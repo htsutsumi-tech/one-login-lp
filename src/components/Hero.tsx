@@ -42,7 +42,7 @@ export default function Hero() {
 
       <div className="relative max-w-content mx-auto px-6 lg:px-8 pb-28 pt-16 lg:pt-20">
 
-        {/* ── Badge + ターゲット: 同じ"導入ゾーン"として近く配置 ── */}
+        {/* ── Badge + ターゲット: 導入ゾーンとして近く配置 ── */}
         <div
           className={`mb-10 transition-all duration-700 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
@@ -62,7 +62,7 @@ export default function Hero() {
         </div>
 
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-        {/* ── Tier 1 × Tier 2: H1 と第二主役を"ひとかたまり"に ── */}
+        {/* ── Tier 1 × Tier 2: H1 と第二主役をひとかたまりに ── */}
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div
           className={`transition-all duration-700 ${
@@ -88,7 +88,7 @@ export default function Hero() {
           </h1>
 
           {/* Positioning Statement — Tier 2: 自信ある宣言 / sans / normal / 第二主役 */}
-          {/* H1との間隔を意図的に狭く → "問い→答え"の一体感 */}
+          {/* H1との間隔を意図的に狭く → 問いと答えの一体感 */}
           <p
             className="
               font-sans font-normal text-neutral-700
@@ -105,7 +105,7 @@ export default function Hero() {
 
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         {/* ── 区切り線 + Tier 3: 補足説明ゾーン ── */}
-        {/* H1ゾーンとの間に"段差"を作る                          */}
+        {/* H1ゾーンとの間に段差を作る */}
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div
           className={`mt-12 pt-10 border-t border-neutral-100 transition-all duration-700 ${
