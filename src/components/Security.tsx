@@ -2,7 +2,7 @@
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const features = [
+const infraFeatures = [
   {
     title: "型安全な設計",
     desc: "TypeScript strict modeを基本とし、型エラーをビルド時に検出。実行時の想定外の動作を構造で防ぎます。",
@@ -35,6 +35,29 @@ const features = [
   },
 ];
 
+const aiGovernance = [
+  {
+    title: "AI生成コードの人的レビュー",
+    desc: "AIが生成したコードはすべてエンジニアによるコードレビューを義務付けています。品質・意図・副作用を人が確認し、判断した上で本番環境へ反映します。",
+    tag: "Human Review",
+  },
+  {
+    title: "機密・個人データのAI入力制御",
+    desc: "顧客データ・個人情報・機密情報をAIモデルへ送信しない運用ルールを明文化。どのデータがどこへ渡るかを、コード・権限・ポリシーの三層で管理します。",
+    tag: "Data Policy",
+  },
+  {
+    title: "AI固有の脆弱性への対応",
+    desc: "プロンプトインジェクションをはじめ、AI利用に固有の攻撃ベクトルをレビュープロセスとセキュリティ設計指針に組み込み、実装段階から対応します。",
+    tag: "AI Risk",
+  },
+  {
+    title: "AIの権限・利用ガバナンス",
+    desc: "使用するAIツール・利用者・用途を社内で明文化。本番環境への直接アクセス権限はAIに付与せず、すべての変更に人の承認を介在させる運用を維持します。",
+    tag: "Governance",
+  },
+];
+
 export default function Security() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
@@ -44,7 +67,7 @@ export default function Security() {
         ref={ref}
         className="max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* Header */}
+        {/* ── Header ── */}
         <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end mb-16">
           <div>
             <p
@@ -64,9 +87,9 @@ export default function Security() {
             className={`hidden lg:block text-right fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
             <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">
-              AIを使って速く作ること、AIからこそ無防備に守ること。
+              AIを開発へ組み込む以上、
               <br />
-              両立を前提に設計しています。
+              AIそのものも管理対象として設計する。
             </p>
           </div>
         </div>
@@ -74,13 +97,18 @@ export default function Security() {
         <p
           className={`lg:hidden text-neutral-400 text-sm leading-relaxed mb-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
-          AIを使って速く作ること、AIからこそ無防備に守ること。
-          両立を前提に設計しています。
+          AIを開発へ組み込む以上、
+          AIそのものも管理対象として設計する。
         </p>
 
-        {/* Feature grid */}
+        {/* ── インフラ・基盤セキュリティ ── */}
+        <div
+          className={`fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+        >
+          <p className="eyebrow mb-6">Infrastructure &amp; Platform</p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-100">
-          {features.map((feature, i) => (
+          {infraFeatures.map((feature, i) => (
             <div
               key={feature.title}
               className={`bg-white p-7 lg:p-8 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
@@ -100,12 +128,60 @@ export default function Security() {
           ))}
         </div>
 
-        {/* Security policy note */}
+        {/* ── AI開発ガバナンス ── */}
+        <div
+          className={`mt-16 pt-14 border-t border-neutral-100 fade-up ${isVisible ? "is-visible" : ""} delay-400`}
+        >
+          {/* サブセクションヘッダー */}
+          <div className="grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-20 items-end mb-10">
+            <div>
+              <p className="eyebrow mb-5">AI Development Governance</p>
+
+              {/* ① 見出しを大きく・重く */}
+              <h3
+                className="
+                  font-sans font-normal leading-snug tracking-tight
+                  text-neutral-900
+                  text-[1.4rem] sm:text-[1.75rem] lg:text-[2rem]
+                "
+              >
+                AIを活用することは、
+                <br />
+                AIを管理することでもある。
+              </h3>
+            </div>
+
+          </div>
+
+          {/* AIガバナンス: 左ボーダー型リスト（インフラカードと視覚的に差別化） */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
+            {aiGovernance.map((item, i) => (
+              <div
+                key={item.title}
+                className={`bg-white p-7 lg:p-8 border-l-2 border-neutral-200 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              >
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <h4 className="text-sm font-medium text-neutral-800 leading-snug">
+                    {item.title}
+                  </h4>
+                  <span className="flex-shrink-0 text-[10px] font-mono text-neutral-400 border border-neutral-100 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-xs text-neutral-500 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── フッターノート ── */}
         <div
           className={`mt-10 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
           <p className="text-xs text-neutral-400 text-center">
-            詳細なセキュリティポリシーについては、お問い合わせ後にご案内しています。
+            詳細なセキュリティ・ガバナンスポリシーについては、お問い合わせ後にご案内しています。
           </p>
         </div>
       </div>
