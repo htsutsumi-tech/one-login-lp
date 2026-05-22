@@ -25,7 +25,7 @@ export default function Footer() {
               <p>
                 東京都港区南山3-3リビエラ南青山ビル A WORKING PARK EN 202
               </p>
-              <p>代表取締役 ： 三浦 拓也</p>
+              <p>代表取締役 ： 三浦 拓郎</p>
             </div>
           </div>
 
