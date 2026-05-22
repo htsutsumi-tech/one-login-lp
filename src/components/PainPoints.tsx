@@ -1,0 +1,88 @@
+"use client";
+
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const pains = [
+  {
+    number: "01",
+    title: "ツールの乱立が、業務を複雑にしている",
+    body: "SaaS導入のたびに増えるログイン、分断されるデータ、現場の習熟コスト。「便利なはずのツール」が、かえって業務を煩雑にする構造。",
+  },
+  {
+    number: "02",
+    title: "既製SaaSでは、顧客ごとの要件に対応できない",
+    body: "汎用パッケージに合わせて業務を変えるか、高額なカスタマイズに頼るか。本来の事業価値を実現するための選択肢が、極端すぎる。",
+  },
+  {
+    number: "03",
+    title: "開発スピードが遅く、機会損失が続く",
+    body: "要件定義に数ヶ月、リリースはさらにその先。市場の変化に追いつけない開発体制では、事業の優位性を保ち続けることができない。",
+  },
+  {
+    number: "04",
+    title: "SaaS費用の積み重なりが、コストを圧迫する",
+    body: "利用率が低いプランでも固定費は増え続ける。従量課金が積み重なり、コストは「使った分」ではなく「契約した分」で決まっていく。",
+  },
+];
+
+export default function PainPoints() {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
+  return (
+    <section id="pain" className="bg-neutral-50 py-32 lg:py-40">
+      <div
+        ref={ref}
+        className="max-w-content mx-auto px-6 lg:px-8"
+      >
+        {/* Header */}
+        <div
+          className={`mb-16 fade-up ${isVisible ? "is-visible" : ""}`}
+        >
+          <p className="section-label mb-5">Pain Points</p>
+          <h2 className="display-heading text-neutral-950 text-[2rem] sm:text-[2.5rem] lg:text-[3rem] leading-tight max-w-xl">
+            多くの企業が、
+            <br />
+            同じ壁にぶつかっている。
+          </h2>
+        </div>
+
+        {/* Pain cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200">
+          {pains.map((pain, i) => (
+            <div
+              key={pain.number}
+              className={`bg-neutral-50 p-8 lg:p-10 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+            >
+              <div className="flex items-start gap-5">
+                <span className="font-mono text-xs text-neutral-300 mt-0.5 flex-shrink-0 leading-none pt-1">
+                  {pain.number}
+                </span>
+                <div>
+                  <h3 className="text-base font-medium text-neutral-900 mb-3 leading-snug">
+                    {pain.title}
+                  </h3>
+                  <p className="text-sm text-neutral-500 leading-relaxed">
+                    {pain.body}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bridge */}
+        <div
+          className={`mt-16 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
+        >
+          <p className="text-center text-neutral-400 text-sm">
+            これらはすべて、
+            <span className="text-neutral-700 font-medium">
+              「構造」を変えることで解決できる
+            </span>
+            課題です。
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

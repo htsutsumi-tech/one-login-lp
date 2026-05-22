@@ -1,0 +1,135 @@
+"use client";
+
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const targetCompanies = [
+  "自社プロダクトを本気で成長させたい企業",
+  "SaaS乱立・ツール分断に課題を感じている企業",
+  "既製SaaSでは限界を感じている企業",
+  "スピード感を持ってDX推進したい企業",
+  "中長期でプロダクトを育てていきたい企業",
+];
+
+const ourProvision = [
+  {
+    title: "AIネイティブ開発体制",
+    desc: "生成AIを設計・実装・検証の各工程に組み込んだ高速実装体制",
+  },
+  {
+    title: "統合基盤の設計力",
+    desc: "One Login, All Contentsの思想に基づく、拡張性の高いシステム設計",
+  },
+  {
+    title: "エンタープライズ水準のセキュリティ",
+    desc: "多要素認証・ロールベースアクセス制御・国内データセンター対応",
+  },
+  {
+    title: "共創型の開発プロセス",
+    desc: "単なる受託ではなく、事業の中核として共に考え実装するパートナーシップ",
+  },
+];
+
+export default function Partnership() {
+  const { ref, isVisible } = useScrollAnimation(0.06);
+
+  return (
+    <section id="partnership" className="bg-neutral-50 py-32 lg:py-44">
+      <div
+        ref={ref}
+        className="max-w-content mx-auto px-6 lg:px-8"
+      >
+        {/* Header */}
+        <div
+          className={`text-center mb-20 fade-up ${isVisible ? "is-visible" : ""}`}
+        >
+          <p className="section-label mb-5">Partnership</p>
+          <h2 className="display-heading text-neutral-950 text-[2rem] sm:text-[3rem] lg:text-[3.8rem] leading-tight mb-6">
+            &ldquo;本気で創る&rdquo;企業へ。
+          </h2>
+          <p className="text-neutral-500 text-base max-w-xl mx-auto leading-relaxed font-light">
+            共同開発パートナーを募集します。
+          </p>
+          <p className="text-neutral-400 text-sm max-w-2xl mx-auto leading-relaxed mt-3">
+            私たちが求めるのは、単に開発を委託したい企業ではありません。
+            本気の事業開発を目指す共創パートナーシップを通じて、
+            自社プロダクトと共に歩む企業と、長期的に創り続けたいと考えています。
+          </p>
+        </div>
+
+        {/* Two column layout */}
+        <div className="grid lg:grid-cols-2 gap-px bg-neutral-200">
+          {/* Left: Target companies */}
+          <div
+            className={`bg-neutral-50 p-10 lg:p-12 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+          >
+            <h3 className="text-sm font-medium text-neutral-900 mb-7 pb-4 border-b border-neutral-200">
+              共同パートナーとして想定する企業
+            </h3>
+            <ul className="space-y-4">
+              {targetCompanies.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <svg
+                    className="mt-0.5 flex-shrink-0 text-neutral-400"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path
+                      d="M2 7l3.5 3.5L12 3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="text-sm text-neutral-600 leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 pt-6 border-t border-neutral-100">
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                業種・規模は問いません。事業への本気度を最も重視しています。
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Our provision */}
+          <div
+            className={`bg-neutral-50 p-10 lg:p-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+          >
+            <h3 className="text-sm font-medium text-neutral-900 mb-7 pb-4 border-b border-neutral-200">
+              私たちが提供できること
+            </h3>
+            <div className="space-y-6">
+              {ourProvision.map((item, i) => (
+                <div key={i}>
+                  <p className="text-sm font-medium text-neutral-800 mb-1">
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-neutral-500 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Quote */}
+        <div
+          className={`mt-16 text-center fade-up ${isVisible ? "is-visible" : ""} delay-300`}
+        >
+          <blockquote className="display-heading text-neutral-400 text-lg sm:text-xl font-light italic">
+            戦術ではなく、構造を導入する。
+            <br className="hidden sm:block" />
+            その発想を、本気で事業を伸ばす企業と共に体現します。
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  );
+}
