@@ -33,11 +33,30 @@ export default function Navigation() {
           className="flex items-center gap-2.5 group"
           aria-label="トップへ戻る"
         >
-          <span className="font-serif text-[1.05rem] font-semibold tracking-tight text-slate-900 group-hover:opacity-70 transition-opacity">
-            ONE-EIGHTY
+          {/* Brand mark — blob topology abstracted to precision circles, blue/slate palette */}
+          <svg
+            width="26" height="21"
+            viewBox="0 0 34 28"
+            fill="none"
+            aria-hidden="true"
+            className="flex-shrink-0 group-hover:opacity-70 transition-opacity duration-200"
+          >
+            {/* Main anchor — largest */}
+            <circle cx="12" cy="16" r="11" fill="#0f172a" opacity="0.9"/>
+            {/* Upper-left — secondary */}
+            <circle cx="8"  cy="7"  r="6.5" fill="#0f172a" opacity="0.58"/>
+            {/* Upper-right — blue accent */}
+            <circle cx="23" cy="8"  r="5"   fill="#2563eb" opacity="0.52"/>
+            {/* Far-right micro */}
+            <circle cx="30" cy="17" r="2.8" fill="#2563eb" opacity="0.28"/>
+          </svg>
+
+          {/* Wordmark */}
+          <span className="font-sans text-[0.95rem] font-medium tracking-[0.01em] text-slate-900 group-hover:opacity-70 transition-opacity duration-200">
+            one.
           </span>
           <span className="hidden sm:block w-px h-3.5 bg-slate-300" />
-          <span className="hidden sm:block eyebrow !text-slate-400 text-[10px] group-hover:opacity-70 transition-opacity">
+          <span className="hidden sm:block eyebrow !text-slate-400 text-[10px] group-hover:opacity-70 transition-opacity duration-200">
             共創パートナー
           </span>
         </button>

@@ -17,9 +17,24 @@ export default function Footer() {
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-start">
           {/* Left */}
           <div>
-            <p className="font-serif text-white text-base font-semibold mb-2">
-              ONE-EIGHTY
-            </p>
+            {/* Logo — white/blue-200 variant for dark footer */}
+            <div className="flex items-center gap-2.5 mb-3">
+              <svg
+                width="24" height="19"
+                viewBox="0 0 34 28"
+                fill="none"
+                aria-hidden="true"
+                className="flex-shrink-0"
+              >
+                <circle cx="12" cy="16" r="11" fill="white"    opacity="0.72"/>
+                <circle cx="8"  cy="7"  r="6.5" fill="white"   opacity="0.46"/>
+                <circle cx="23" cy="8"  r="5"   fill="#bfdbfe" opacity="0.55"/>
+                <circle cx="30" cy="17" r="2.8" fill="#bfdbfe" opacity="0.32"/>
+              </svg>
+              <span className="font-sans text-white text-[0.92rem] font-medium tracking-[0.01em]">
+                one.
+              </span>
+            </div>
             <p className="text-slate-500 text-xs mb-6 leading-relaxed max-w-xs">
               AIネイティブ開発で、事業の競争優位を共に実装する
               <br />
