@@ -6,7 +6,7 @@ export default function Hero() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 80);
+    const timer = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
@@ -15,8 +15,13 @@ export default function Hero() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const fadeIn = (delay: number) =>
+    `transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`;
+
   return (
     <section id="hero" className="relative min-h-screen flex flex-col justify-center bg-white overflow-hidden pt-16">
+
+      {/* ── Backgrounds ─────────────────────────────────────────────────── */}
 
       {/* Grid — blue-tinted lines */}
       <div
@@ -24,45 +29,87 @@ export default function Hero() {
         aria-hidden="true"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(37,99,235,0.09) 1px, transparent 1px), linear-gradient(to bottom, rgba(37,99,235,0.09) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(37,99,235,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(37,99,235,0.08) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
-          opacity: 0.6,
+          opacity: 0.65,
         }}
       />
-      {/* Vignette — fades grid toward edges */}
+      {/* Vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
-          background: "radial-gradient(ellipse 85% 70% at 50% 40%, transparent 0%, rgba(255,255,255,0.8) 55%, #ffffff 100%)",
+          background:
+            "radial-gradient(ellipse 85% 70% at 50% 40%, transparent 0%, rgba(255,255,255,0.82) 52%, #ffffff 100%)",
         }}
       />
-      {/* Blue atmospheric glow — top-right */}
+      {/* Atmospheric glow — top-right */}
       <div
         className="absolute top-0 right-0 w-[70vw] h-[70vw] pointer-events-none"
         aria-hidden="true"
         style={{
-          background: "radial-gradient(ellipse at 75% 5%, rgba(37,99,235,0.08) 0%, transparent 55%)",
+          background:
+            "radial-gradient(ellipse at 75% 5%, rgba(37,99,235,0.07) 0%, transparent 55%)",
         }}
       />
-      {/* Blue atmospheric glow — bottom-left */}
+      {/* Atmospheric glow — bottom-left */}
       <div
         className="absolute bottom-0 left-0 w-[50vw] h-[50vw] pointer-events-none"
         aria-hidden="true"
         style={{
-          background: "radial-gradient(ellipse at 15% 95%, rgba(37,99,235,0.05) 0%, transparent 55%)",
+          background:
+            "radial-gradient(ellipse at 15% 95%, rgba(37,99,235,0.04) 0%, transparent 55%)",
         }}
       />
 
+      {/* Large background "01" — depth marker */}
+      <div
+        className="absolute right-[-2vw] top-1/2 -translate-y-[55%] pointer-events-none select-none hidden lg:block"
+        aria-hidden="true"
+      >
+        <span
+          className="block font-mono font-bold leading-none tracking-[-0.06em]"
+          style={{ fontSize: "26vw", color: "rgba(37,99,235,0.032)" }}
+        >
+          01
+        </span>
+      </div>
+
+      {/* Corner markers — blueprint accent */}
+      <div className="absolute top-[4.5rem] left-6 lg:left-8 pointer-events-none hidden sm:block" aria-hidden="true">
+        <div className="w-[18px] h-[18px] relative">
+          <div className="absolute top-0 left-0 w-full h-px bg-slate-300/80" />
+          <div className="absolute top-0 left-0 w-px h-full bg-slate-300/80" />
+        </div>
+      </div>
+      <div className="absolute top-[4.5rem] right-6 lg:right-8 pointer-events-none hidden sm:block" aria-hidden="true">
+        <div className="w-[18px] h-[18px] relative">
+          <div className="absolute top-0 right-0 w-full h-px bg-slate-300/80" />
+          <div className="absolute top-0 right-0 w-px h-full bg-slate-300/80" />
+        </div>
+      </div>
+      {/* Small section label */}
+      <div
+        className="absolute pointer-events-none hidden lg:block"
+        style={{ top: "5.8rem", right: "2rem" }}
+        aria-hidden="true"
+      >
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 01<br />First View
+        </p>
+      </div>
+
+      {/* ── Content ─────────────────────────────────────────────────────── */}
+
       <div className="relative max-w-content mx-auto px-6 lg:px-8 pb-28 pt-16 lg:pt-20">
 
-        {/* Badge — sharp enterprise tag */}
+        {/* Badge */}
         <div
-          className={`mb-12 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+          className={`mb-16 ${fadeIn(0)}`}
           style={{ transitionDelay: "0ms" }}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase font-medium text-blue-600 border border-blue-200 px-2.5 py-1.5 rounded-none">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase font-medium text-blue-600 border border-blue-200 px-2.5 py-1.5">
               Co-Development
             </span>
             <span className="hidden sm:flex items-center gap-3">
@@ -70,37 +117,58 @@ export default function Hero() {
               <span className="text-[11px] text-slate-400 tracking-wide">共同開発パートナー募集</span>
             </span>
           </div>
-          <p className="text-sm sm:text-base text-slate-500 font-light">
-            自社プロダクトを、本気で育てる企業へ。
-          </p>
         </div>
 
-        {/* H1 + Positioning Statement */}
-        <div
-          className={`transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-          style={{ transitionDelay: "160ms" }}
+        {/* H1 — 3-line structure, each line enters independently */}
+        <h1
+          className="mb-8"
+          aria-label="その事業構想、「既製SaaS」で妥協しない。"
         >
-          {/* H1 — serif / light / large */}
-          <h1 className="display-heading text-slate-900 mb-5">
-            <span className="block text-[2.8rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.06] tracking-[-0.04em]">
-              その事業構想、
-            </span>
-            <span className="block text-[2.8rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.06] tracking-[-0.04em]">
-              <span className="relative inline-block mr-[0.06em]">
-                {/* Blue underline accent on "既製SaaS" */}
-                <span className="relative z-10 text-slate-500 text-[0.95em]">&ldquo;既製SaaS&rdquo;</span>
+          {/* Line 1 — annotation, quiet qualifier */}
+          <span
+            className={`block font-sans font-light text-[1.15rem] sm:text-[1.5rem] lg:text-[1.9rem] leading-[1.4] tracking-[-0.01em] text-slate-400 mb-1 lg:mb-2 ${fadeIn(80)}`}
+            style={{ transitionDelay: "80ms" }}
+          >
+            その事業構想、
+          </span>
+
+          {/* Lines 2 + 3 — main statement, enormous serif */}
+          <span className="display-heading block">
+            {/* Line 2 — tension: "既製SaaS"で */}
+            <span
+              className={`block text-[2.8rem] sm:text-[4rem] lg:text-[6.5rem] leading-[1.04] tracking-[-0.04em] text-slate-900 ${fadeIn(200)}`}
+              style={{ transitionDelay: "200ms" }}
+            >
+              <span className="relative inline-block mr-[0.04em]">
+                <span className="relative z-10 text-blue-600 text-[0.95em]">
+                  &ldquo;既製SaaS&rdquo;
+                </span>
+                {/* Blue underline — accent on the key term */}
                 <span
-                  className="absolute left-0 right-0 h-[3px] bg-blue-400"
-                  style={{ bottom: "0.06em" }}
+                  className="absolute left-0 right-0 bg-blue-400"
+                  style={{ bottom: "0.05em", height: "3px" }}
                   aria-hidden="true"
                 />
               </span>
-              で妥協しない。
+              で
             </span>
-          </h1>
 
-          {/* Tier 2 — sans / confident declaration */}
-          <p className="font-sans font-normal text-slate-700 text-[1.6rem] sm:text-[2.2rem] lg:text-[2.8rem] leading-[1.28] tracking-[-0.02em] mt-2 mb-0">
+            {/* Line 3 — resolution: 妥協しない。*/}
+            <span
+              className={`block text-[2.8rem] sm:text-[4rem] lg:text-[6.5rem] leading-[1.04] tracking-[-0.04em] text-slate-900 ${fadeIn(320)}`}
+              style={{ transitionDelay: "320ms" }}
+            >
+              妥協しない。
+            </span>
+          </span>
+        </h1>
+
+        {/* Tier 2 — positioning statement */}
+        <div
+          className={fadeIn(440)}
+          style={{ transitionDelay: "440ms" }}
+        >
+          <p className="font-sans font-normal text-slate-600 text-[1.45rem] sm:text-[1.9rem] lg:text-[2.3rem] leading-[1.3] tracking-[-0.02em]">
             御社の事業構想を、
             <br className="hidden sm:block" />
             プロダクトとして実装する。
@@ -109,8 +177,8 @@ export default function Hero() {
 
         {/* Divider + Body + CTA */}
         <div
-          className={`mt-14 pt-10 border-t border-slate-100 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          style={{ transitionDelay: "320ms" }}
+          className={`mt-14 pt-10 border-t border-slate-100 ${fadeIn(560)}`}
+          style={{ transitionDelay: "560ms" }}
         >
           <p className="text-slate-500 text-sm sm:text-base leading-loose font-light max-w-lg mb-10">
             業務・データ・顧客接点を、一つのログイン基盤へ統合。
@@ -119,13 +187,20 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               <button
                 onClick={() => scrollTo("cta")}
-                className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-blue-700 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 rounded-sm w-fit shadow-sm shadow-blue-200"
+                className="inline-flex items-center gap-3.5 bg-blue-600 text-white px-9 py-4 text-sm font-medium tracking-wide rounded-sm w-fit group transition-all duration-200
+                  shadow-[0_2px_16px_rgba(37,99,235,0.2)]
+                  hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(37,99,235,0.3)]
+                  active:scale-[0.99]"
               >
                 共同開発パートナーについて相談する
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <svg
+                  className="flex-shrink-0 group-hover:translate-x-0.5 transition-transform duration-200"
+                  width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5"
+                  aria-hidden="true"
+                >
                   <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
@@ -141,7 +216,8 @@ export default function Hero() {
               詳しく読む
               <svg
                 className="group-hover:translate-y-0.5 transition-transform duration-200"
-                width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"
+                width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
+                aria-hidden="true"
               >
                 <path d="M6 2v8M3 6.5l3 3 3-3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -151,8 +227,8 @@ export default function Hero() {
 
         {/* Process Strip */}
         <div
-          className={`mt-24 pt-7 border-t border-slate-100 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          style={{ transitionDelay: "500ms" }}
+          className={`mt-24 pt-7 border-t border-slate-100 ${fadeIn(720)}`}
+          style={{ transitionDelay: "720ms" }}
         >
           <div className="grid grid-cols-3 gap-2 sm:gap-0 sm:flex sm:items-center">
             {[
@@ -183,11 +259,11 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className={`absolute bottom-7 left-1/2 -translate-x-1/2 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
-        style={{ transitionDelay: "800ms" }}
+        className={`absolute bottom-7 left-1/2 -translate-x-1/2 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ transitionDelay: "1000ms" }}
         aria-hidden="true"
       >
-        <div className="w-px h-10 bg-gradient-to-b from-slate-200 to-transparent" />
+        <div className="w-px h-10 bg-gradient-to-b from-slate-300 to-transparent" />
       </div>
     </section>
   );
