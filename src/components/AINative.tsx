@@ -30,10 +30,25 @@ export default function AINative() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="ai-native" className="section-atm-white py-28 lg:py-40">
+    <section id="ai-native" className="section-atm-white py-28 lg:py-40 relative overflow-hidden">
+
+      {/* Section number watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <span className="block font-mono font-bold leading-none tracking-[-0.06em]" style={{ fontSize: "18vw", color: "rgba(37,99,235,0.028)" }}>
+          04
+        </span>
+      </div>
+
+      {/* Section index label */}
+      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 04<br />AI Native
+        </p>
+      </div>
+
       <div
         ref={ref}
-        className="max-w-content mx-auto px-6 lg:px-8"
+        className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
         <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end mb-20">
@@ -44,7 +59,7 @@ export default function AINative() {
               AI Native Development
             </p>
             <h2
-              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.5rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               なぜ、いま
               <br />

@@ -21,10 +21,33 @@ export default function Concept() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="concept" className="section-atm-white py-32 lg:py-52">
+    <section id="concept" className="section-atm-white py-32 lg:py-52 relative overflow-hidden">
+
+      {/* Section number watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <span className="block font-mono font-bold leading-none tracking-[-0.06em]" style={{ fontSize: "18vw", color: "rgba(37,99,235,0.028)" }}>
+          03
+        </span>
+      </div>
+
+      {/* Section index label */}
+      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 03<br />Concept
+        </p>
+      </div>
+
+      {/* Corner markers — blueprint accent */}
+      <div className="absolute top-8 left-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <div className="w-[18px] h-[18px] relative">
+          <div className="absolute top-0 left-0 w-full h-px bg-slate-300/70" />
+          <div className="absolute top-0 left-0 w-px h-full bg-slate-300/70" />
+        </div>
+      </div>
+
       <div
         ref={ref}
-        className="max-w-content mx-auto px-6 lg:px-8"
+        className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24">

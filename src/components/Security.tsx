@@ -62,10 +62,25 @@ export default function Security() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
   return (
-    <section id="security" className="section-atm-security py-28 lg:py-40">
+    <section id="security" className="section-atm-security py-28 lg:py-40 relative overflow-hidden">
+
+      {/* Section number watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <span className="block font-mono font-bold leading-none tracking-[-0.06em]" style={{ fontSize: "18vw", color: "rgba(37,99,235,0.028)" }}>
+          07
+        </span>
+      </div>
+
+      {/* Section index label */}
+      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 07<br />Security
+        </p>
+      </div>
+
       <div
         ref={ref}
-        className="max-w-content mx-auto px-6 lg:px-8"
+        className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* ── Header ── */}
         <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end mb-16">
@@ -111,7 +126,7 @@ export default function Security() {
           {infraFeatures.map((feature, i) => (
             <div
               key={feature.title}
-              className={`bg-white p-7 lg:p-8 card-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`bg-white p-7 lg:p-8 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h3 className="text-sm font-medium text-slate-900 leading-snug">
@@ -156,7 +171,7 @@ export default function Security() {
             {aiGovernance.map((item, i) => (
               <div
                 key={item.title}
-                className={`bg-white p-7 lg:p-8 border-l-2 border-blue-200 card-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+                className={`bg-white p-7 lg:p-8 border-l-2 border-blue-200 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <h4 className="text-sm font-medium text-slate-800 leading-snug">

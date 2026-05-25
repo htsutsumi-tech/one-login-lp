@@ -29,17 +29,32 @@ export default function PainPoints() {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="pain" className="section-atm-slate py-24 lg:py-36">
+    <section id="pain" className="section-atm-slate py-24 lg:py-36 relative overflow-hidden">
+
+      {/* Section number watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <span className="block font-mono font-bold leading-none tracking-[-0.06em]" style={{ fontSize: "18vw", color: "rgba(37,99,235,0.028)" }}>
+          02
+        </span>
+      </div>
+
+      {/* Section index label */}
+      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 02<br />Pain Points
+        </p>
+      </div>
+
       <div
         ref={ref}
-        className="max-w-content mx-auto px-6 lg:px-8"
+        className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
         <div
           className={`mb-16 fade-up ${isVisible ? "is-visible" : ""}`}
         >
           <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Pain Points</p>
-          <h2 className="display-heading text-slate-900 text-[2rem] sm:text-[2.5rem] lg:text-[3rem] leading-tight max-w-xl">
+          <h2 className="display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[4rem] leading-tight">
             多くの企業が、
             <br />
             同じ壁にぶつかっている。
@@ -51,7 +66,7 @@ export default function PainPoints() {
           {pains.map((pain, i) => (
             <div
               key={pain.number}
-              className={`bg-slate-50 p-8 lg:p-10 card-hover relative overflow-hidden fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`bg-slate-50 p-8 lg:p-10 card-grid-hover relative fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
               {/* Decorative large number — background */}
               <span

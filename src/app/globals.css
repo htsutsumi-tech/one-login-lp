@@ -107,7 +107,7 @@ body {
   line-height: 1.2;
 }
 
-/* Card hover — lift + blue tint */
+/* Card hover — lift + blue tint (standalone cards) */
 .card-hover {
   transition:
     border-color 0.25s ease,
@@ -120,6 +120,38 @@ body {
   background-color: #f8faff;
   box-shadow: 0 0 0 1px #bfdbfe, 0 6px 28px rgba(37, 99, 235, 0.08);
   transform: translateY(-2px);
+}
+
+/* Grid card hover — top accent line reveal, no lift (gap-px grids) */
+.card-grid-hover {
+  position: relative;
+  transition: background-color 0.22s ease;
+  overflow: hidden;
+}
+.card-grid-hover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: #2563eb;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-grid-hover:hover {
+  background-color: #f8faff;
+}
+.card-grid-hover:hover::before {
+  transform: scaleX(1);
+}
+
+/* Scroll indicator — gentle downward pulse */
+@keyframes scroll-down {
+  0%, 100% { opacity: 0.9; transform: translateY(0); }
+  55%       { opacity: 0.3; transform: translateY(7px); }
+}
+.animate-scroll-down {
+  animation: scroll-down 2.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 /* ── Atmospheric section backgrounds ───────────────────────────────────────── */

@@ -33,16 +33,39 @@ export default function Partnership() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
   return (
-    <section id="partnership" className="section-atm-slate py-32 lg:py-44">
+    <section id="partnership" className="section-atm-slate py-32 lg:py-44 relative overflow-hidden">
+
+      {/* Section number watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <span className="block font-mono font-bold leading-none tracking-[-0.06em]" style={{ fontSize: "18vw", color: "rgba(37,99,235,0.028)" }}>
+          06
+        </span>
+      </div>
+
+      {/* Section index label */}
+      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 06<br />Partnership
+        </p>
+      </div>
+
+      {/* Corner markers */}
+      <div className="absolute top-8 left-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <div className="w-[18px] h-[18px] relative">
+          <div className="absolute top-0 left-0 w-full h-px bg-slate-300/70" />
+          <div className="absolute top-0 left-0 w-px h-full bg-slate-300/70" />
+        </div>
+      </div>
+
       <div
         ref={ref}
-        className="max-w-content mx-auto px-6 lg:px-8"
+        className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
         <div
           className={`text-center mb-20 fade-up ${isVisible ? "is-visible" : ""}`}
         >
-          <p className="section-label mb-5">Partnership</p>
+          <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Partnership</p>
           <h2 className="display-heading text-slate-900 text-[2.2rem] sm:text-[3.2rem] lg:text-[4.4rem] leading-tight mb-6">
             &ldquo;本気で創る&rdquo;企業へ。
           </h2>
@@ -60,7 +83,7 @@ export default function Partnership() {
         <div className="grid lg:grid-cols-2 gap-px bg-slate-200">
           {/* Left: Target companies */}
           <div
-            className={`bg-slate-50 p-10 lg:p-12 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
           >
             <h3 className="text-sm font-medium text-slate-900 mb-7 pb-4 border-b border-slate-200">
               共同パートナーとして想定する企業
@@ -99,7 +122,7 @@ export default function Partnership() {
 
           {/* Right: Our provision */}
           <div
-            className={`bg-slate-50 p-10 lg:p-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+            className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
             <h3 className="text-sm font-medium text-slate-900 mb-7 pb-4 border-b border-slate-200">
               私たちが提供できること

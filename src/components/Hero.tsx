@@ -257,13 +257,24 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — SCROLL ↓ */}
       <div
-        className={`absolute bottom-7 left-1/2 -translate-x-1/2 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}
-        style={{ transitionDelay: "1000ms" }}
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ transitionDelay: "1400ms" }}
         aria-hidden="true"
       >
-        <div className="w-px h-10 bg-gradient-to-b from-slate-300 to-transparent" />
+        <span className="font-mono text-[9px] tracking-[0.24em] uppercase text-slate-400 select-none leading-none">
+          Scroll
+        </span>
+        <div className="animate-scroll-down flex flex-col items-center gap-px">
+          <div className="w-px h-7 bg-gradient-to-b from-slate-300 to-transparent" />
+          <svg
+            width="8" height="5" viewBox="0 0 8 5" fill="none"
+            className="text-slate-300"
+          >
+            <path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
       </div>
     </section>
   );

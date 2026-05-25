@@ -49,10 +49,25 @@ export default function BuildScope() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="build-scope" className="section-atm-white py-20 lg:py-28">
+    <section id="build-scope" className="section-atm-white py-20 lg:py-28 relative overflow-hidden">
+
+      {/* Section number watermark */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <span className="block font-mono font-bold leading-none tracking-[-0.06em]" style={{ fontSize: "18vw", color: "rgba(37,99,235,0.028)" }}>
+          05
+        </span>
+      </div>
+
+      {/* Section index label */}
+      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
+        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
+          Sect. 05<br />Build Scope
+        </p>
+      </div>
+
       <div
         ref={ref}
-        className="max-w-content mx-auto px-6 lg:px-8"
+        className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
@@ -63,7 +78,7 @@ export default function BuildScope() {
               Build Scope
             </p>
             <h2
-              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.8rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               構築可能な
               <br />
@@ -88,7 +103,7 @@ export default function BuildScope() {
           {categories.map((cat, i) => (
             <div
               key={cat.label}
-              className={`bg-white p-7 card-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`bg-white p-7 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
               <p className="text-xs font-medium text-slate-900 mb-4 pb-3 border-b border-slate-100">
                 {cat.label}
