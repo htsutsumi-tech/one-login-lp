@@ -49,7 +49,7 @@ export default function BuildScope() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="build-scope" className="bg-white py-32 lg:py-44">
+    <section id="build-scope" className="section-atm-white py-20 lg:py-28">
       <div
         ref={ref}
         className="max-w-content mx-auto px-6 lg:px-8"
@@ -63,7 +63,7 @@ export default function BuildScope() {
               Build Scope
             </p>
             <h2
-              className={`display-heading text-neutral-950 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               構築可能な
               <br />
@@ -73,34 +73,34 @@ export default function BuildScope() {
           <div
             className={`self-end fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
-            <p className="text-neutral-500 text-sm leading-relaxed">
+            <p className="text-slate-500 text-sm leading-relaxed">
               独立したSaaSを並べるのではなく、
               御社の業務に合わせた統合プロダクトとして設計します。
               ここに挙げた機能領域を組み合わせ、
-              <span className="text-neutral-800">必要な形に最適化</span>
+              <span className="text-slate-800 font-medium">必要な形に最適化</span>
               して実装します。
             </p>
           </div>
         </div>
 
         {/* Categories grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100">
           {categories.map((cat, i) => (
             <div
               key={cat.label}
-              className={`bg-white p-7 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`bg-white p-7 card-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
-              <p className="text-xs font-medium text-neutral-900 mb-4 pb-3 border-b border-neutral-100">
+              <p className="text-xs font-medium text-slate-900 mb-4 pb-3 border-b border-slate-100">
                 {cat.label}
               </p>
               <ul className="space-y-2.5">
                 {cat.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span
-                      className="mt-1.5 w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"
+                      className="mt-1.5 w-1 h-1 rounded-full bg-blue-300 flex-shrink-0"
                       aria-hidden="true"
                     />
-                    <span className="text-xs text-neutral-500 leading-relaxed">
+                    <span className="text-xs text-slate-500 leading-relaxed">
                       {item}
                     </span>
                   </li>
@@ -114,7 +114,7 @@ export default function BuildScope() {
         <div
           className={`mt-8 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-xs text-neutral-400 text-center">
+          <p className="text-xs text-slate-400 text-center">
             上記はすべて単一ログイン基盤上に統合可能です。
             御社の要件に合わせた組み合わせをご提案します。
           </p>

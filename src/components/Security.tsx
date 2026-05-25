@@ -62,7 +62,7 @@ export default function Security() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
   return (
-    <section id="security" className="bg-white py-32 lg:py-44">
+    <section id="security" className="section-atm-security py-28 lg:py-40">
       <div
         ref={ref}
         className="max-w-content mx-auto px-6 lg:px-8"
@@ -76,7 +76,7 @@ export default function Security() {
               Security
             </p>
             <h2
-              className={`display-heading text-neutral-950 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               開発スピードと引き換えに、
               <br />
@@ -86,7 +86,7 @@ export default function Security() {
           <div
             className={`hidden lg:block text-right fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
-            <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               AIを開発へ組み込む以上、
               <br />
               AIそのものも管理対象として設計する。
@@ -95,7 +95,7 @@ export default function Security() {
         </div>
 
         <p
-          className={`lg:hidden text-neutral-400 text-sm leading-relaxed mb-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+          className={`lg:hidden text-slate-400 text-sm leading-relaxed mb-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
           AIを開発へ組み込む以上、
           AIそのものも管理対象として設計する。
@@ -107,21 +107,21 @@ export default function Security() {
         >
           <p className="eyebrow mb-6">Infrastructure &amp; Platform</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100">
           {infraFeatures.map((feature, i) => (
             <div
               key={feature.title}
-              className={`bg-white p-7 lg:p-8 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`bg-white p-7 lg:p-8 card-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
               <div className="flex items-start justify-between gap-4 mb-4">
-                <h3 className="text-sm font-medium text-neutral-900 leading-snug">
+                <h3 className="text-sm font-medium text-slate-900 leading-snug">
                   {feature.title}
                 </h3>
-                <span className="flex-shrink-0 text-[10px] font-mono text-neutral-400 border border-neutral-100 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
+                <span className="flex-shrink-0 text-[10px] font-mono text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
                   {feature.tag}
                 </span>
               </div>
-              <p className="text-xs text-neutral-500 leading-relaxed">
+              <p className="text-xs text-slate-500 leading-relaxed">
                 {feature.desc}
               </p>
             </div>
@@ -130,18 +130,17 @@ export default function Security() {
 
         {/* ── AI開発ガバナンス ── */}
         <div
-          className={`mt-16 pt-14 border-t border-neutral-100 fade-up ${isVisible ? "is-visible" : ""} delay-400`}
+          className={`mt-16 pt-14 border-t border-slate-100 fade-up ${isVisible ? "is-visible" : ""} delay-400`}
         >
           {/* サブセクションヘッダー */}
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-20 items-end mb-10">
             <div>
               <p className="eyebrow mb-5">AI Development Governance</p>
 
-              {/* ① 見出しを大きく・重く */}
               <h3
                 className="
                   font-sans font-normal leading-snug tracking-tight
-                  text-neutral-900
+                  text-slate-900
                   text-[1.4rem] sm:text-[1.75rem] lg:text-[2rem]
                 "
               >
@@ -150,25 +149,24 @@ export default function Security() {
                 AIを管理することでもある。
               </h3>
             </div>
-
           </div>
 
-          {/* AIガバナンス: 左ボーダー型リスト（インフラカードと視覚的に差別化） */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
+          {/* AIガバナンス: 左ボーダー型リスト */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-100">
             {aiGovernance.map((item, i) => (
               <div
                 key={item.title}
-                className={`bg-white p-7 lg:p-8 border-l-2 border-neutral-200 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+                className={`bg-white p-7 lg:p-8 border-l-2 border-blue-200 card-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
-                  <h4 className="text-sm font-medium text-neutral-800 leading-snug">
+                  <h4 className="text-sm font-medium text-slate-800 leading-snug">
                     {item.title}
                   </h4>
-                  <span className="flex-shrink-0 text-[10px] font-mono text-neutral-400 border border-neutral-100 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
+                  <span className="flex-shrink-0 text-[10px] font-mono text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
                     {item.tag}
                   </span>
                 </div>
-                <p className="text-xs text-neutral-500 leading-relaxed">
+                <p className="text-xs text-slate-500 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -180,7 +178,7 @@ export default function Security() {
         <div
           className={`mt-10 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-xs text-neutral-400 text-center">
+          <p className="text-xs text-slate-400 text-center">
             詳細なセキュリティ・ガバナンスポリシーについては、お問い合わせ後にご案内しています。
           </p>
         </div>

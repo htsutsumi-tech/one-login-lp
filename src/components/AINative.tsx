@@ -30,66 +30,88 @@ export default function AINative() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="ai-native" className="bg-neutral-950 py-32 lg:py-44 text-white">
+    <section id="ai-native" className="section-atm-white py-28 lg:py-40">
       <div
         ref={ref}
         className="max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
-        <div className="mb-20">
-          <p
-            className={`section-label text-neutral-500 mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
+        <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end mb-20">
+          <div>
+            <p
+              className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
+            >
+              AI Native Development
+            </p>
+            <h2
+              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            >
+              なぜ、いま
+              <br />
+              AIネイティブ開発なのか。
+            </h2>
+          </div>
+          <div
+            className={`hidden lg:block fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
-            AI Native Development
-          </p>
-          <h2
-            className={`display-heading text-white text-[2rem] sm:text-[2.8rem] lg:text-[3.5rem] leading-tight max-w-2xl fade-up ${isVisible ? "is-visible" : ""} delay-100`}
-          >
-            なぜ、いま
-            <br />
-            AIネイティブ開発なのか。
-          </h2>
-          <p
-            className={`text-neutral-400 text-sm mt-6 leading-relaxed max-w-lg fade-up ${isVisible ? "is-visible" : ""} delay-200`}
-          >
-            AIは「便利なツール」ではなく、開発体制そのものに組み込む
-            <span className="text-neutral-200">「構造」</span>
-            として機能します。
-          </p>
+            <p className="text-slate-400 text-sm leading-relaxed text-right max-w-xs">
+              AIは「便利なツール」ではなく、
+              <br />
+              開発体制そのものに組み込む
+              <span className="text-slate-700 font-medium">「構造」</span>
+              として機能します。
+            </p>
+          </div>
         </div>
+
+        <p
+          className={`lg:hidden text-slate-400 text-sm leading-relaxed mb-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+        >
+          AIは「便利なツール」ではなく、開発体制そのものに組み込む
+          <span className="text-slate-700 font-medium">「構造」</span>
+          として機能します。
+        </p>
 
         {/* Values */}
         <div className="space-y-px">
           {values.map((value, i) => (
             <div
               key={value.number}
-              className={`group border-t border-neutral-800 py-10 lg:py-12 grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16 hover:bg-neutral-900 transition-colors duration-300 px-2 -mx-2 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`group relative border-t border-slate-100 py-10 lg:py-12 grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-16 hover:bg-slate-50 transition-colors duration-300 px-4 -mx-4 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
+              {/* Decorative number */}
+              <span
+                className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-mono text-[6rem] lg:text-[8rem] leading-none text-blue-50 font-bold"
+                aria-hidden="true"
+              >
+                {value.number}
+              </span>
+
               {/* Left */}
-              <div className="flex flex-col gap-2">
-                <span className="font-mono text-xs text-neutral-600">
+              <div className="relative flex flex-col gap-2">
+                <span className="font-mono text-xs text-blue-400">
                   {value.number}
                 </span>
-                <h3 className="text-white font-medium text-base leading-snug">
+                <h3 className="text-slate-900 font-medium text-base leading-snug">
                   {value.title}
                 </h3>
-                <span className="inline-block mt-auto text-xs text-neutral-500 border border-neutral-800 rounded-full px-2.5 py-1 w-fit group-hover:border-neutral-600 transition-colors duration-300">
+                <span className="inline-block mt-auto text-xs text-blue-600 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1 w-fit">
                   {value.highlight}
                 </span>
               </div>
 
               {/* Right */}
-              <div>
-                <p className="text-neutral-200 text-sm font-medium mb-3 leading-relaxed">
+              <div className="relative">
+                <p className="text-slate-800 text-sm font-medium mb-3 leading-relaxed">
                   {value.lead}
                 </p>
-                <p className="text-neutral-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed">
                   {value.body}
                 </p>
               </div>
             </div>
           ))}
-          <div className="border-t border-neutral-800" />
+          <div className="border-t border-slate-100" />
         </div>
       </div>
     </section>

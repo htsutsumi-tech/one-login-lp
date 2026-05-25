@@ -21,7 +21,7 @@ export default function Concept() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="concept" className="bg-white py-32 lg:py-44">
+    <section id="concept" className="section-atm-white py-32 lg:py-52">
       <div
         ref={ref}
         className="max-w-content mx-auto px-6 lg:px-8"
@@ -35,19 +35,19 @@ export default function Concept() {
               Concept
             </p>
             <h2
-              className={`display-heading text-neutral-950 text-[2.4rem] sm:text-[3.2rem] lg:text-[4rem] leading-[1.15] mb-8 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-slate-900 text-[2.4rem] sm:text-[3.4rem] lg:text-[4.5rem] leading-[1.1] mb-8 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               One Login,
               <br />
               All Contents.
             </h2>
             <p
-              className={`text-neutral-500 text-sm leading-loose mb-4 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+              className={`text-slate-500 text-sm leading-loose mb-4 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
             >
               一つのIDで、事業に必要なすべてを。
             </p>
             <p
-              className={`text-neutral-400 text-sm leading-loose fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+              className={`text-slate-400 text-sm leading-loose fade-up ${isVisible ? "is-visible" : ""} delay-200`}
             >
               業務管理、顧客管理、データ可視化、外部システム連携——
               <br />
@@ -58,14 +58,14 @@ export default function Concept() {
           <div
             className={`fade-up ${isVisible ? "is-visible" : ""} delay-300`}
           >
-            <div className="space-y-3 text-sm text-neutral-500 leading-loose max-w-lg">
+            <div className="space-y-3 text-sm text-slate-500 leading-loose max-w-lg">
               <p>
                 汎用SaaSの限界は「全員向けに設計されている」点にあります。
                 業務フローに合わせてツールを増やすほど、現場はその分断に翻弄されます。
               </p>
               <p>
                 私たちが提唱するのは、逆の発想です。
-                <span className="text-neutral-800 font-medium">
+                <span className="text-slate-800 font-medium">
                   御社の業務に合わせて、機能を統合する。
                 </span>
               </p>
@@ -82,7 +82,7 @@ export default function Concept() {
         <div
           className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}
         >
-          <div className="border border-neutral-100 rounded-sm p-8 lg:p-12 bg-neutral-50">
+          <div className="border border-slate-100 rounded-sm p-8 lg:p-12 bg-slate-50">
             {/* Top layer: scattered tools */}
             <div className="mb-8">
               <p className="eyebrow mb-4 text-center">現在：ツールの断片化</p>
@@ -99,13 +99,13 @@ export default function Concept() {
                 ].map((tool) => (
                   <span
                     key={tool}
-                    className="text-xs border border-neutral-200 text-neutral-400 px-3 py-1.5 rounded-full bg-white"
+                    className="text-xs border border-slate-200 text-slate-400 px-3 py-1.5 rounded-full bg-white"
                   >
                     {tool}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-center mt-4 gap-8 text-xs text-neutral-300">
+              <div className="flex justify-center mt-4 gap-8 text-xs text-slate-300">
                 <span>別ログイン</span>
                 <span>/</span>
                 <span>データ分断</span>
@@ -116,7 +116,7 @@ export default function Concept() {
 
             {/* Arrow */}
             <div className="flex justify-center mb-8">
-              <div className="flex flex-col items-center gap-1 text-neutral-300">
+              <div className="flex flex-col items-center gap-1 text-blue-300">
                 <svg
                   width="20"
                   height="20"
@@ -131,26 +131,26 @@ export default function Concept() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="eyebrow text-neutral-300">one login</span>
+                <span className="eyebrow text-blue-400">one login</span>
               </div>
             </div>
 
             {/* Bottom layer: integrated */}
-            <div className="border border-neutral-200 bg-white rounded-sm p-6">
+            <div className="border border-blue-100 rounded-sm p-6" style={{ background: "linear-gradient(135deg, #f0f7ff 0%, #ffffff 60%)" }}>
               <p className="eyebrow mb-6 text-center">
                 One Login, All Contents
               </p>
               <div className="grid grid-cols-3 gap-4">
                 {layers.map((layer) => (
                   <div key={layer.label} className="text-center">
-                    <p className="text-xs font-medium text-neutral-700 mb-2">
+                    <p className="text-xs font-medium text-slate-700 mb-2">
                       {layer.label}
                     </p>
                     <div className="space-y-1">
                       {layer.items.map((item) => (
                         <div
                           key={item}
-                          className="text-xs text-neutral-400 bg-neutral-50 px-2 py-1 rounded-sm"
+                          className="text-xs text-slate-400 bg-slate-50 px-2 py-1 rounded-sm"
                         >
                           {item}
                         </div>
@@ -159,8 +159,8 @@ export default function Concept() {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-4 border-t border-neutral-100 text-center">
-                <p className="text-xs text-neutral-400">
+              <div className="mt-5 pt-4 border-t border-slate-100 text-center">
+                <p className="text-xs text-slate-400">
                   単一ログイン基盤 ／ 統合データ ／ 拡張自在
                 </p>
               </div>
@@ -172,7 +172,7 @@ export default function Concept() {
         <div
           className={`mt-16 text-center fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="display-heading text-neutral-800 text-xl sm:text-2xl font-light">
+          <p className="display-heading text-slate-700 text-xl sm:text-2xl font-light">
             戦術ではなく、構造を導入する。
           </p>
         </div>

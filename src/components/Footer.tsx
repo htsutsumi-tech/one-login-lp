@@ -7,7 +7,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-950 border-t border-neutral-900">
+    <footer
+      className="border-t border-slate-800"
+      style={{
+        background: "radial-gradient(ellipse 80% 30% at 50% 0%, rgba(37,99,235,0.12) 0%, transparent 65%), #0f172a",
+      }}
+    >
       <div className="max-w-content mx-auto px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-start">
           {/* Left */}
@@ -15,12 +20,12 @@ export default function Footer() {
             <p className="font-serif text-white text-base font-semibold mb-2">
               ONE-EIGHTY
             </p>
-            <p className="text-neutral-600 text-xs mb-6 leading-relaxed max-w-xs">
+            <p className="text-slate-500 text-xs mb-6 leading-relaxed max-w-xs">
               AIネイティブ開発で、事業の競争優位を共に実装する
               <br />
               共創パートナー。
             </p>
-            <div className="space-y-1 text-xs text-neutral-600">
+            <div className="space-y-1 text-xs text-slate-500">
               <p>株式会社ワンエイティ</p>
               <p>
                 東京都港区南山3-3リビエラ南青山ビル A WORKING PARK EN 202
@@ -43,7 +48,7 @@ export default function Footer() {
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className="text-left text-xs text-neutral-600 hover:text-neutral-400 transition-colors duration-200 py-1"
+                className="text-left text-xs text-slate-500 hover:text-slate-300 transition-colors duration-200 py-1"
               >
                 {label}
               </button>
@@ -52,8 +57,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-          <p className="text-[11px] text-neutral-700">
+        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <p className="text-[11px] text-slate-600">
             © 2026 ONE-EIGHTY Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
@@ -61,7 +66,7 @@ export default function Footer() {
               href="https://o-eighty.jp"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] text-neutral-700 hover:text-neutral-500 transition-colors duration-200"
+              className="text-[11px] text-slate-600 hover:text-slate-400 transition-colors duration-200"
             >
               コーポレートサイト
             </a>

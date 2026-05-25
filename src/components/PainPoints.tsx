@@ -29,7 +29,7 @@ export default function PainPoints() {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="pain" className="bg-neutral-50 py-32 lg:py-40">
+    <section id="pain" className="section-atm-slate py-24 lg:py-36">
       <div
         ref={ref}
         className="max-w-content mx-auto px-6 lg:px-8"
@@ -38,33 +38,41 @@ export default function PainPoints() {
         <div
           className={`mb-16 fade-up ${isVisible ? "is-visible" : ""}`}
         >
-          <p className="section-label mb-5">Pain Points</p>
-          <h2 className="display-heading text-neutral-950 text-[2rem] sm:text-[2.5rem] lg:text-[3rem] leading-tight max-w-xl">
+          <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Pain Points</p>
+          <h2 className="display-heading text-slate-900 text-[2rem] sm:text-[2.5rem] lg:text-[3rem] leading-tight max-w-xl">
             多くの企業が、
             <br />
             同じ壁にぶつかっている。
           </h2>
         </div>
 
-        {/* Pain cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200">
+        {/* Pain cards — with decorative background numbers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200">
           {pains.map((pain, i) => (
             <div
               key={pain.number}
-              className={`bg-neutral-50 p-8 lg:p-10 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`bg-slate-50 p-8 lg:p-10 card-hover relative overflow-hidden fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
-              <div className="flex items-start gap-5">
-                <span className="font-mono text-xs text-neutral-300 mt-0.5 flex-shrink-0 leading-none pt-1">
-                  {pain.number}
-                </span>
-                <div>
-                  <h3 className="text-base font-medium text-neutral-900 mb-3 leading-snug">
-                    {pain.title}
-                  </h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">
-                    {pain.body}
-                  </p>
-                </div>
+              {/* Decorative large number — background */}
+              <span
+                className="absolute top-3 right-4 font-mono text-[5rem] leading-none text-blue-50 font-bold select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                {pain.number}
+              </span>
+
+              {/* Small step indicator */}
+              <span className="font-mono text-[10px] tracking-[0.18em] text-blue-500 font-semibold block mb-4">
+                {pain.number}
+              </span>
+
+              <div className="relative">
+                <h3 className="text-base font-medium text-slate-900 mb-3 leading-snug pr-12">
+                  {pain.title}
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  {pain.body}
+                </p>
               </div>
             </div>
           ))}
@@ -72,11 +80,11 @@ export default function PainPoints() {
 
         {/* Bridge */}
         <div
-          className={`mt-16 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
+          className={`mt-14 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-center text-neutral-400 text-sm">
+          <p className="text-center text-slate-400 text-sm">
             これらはすべて、
-            <span className="text-neutral-700 font-medium">
+            <span className="text-slate-700 font-medium">
               「構造」を変えることで解決できる
             </span>
             課題です。
