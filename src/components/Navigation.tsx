@@ -56,7 +56,7 @@ export default function Navigation() {
           </svg>
           <span className="hidden sm:block w-px h-3.5 bg-slate-300" />
           <span className="hidden sm:block eyebrow !text-slate-400 text-[10px] group-hover:opacity-70 transition-opacity duration-200">
-            共創パートナー
+            株式会社ワンエイティ
           </span>
         </button>
 
