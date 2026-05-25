@@ -62,19 +62,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Large background "01" — depth marker */}
-      <div
-        className="absolute right-[-2vw] top-1/2 -translate-y-[55%] pointer-events-none select-none hidden lg:block"
-        aria-hidden="true"
-      >
-        <span
-          className="block font-mono font-bold leading-none tracking-[-0.06em]"
-          style={{ fontSize: "26vw", color: "rgba(37,99,235,0.032)" }}
-        >
-          01
-        </span>
-      </div>
-
       {/* Corner markers — blueprint accent */}
       <div className="absolute top-[4.5rem] left-6 lg:left-8 pointer-events-none hidden sm:block" aria-hidden="true">
         <div className="w-[18px] h-[18px] relative">
