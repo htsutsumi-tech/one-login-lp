@@ -115,11 +115,14 @@ body {
     background-color 0.25s ease,
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.card-hover:hover {
-  border-color: #bfdbfe !important; /* blue-200 */
-  background-color: #f8faff;
-  box-shadow: 0 0 0 1px #bfdbfe, 0 6px 28px rgba(37, 99, 235, 0.08);
-  transform: translateY(-2px);
+/* pointer: fine only — prevents sticky hover on touch */
+@media (hover: hover) and (pointer: fine) {
+  .card-hover:hover {
+    border-color: #bfdbfe !important;
+    background-color: #f8faff;
+    box-shadow: 0 0 0 1px #bfdbfe, 0 6px 28px rgba(37, 99, 235, 0.08);
+    transform: translateY(-2px);
+  }
 }
 
 /* Grid card hover — top accent line reveal, no lift (gap-px grids) */
@@ -138,11 +141,43 @@ body {
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.card-grid-hover:hover {
-  background-color: #f8faff;
+@media (hover: hover) and (pointer: fine) {
+  .card-grid-hover:hover { background-color: #f8faff; }
+  .card-grid-hover:hover::before { transform: scaleX(1); }
 }
-.card-grid-hover:hover::before {
-  transform: scaleX(1);
+
+/* ── Hero CTA primary button ──────────────────────────────────────────────── */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;           /* gap-3.5 */
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 1rem 2.25rem;   /* py-4 px-9 */
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  box-shadow: 0 2px 16px rgba(37, 99, 235, 0.18);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.22s ease;
+  cursor: pointer;
+}
+.hero-cta:active { transform: scale(0.99); }
+
+.hero-cta-arrow {
+  flex-shrink: 0;
+  transition: transform 0.3s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12), 0 10px 36px rgba(37, 99, 235, 0.32);
+  }
+  .hero-cta:hover .hero-cta-arrow {
+    transform: translateX(8px);
+  }
 }
 
 /* Scroll indicator — gentle downward pulse */

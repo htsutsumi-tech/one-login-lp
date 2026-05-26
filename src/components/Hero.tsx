@@ -88,7 +88,7 @@ export default function Hero() {
 
       {/* ── Content ─────────────────────────────────────────────────────── */}
 
-      <div className="relative max-w-content mx-auto px-6 lg:px-8 pb-28 pt-16 lg:pt-20">
+      <div className="relative max-w-[76rem] mx-auto px-6 lg:px-8 pb-28 pt-16 lg:pt-20">
 
         {/* Badge */}
         <div
@@ -177,15 +177,11 @@ export default function Hero() {
             <div className="flex flex-col gap-2.5">
               <button
                 onClick={() => scrollTo("cta")}
-                className="inline-flex items-center gap-3.5 bg-blue-600 text-white px-9 py-4 text-sm font-medium tracking-wide rounded-sm w-fit group transition-all duration-250
-                  shadow-[0_2px_16px_rgba(37,99,235,0.18)]
-                  hover:bg-blue-700 hover:-translate-y-0.5
-                  hover:shadow-[0_2px_8px_rgba(37,99,235,0.12),_0_10px_36px_rgba(37,99,235,0.32)]
-                  active:scale-[0.99]"
+                className="hero-cta"
               >
                 共同開発パートナーについて相談する
                 <svg
-                  className="flex-shrink-0 group-hover:translate-x-2 transition-transform duration-300 ease-out"
+                  className="hero-cta-arrow"
                   width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5"
                   aria-hidden="true"
                 >
