@@ -72,7 +72,7 @@ export default function Partnership() {
             <ul className="space-y-5">
               {targetCompanies.map((item, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="font-mono text-[10px] text-blue-400 mt-0.5 flex-shrink-0 select-none">
+                  <span className="font-mono text-[10px] text-[#7AAAC8] mt-0.5 flex-shrink-0 select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-sm text-[#191919] leading-relaxed">

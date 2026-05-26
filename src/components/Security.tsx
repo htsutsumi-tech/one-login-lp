@@ -135,7 +135,7 @@ export default function Security() {
             {aiGovernance.map((item, i) => (
               <div
                 key={item.title}
-                className={`card-notion p-7 lg:p-8 card-grid-hover border-l-4 border-blue-400 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+                className={`card-notion p-7 lg:p-8 card-grid-hover border-l-4 border-[#7AAAC8] fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">

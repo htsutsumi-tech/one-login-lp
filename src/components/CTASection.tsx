@@ -71,8 +71,8 @@ export default function CTASection() {
                 "共同開発パートナーシップのご提案",
               ].map((step, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0">
-                    <span className="font-mono text-[10px] text-blue-500 font-semibold">
+                  <span className="w-6 h-6 rounded-full bg-[#EEF4F9] border border-[#BDD3E7] flex items-center justify-center flex-shrink-0">
+                    <span className="font-mono text-[10px] text-[#4A7BA8] font-semibold">
                       {i + 1}
                     </span>
                   </span>
@@ -86,7 +86,7 @@ export default function CTASection() {
           <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-200`}>
             {submitted ? (
               <div className="card-notion h-full flex flex-col items-center justify-center text-center py-16 px-8" style={{ boxShadow: "var(--shadow-card)" }}>
-                <div className="w-14 h-14 rounded-full border border-blue-100 bg-blue-50 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-full border border-[#BDD3E7] bg-[#EEF4F9] flex items-center justify-center mb-6">
                   <svg
                     width="22"
                     height="22"
@@ -94,7 +94,7 @@ export default function CTASection() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
-                    className="text-blue-500"
+                    className="text-[#4A7BA8]"
                   >
                     <path
                       d="M3 10l5 5 9-9"
@@ -142,7 +142,7 @@ export default function CTASection() {
                       <label className="block text-xs font-medium text-[#787674] mb-1.5">
                         {field.label}
                         {field.required && (
-                          <span className="text-blue-500 ml-1">*</span>
+                          <span className="text-[#4A7BA8] ml-1">*</span>
                         )}
                       </label>
                       <input
@@ -152,7 +152,7 @@ export default function CTASection() {
                         required={field.required}
                         value={formState[field.name as keyof typeof formState]}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-50 transition-all duration-200"
+                        className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-[#4A7BA8] focus:ring-2 focus:ring-[#EEF4F9] transition-all duration-200"
                       />
                     </div>
                   ))}
@@ -167,7 +167,7 @@ export default function CTASection() {
                       rows={4}
                       value={formState.message}
                       onChange={handleChange}
-                      className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-50 transition-all duration-200 resize-none"
+                      className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-[#4A7BA8] focus:ring-2 focus:ring-[#EEF4F9] transition-all duration-200 resize-none"
                     />
                   </div>
 

@@ -13,10 +13,10 @@
   --color-text-muted:      #A09D99;
   --color-border:          #E8E5DF;
   --color-border-subtle:   #F0EDE7;
-  --color-accent:          #2563eb;
-  --color-accent-hover:    #1d4ed8;
-  --color-accent-subtle:   #EEF5FF;
-  --color-accent-border:   #BFDBFE;
+  --color-accent:          #4A7BA8;
+  --color-accent-hover:    #3A6A96;
+  --color-accent-subtle:   #EEF4F9;
+  --color-accent-border:   #BDD3E7;
   --shadow-card:           0 1px 4px rgba(0,0,0,0.05), 0 6px 24px rgba(0,0,0,0.06);
   --shadow-card-hover:     0 4px 16px rgba(0,0,0,0.09), 0 20px 56px rgba(0,0,0,0.10);
 }
@@ -196,7 +196,7 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: #191919;
+  background-color: #4A7BA8;
   color: #ffffff;
 }
 

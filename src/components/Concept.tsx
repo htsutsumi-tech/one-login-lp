@@ -110,7 +110,7 @@ export default function Concept() {
 
             {/* Arrow */}
             <div className="flex justify-center mb-8">
-              <div className="flex flex-col items-center gap-1 text-blue-300">
+              <div className="flex flex-col items-center gap-1 text-[#9BBDD4]">
                 <svg
                   width="20"
                   height="20"
@@ -125,14 +125,14 @@ export default function Concept() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="eyebrow text-blue-400">one login</span>
+                <span className="eyebrow text-[#7AAAC8]">one login</span>
               </div>
             </div>
 
             {/* Bottom: integrated */}
             <div
-              className="rounded-xl p-6 border border-blue-100"
-              style={{ background: "linear-gradient(135deg, #EEF5FF 0%, #ffffff 60%)" }}
+              className="rounded-xl p-6 border border-[#BDD3E7]"
+              style={{ background: "linear-gradient(135deg, #EEF4F9 0%, #ffffff 60%)" }}
             >
               <p className="eyebrow mb-6 text-center">
                 One Login, All Contents

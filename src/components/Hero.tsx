@@ -63,7 +63,7 @@ export default function Hero() {
 
           <span className={`display-heading block text-[#191919] ${fadeIn(200)}`} style={{ transitionDelay: "200ms" }}>
             <span className="block text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[1.02]">
-              <span className="text-blue-600">&ldquo;既製SaaS&rdquo;</span>で
+              <span className="text-[#4A7BA8]">&ldquo;既製SaaS&rdquo;</span>で
             </span>
             <span className="block text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[1.02]">
               妥協しない。
@@ -136,7 +136,7 @@ export default function Hero() {
               <div key={item.step} className="flex items-center sm:w-[190px]">
                 <div className="flex-1 sm:flex-none text-center sm:text-left">
                   <div className="flex items-baseline gap-1.5 mb-0.5 justify-center sm:justify-start">
-                    <span className="font-mono text-[10px] text-blue-500 font-semibold">{item.step}</span>
+                    <span className="font-mono text-[10px] text-[#4A7BA8] font-semibold">{item.step}</span>
                     <span className="text-xs font-medium text-[#191919]">{item.label}</span>
                   </div>
                   <p className="text-[11px] text-[#A09D99] hidden sm:block">{item.sub}</p>
