@@ -165,7 +165,7 @@ export default function Hero() {
 
             {/* Divider + CTA */}
             <div
-              className={`mt-12 pt-9 border-t border-slate-100 ${fadeIn(560)}`}
+              className={`mt-12 pt-9 border-t border-slate-200 ${fadeIn(560)}`}
               style={{ transitionDelay: "560ms" }}
             >
               <div className="flex flex-col sm:flex-row sm:items-center gap-5">
@@ -227,7 +227,7 @@ export default function Hero() {
 
         {/* Process Strip */}
         <div
-          className={`mt-20 pt-7 border-t border-slate-100 ${fadeIn(720)}`}
+          className={`mt-20 pt-7 border-t border-slate-200 ${fadeIn(720)}`}
           style={{ transitionDelay: "720ms" }}
         >
           <div className="grid grid-cols-3 gap-2 sm:gap-0 sm:flex sm:items-center sm:justify-center">

@@ -21,7 +21,7 @@ export default function Concept() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="concept" className="section-atm-white py-32 lg:py-52 relative overflow-hidden">
+    <section id="concept" className="section-atm-white py-40 lg:py-56 relative overflow-hidden">
 
       {/* Section index label */}
       <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
@@ -42,55 +42,50 @@ export default function Concept() {
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24">
+        {/* Section label */}
+        <p className={`section-label mb-10 fade-up ${isVisible ? "is-visible" : ""}`}>
+          Concept
+        </p>
+
+        {/* Dominant H2 — full-width editorial statement */}
+        <h2
+          className={`display-heading text-slate-900 text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[0.92] tracking-[-0.03em] mb-12 lg:mb-20 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+        >
+          One Login,
+          <br />
+          All Contents.
+        </h2>
+
+        {/* Description row — under the dominant title */}
+        <div
+          className={`grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-24 mb-24 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+        >
           <div>
-            <p
-              className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
-            >
-              Concept
-            </p>
-            <h2
-              className={`display-heading text-slate-900 text-[2.4rem] sm:text-[3.4rem] lg:text-[4.5rem] leading-[1.1] mb-8 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
-            >
-              One Login,
-              <br />
-              All Contents.
-            </h2>
-            <p
-              className={`text-slate-500 text-sm leading-loose mb-4 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
-            >
+            <p className="text-slate-600 text-[0.95rem] font-light leading-loose mb-4">
               一つのIDで、事業に必要なすべてを。
             </p>
-            <p
-              className={`text-slate-400 text-sm leading-loose fade-up ${isVisible ? "is-visible" : ""} delay-200`}
-            >
+            <p className="text-slate-400 text-sm leading-loose">
               業務管理、顧客管理、データ可視化、外部システム連携——
               <br />
               点在するツールを、一つのログイン基盤へ統合します。
             </p>
           </div>
-
-          <div
-            className={`fade-up ${isVisible ? "is-visible" : ""} delay-300`}
-          >
-            <div className="space-y-3 text-sm text-slate-500 leading-loose max-w-lg">
-              <p>
-                汎用SaaSの限界は「全員向けに設計されている」点にあります。
-                業務フローに合わせてツールを増やすほど、現場はその分断に翻弄されます。
-              </p>
-              <p>
-                私たちが提唱するのは、逆の発想です。
-                <span className="text-slate-800 font-medium">
-                  御社の業務に合わせて、機能を統合する。
-                </span>
-              </p>
-              <p>
-                &ldquo;全部入りSaaS&rdquo;ではなく、御社の事業に最適化された
-                統合プロダクトを、AIネイティブ開発によって高速実装する。
-                使うほどに業務がシンプルになる体験を設計します。
-              </p>
-            </div>
+          <div className="space-y-3 text-sm text-slate-500 leading-loose">
+            <p>
+              汎用SaaSの限界は「全員向けに設計されている」点にあります。
+              業務フローに合わせてツールを増やすほど、現場はその分断に翻弄されます。
+            </p>
+            <p>
+              私たちが提唱するのは、逆の発想です。
+              <span className="text-slate-800 font-medium">
+                御社の業務に合わせて、機能を統合する。
+              </span>
+            </p>
+            <p>
+              &ldquo;全部入りSaaS&rdquo;ではなく、御社の事業に最適化された
+              統合プロダクトを、AIネイティブ開発によって高速実装する。
+              使うほどに業務がシンプルになる体験を設計します。
+            </p>
           </div>
         </div>
 
@@ -98,7 +93,7 @@ export default function Concept() {
         <div
           className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}
         >
-          <div className="border border-slate-100 rounded-sm p-8 lg:p-12 bg-slate-50">
+          <div className="border border-slate-200 rounded-sm p-8 lg:p-12 bg-slate-50">
             {/* Top layer: scattered tools */}
             <div className="mb-8">
               <p className="eyebrow mb-4 text-center">現在：ツールの断片化</p>
@@ -152,7 +147,7 @@ export default function Concept() {
             </div>
 
             {/* Bottom layer: integrated */}
-            <div className="border border-blue-100 rounded-sm p-6" style={{ background: "linear-gradient(135deg, #f0f7ff 0%, #ffffff 60%)" }}>
+            <div className="border border-blue-200 rounded-sm p-6" style={{ background: "linear-gradient(135deg, #f0f7ff 0%, #ffffff 60%)" }}>
               <p className="eyebrow mb-6 text-center">
                 One Login, All Contents
               </p>
@@ -175,7 +170,7 @@ export default function Concept() {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-4 border-t border-slate-100 text-center">
+              <div className="mt-5 pt-4 border-t border-slate-200 text-center">
                 <p className="text-xs text-slate-400">
                   単一ログイン基盤 ／ 統合データ ／ 拡張自在
                 </p>

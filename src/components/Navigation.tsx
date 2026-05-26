@@ -83,7 +83,7 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white border-b border-slate-100 transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
+      <div className={`md:hidden bg-white border-b border-slate-200 transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="px-6 py-4 flex flex-col gap-4">
           {[
             { label: "課題", id: "pain" },

@@ -6,41 +6,41 @@ const categories = [
   {
     label: "業務管理",
     items: [
-      "タスク・プロジェクト管理",
-      "承認フロー・ワークフロー",
-      "スケジュール・工程管理",
-      "社内ナレッジベース",
-      "勤怠・シフト管理",
+      { name: "タスク・プロジェクト管理", note: "進捗可視化・担当割当" },
+      { name: "承認フロー・ワークフロー", note: "多段階承認・条件分岐" },
+      { name: "スケジュール・工程管理", note: "ガント・マイルストーン" },
+      { name: "社内ナレッジベース", note: "検索・構造化ドキュメント" },
+      { name: "勤怠・シフト管理", note: "申請・集計自動化" },
     ],
   },
   {
     label: "顧客接点",
     items: [
-      "CRM・顧客管理",
-      "問い合わせ管理",
-      "顧客ポータル",
-      "見積・契約管理",
-      "メール・通知配信",
+      { name: "CRM・顧客管理", note: "商談履歴・パイプライン" },
+      { name: "問い合わせ管理", note: "マルチチャネル統合" },
+      { name: "顧客ポータル", note: "ログイン基盤と直結" },
+      { name: "見積・契約管理", note: "電子署名・改訂履歴" },
+      { name: "メール・通知配信", note: "セグメント・自動トリガー" },
     ],
   },
   {
     label: "データ・分析",
     items: [
-      "ダッシュボード",
-      "BIレポート",
-      "データパイプライン",
-      "在庫・物流管理",
-      "予実管理",
+      { name: "ダッシュボード", note: "リアルタイム・カスタム可" },
+      { name: "BIレポート", note: "クロス集計・PDF出力" },
+      { name: "データパイプライン", note: "ETL・定期同期" },
+      { name: "在庫・物流管理", note: "入出庫・ロット追跡" },
+      { name: "予実管理", note: "目標設定・差異分析" },
     ],
   },
   {
     label: "システム連携",
     items: [
-      "APIプラットフォーム",
-      "外部SaaS連携",
-      "SSO・認証基盤",
-      "会計・ERP連携",
-      "Webhook・自動化",
+      { name: "APIプラットフォーム", note: "REST / GraphQL" },
+      { name: "外部SaaS連携", note: "既存ツールと接続" },
+      { name: "SSO・認証基盤", note: "SAML / OAuth2.0" },
+      { name: "会計・ERP連携", note: "仕訳連携・マスタ同期" },
+      { name: "Webhook・自動化", note: "イベント駆動・実行ログ" },
     ],
   },
 ];
@@ -49,7 +49,7 @@ export default function BuildScope() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="build-scope" className="section-atm-white py-20 lg:py-28 relative overflow-hidden">
+    <section id="build-scope" className="section-atm-white py-16 lg:py-20 relative overflow-hidden">
 
       {/* Section index label */}
       <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
@@ -62,8 +62,19 @@ export default function BuildScope() {
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
+        {/* Background structural lines */}
+        <div
+          className="absolute inset-0 pointer-events-none hidden lg:block"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(148,163,184,0.07) 1px, transparent 1px)",
+            backgroundSize: "25% 100%",
+          }}
+        />
+
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
+        <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
           <div>
             <p
               className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
@@ -71,7 +82,7 @@ export default function BuildScope() {
               Build Scope
             </p>
             <h2
-              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.8rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-slate-900 text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               構築可能な
               <br />
@@ -91,38 +102,50 @@ export default function BuildScope() {
           </div>
         </div>
 
-        {/* Categories grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100">
+        {/* Capability index */}
+        <div className="relative divide-y divide-slate-200 border-t border-slate-200">
           {categories.map((cat, i) => (
             <div
               key={cat.label}
-              className={`bg-white p-7 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`py-10 lg:py-12 grid grid-cols-1 lg:grid-cols-[200px_1fr] lg:gap-x-16 lg:items-start fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
-              <p className="text-[0.8rem] font-semibold text-slate-900 tracking-[0.03em] mb-4 pb-3 border-b border-slate-200">
-                {cat.label}
-              </p>
-              <ul className="space-y-2.5">
-                {cat.items.map((item) => (
-                  <li key={item} className="flex items-baseline gap-2.5">
+              {/* Left — large decorative number + category name */}
+              <div className="mb-6 lg:mb-0">
+                <span
+                  className="font-mono font-bold leading-none text-slate-100 select-none block text-[3.5rem] lg:text-[5rem]"
+                  aria-hidden="true"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="-mt-1 lg:-mt-2 text-slate-900 font-bold text-[1.35rem] lg:text-[1.5rem] leading-tight">
+                  {cat.label}
+                </h3>
+              </div>
+
+              {/* Right — items with name + mono note, hover reveal */}
+              <div className="flex flex-wrap gap-x-10 gap-y-5 lg:pt-1">
+                {cat.items.map((item, j) => (
+                  <div key={item.name} className="group/item cursor-default">
                     <span
-                      className="text-slate-300 text-[10px] flex-shrink-0 select-none"
-                      aria-hidden="true"
-                    >—</span>
-                    <span className="text-xs text-slate-500 leading-relaxed">
-                      {item}
+                      className="text-sm leading-snug block text-slate-600 group-hover/item:text-slate-800 transition-colors duration-150"
+                    >
+                      {item.name}
                     </span>
-                  </li>
+                    <span className="font-mono text-[10px] text-slate-300 group-hover/item:text-blue-400 block mt-1 leading-tight transition-colors duration-150">
+                      {item.note}
+                    </span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Note */}
         <div
-          className={`mt-8 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
+          className={`relative mt-10 pt-6 border-t border-slate-200 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-xs text-slate-400 text-center">
+          <p className="text-xs text-slate-400">
             上記はすべて単一ログイン基盤上に統合可能です。
             御社の要件に合わせた組み合わせをご提案します。
           </p>

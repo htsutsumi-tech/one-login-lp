@@ -58,7 +58,7 @@ export default function Partnership() {
         <div className="grid lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-end mb-20">
           <div className={`fade-up ${isVisible ? "is-visible" : ""}`}>
             <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Partnership</p>
-            <h2 className="display-heading text-slate-900 text-[2.2rem] sm:text-[3.2rem] lg:text-[4.4rem] leading-[1.08] mb-6">
+            <h2 className="display-heading text-slate-900 text-[2.5rem] sm:text-[3.8rem] lg:text-[5.5rem] leading-[1.04] mb-6">
               &ldquo;本気で創る&rdquo;企業へ。
             </h2>
             <p className="text-slate-600 text-base leading-relaxed font-light">
@@ -75,7 +75,7 @@ export default function Partnership() {
         </div>
 
         {/* Two column layout */}
-        <div className="grid lg:grid-cols-2 gap-px bg-slate-200">
+        <div className="grid lg:grid-cols-2 gap-px bg-slate-300">
           {/* Left: Target companies */}
           <div
             className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
@@ -96,7 +96,7 @@ export default function Partnership() {
               ))}
             </ul>
 
-            <div className="mt-10 pt-6 border-t border-slate-100">
+            <div className="mt-10 pt-6 border-t border-slate-200">
               <p className="text-xs text-slate-400 leading-relaxed">
                 業種・規模は問いません。事業への本気度を最も重視しています。
               </p>
@@ -112,7 +112,7 @@ export default function Partnership() {
             </h3>
             <div className="space-y-7">
               {ourProvision.map((item, i) => (
-                <div key={i} className="border-t border-slate-100 pt-5 first:border-t-0 first:pt-0">
+                <div key={i} className="border-t border-slate-200 pt-5 first:border-t-0 first:pt-0">
                   <p className="text-sm font-semibold text-slate-900 mb-1.5">
                     {item.title}
                   </p>

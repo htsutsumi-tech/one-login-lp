@@ -30,7 +30,7 @@ export default function AINative() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="ai-native" className="section-atm-white py-28 lg:py-40 relative overflow-hidden">
+    <section id="ai-native" className="section-atm-white py-16 lg:py-24 relative overflow-hidden">
 
       {/* Section index label */}
       <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
@@ -43,39 +43,27 @@ export default function AINative() {
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* Header */}
-        <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end mb-20">
-          <div>
-            <p
-              className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
-            >
-              AI Native Development
-            </p>
-            <h2
-              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.5rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
-            >
-              なぜ、いま
-              <br />
-              AIネイティブ開発なのか。
-            </h2>
-          </div>
-          <div
-            className={`hidden lg:block fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+        {/* Header — full-width, dominant */}
+        <div className="mb-10 lg:mb-12">
+          <p
+            className={`section-label mb-8 fade-up ${isVisible ? "is-visible" : ""}`}
           >
-            <p className="text-slate-400 text-sm leading-relaxed text-right max-w-xs">
-              AIは「便利なツール」ではなく、
-              <br />
-              開発体制そのものに組み込む
-              <span className="text-slate-700 font-medium">「構造」</span>
-              として機能します。
-            </p>
-          </div>
+            AI Native Development
+          </p>
+          <h2
+            className={`display-heading text-slate-900 text-[2.5rem] sm:text-[4rem] lg:text-[4.5rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+          >
+            なぜ、いま
+            <br />
+            AIネイティブ開発なのか。
+          </h2>
         </div>
 
         <p
-          className={`lg:hidden text-slate-400 text-sm leading-relaxed mb-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+          className={`text-slate-400 text-sm leading-relaxed mb-16 max-w-xl fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
-          AIは「便利なツール」ではなく、開発体制そのものに組み込む
+          AIは「便利なツール」ではなく、
+          開発体制そのものに組み込む
           <span className="text-slate-700 font-medium">「構造」</span>
           として機能します。
         </p>
@@ -85,7 +73,7 @@ export default function AINative() {
           {values.map((value, i) => (
             <div
               key={value.number}
-              className={`group relative border-t border-slate-100 py-10 lg:py-12 grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-16 hover:bg-slate-50 transition-colors duration-300 px-4 -mx-4 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`group relative border-t border-slate-200 py-10 lg:py-12 grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-16 hover:bg-slate-50 transition-colors duration-300 px-4 -mx-4 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
               {/* Decorative number */}
               <span
@@ -103,7 +91,7 @@ export default function AINative() {
                 <h3 className="text-slate-900 font-medium text-base leading-snug">
                   {value.title}
                 </h3>
-                <span className="inline-block mt-auto text-xs text-blue-600 bg-blue-50 border border-blue-100 rounded-sm px-2.5 py-1 w-fit">
+                <span className="inline-block mt-auto text-xs text-blue-600 bg-blue-50 border border-blue-200 rounded-sm px-2.5 py-1 w-fit">
                   {value.highlight}
                 </span>
               </div>
@@ -119,7 +107,7 @@ export default function AINative() {
               </div>
             </div>
           ))}
-          <div className="border-t border-slate-100" />
+          <div className="border-t border-slate-200" />
         </div>
       </div>
     </section>

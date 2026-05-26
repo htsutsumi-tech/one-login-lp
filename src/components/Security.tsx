@@ -62,7 +62,7 @@ export default function Security() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
   return (
-    <section id="security" className="section-atm-security py-28 lg:py-40 relative overflow-hidden">
+    <section id="security" className="section-atm-security py-32 lg:py-48 relative overflow-hidden">
 
       {/* Section index label */}
       <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
@@ -75,39 +75,27 @@ export default function Security() {
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* ── Header ── */}
-        <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-end mb-16">
-          <div>
-            <p
-              className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
-            >
-              Security
-            </p>
-            <h2
-              className={`display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
-            >
-              開発スピードと引き換えに、
-              <br />
-              セキュリティを犠牲にしない。
-            </h2>
-          </div>
-          <div
-            className={`hidden lg:block text-right fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+        {/* ── Header — full-width, released from column constraint ── */}
+        <div className="mb-16 lg:mb-20">
+          <p
+            className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
           >
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              AIを開発へ組み込む以上、
-              <br />
-              AIそのものも管理対象として設計する。
-            </p>
-          </div>
+            Security
+          </p>
+          <h2
+            className={`display-heading text-slate-900 text-[2.5rem] sm:text-[3.5rem] lg:text-[4.2rem] leading-tight mb-6 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+          >
+            開発スピードと引き換えに、
+            <br />
+            セキュリティを犠牲にしない。
+          </h2>
+          <p
+            className={`text-slate-400 text-sm leading-relaxed max-w-md fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+          >
+            AIを開発へ組み込む以上、
+            AIそのものも管理対象として設計する。
+          </p>
         </div>
-
-        <p
-          className={`lg:hidden text-slate-400 text-sm leading-relaxed mb-12 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
-        >
-          AIを開発へ組み込む以上、
-          AIそのものも管理対象として設計する。
-        </p>
 
         {/* ── インフラ・基盤セキュリティ ── */}
         <div
@@ -115,7 +103,7 @@ export default function Security() {
         >
           <p className="eyebrow mb-6">Infrastructure &amp; Platform</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-300">
           {infraFeatures.map((feature, i) => (
             <div
               key={feature.title}
@@ -138,7 +126,7 @@ export default function Security() {
 
         {/* ── AI開発ガバナンス ── */}
         <div
-          className={`mt-16 pt-14 border-t border-slate-100 fade-up ${isVisible ? "is-visible" : ""} delay-400`}
+          className={`mt-16 pt-14 border-t border-slate-200 fade-up ${isVisible ? "is-visible" : ""} delay-400`}
         >
           {/* サブセクションヘッダー */}
           <div className="grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-20 items-end mb-10">
@@ -160,11 +148,11 @@ export default function Security() {
           </div>
 
           {/* AIガバナンス: 左ボーダー型リスト */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-300">
             {aiGovernance.map((item, i) => (
               <div
                 key={item.title}
-                className={`bg-white p-7 lg:p-8 border-l-2 border-blue-200 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+                className={`bg-white p-7 lg:p-8 border-l-2 border-blue-400 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <h4 className="text-sm font-medium text-slate-800 leading-snug">

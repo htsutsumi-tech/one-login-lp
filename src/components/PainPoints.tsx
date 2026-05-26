@@ -53,7 +53,7 @@ export default function PainPoints() {
         </div>
 
         {/* Pain cards — featured first + supporting three */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-300">
 
           {/* Featured card — Pain 01 */}
           <div

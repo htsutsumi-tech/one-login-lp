@@ -95,7 +95,7 @@ body {
     opacity 0.3s ease 0.4s;
 }
 .section-label.is-visible::after {
-  width: 22px;
+  width: 32px;
   opacity: 1;
 }
 
@@ -135,7 +135,7 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 2px;
+  height: 3px;
   background: #2563eb;
   transform: scaleX(0);
   transform-origin: left;
