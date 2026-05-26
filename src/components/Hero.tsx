@@ -88,139 +88,155 @@ export default function Hero() {
 
       {/* ── Content ─────────────────────────────────────────────────────── */}
 
-      <div className="relative max-w-[76rem] mx-auto px-6 lg:px-8 pb-28 pt-16 lg:pt-20">
+      <div className="relative max-w-[76rem] mx-auto px-6 lg:px-8 pb-24 pt-16 lg:pt-20">
 
-        {/* Badge */}
-        <div
-          className={`mb-16 ${fadeIn(0)}`}
-          style={{ transitionDelay: "0ms" }}
-        >
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase font-medium text-blue-600 border border-blue-200 px-2.5 py-1.5">
-              Co-Development
-            </span>
-            <span className="hidden sm:flex items-center gap-3">
-              <span className="w-px h-3 bg-slate-200" aria-hidden="true" />
-              <span className="text-[11px] text-slate-400 tracking-wide">共同開発パートナー募集</span>
-            </span>
-          </div>
-        </div>
+        {/* 2-column grid — left: main copy, right: quiet supplement */}
+        <div className="grid lg:grid-cols-[1fr_340px] gap-12 lg:gap-12">
 
-        {/* H1 — 3-line structure, each line enters independently */}
-        <h1
-          className="mb-8"
-          aria-label="その事業構想、「既製SaaS」で妥協しない。"
-        >
-          {/* Line 1 — annotation, quiet qualifier */}
-          <span
-            className={`block font-sans font-light text-[1.15rem] sm:text-[1.5rem] lg:text-[1.9rem] leading-[1.4] tracking-[-0.01em] text-slate-400 mb-1 lg:mb-2 ${fadeIn(80)}`}
-            style={{ transitionDelay: "80ms" }}
-          >
-            その事業構想、
-          </span>
+          {/* ── LEFT: Main copy ─────────────────────────────────────────── */}
+          <div>
 
-          {/* Lines 2 + 3 — main statement, enormous serif */}
-          <span className="display-heading block">
-            {/* Line 2 — tension: "既製SaaS"で */}
-            <span
-              className={`block text-[2.8rem] sm:text-[4rem] lg:text-[6.5rem] leading-[1.04] tracking-[-0.04em] text-slate-900 ${fadeIn(200)}`}
-              style={{ transitionDelay: "200ms" }}
+            {/* Badge */}
+            <div
+              className={`mb-14 ${fadeIn(0)}`}
+              style={{ transitionDelay: "0ms" }}
             >
-              <span className="relative inline-block mr-[0.04em]">
-                <span className="relative z-10 text-blue-600 text-[0.88em]">
-                  &ldquo;既製SaaS&rdquo;
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-[10px] tracking-[0.22em] uppercase font-medium text-blue-600 border border-blue-200 px-2.5 py-1.5">
+                  Co-Development
                 </span>
-                {/* Blue underline — accent on the key term */}
-                <span
-                  className="absolute left-0 right-0 bg-blue-400"
-                  style={{ bottom: "0.05em", height: "3px" }}
-                  aria-hidden="true"
-                />
-              </span>
-              で
-            </span>
+                <span className="hidden sm:flex items-center gap-3">
+                  <span className="w-px h-3 bg-slate-200" aria-hidden="true" />
+                  <span className="text-[11px] text-slate-400 tracking-wide">共同開発パートナー募集</span>
+                </span>
+              </div>
+            </div>
 
-            {/* Line 3 — resolution: 妥協しない。*/}
-            <span
-              className={`block text-[2.8rem] sm:text-[4rem] lg:text-[6.5rem] leading-[1.04] tracking-[-0.04em] text-slate-900 ${fadeIn(320)}`}
-              style={{ transitionDelay: "320ms" }}
+            {/* H1 — 3-line structure */}
+            <h1
+              className="mb-8"
+              aria-label="その事業構想、「既製SaaS」で妥協しない。"
             >
-              妥協しない。
-            </span>
-          </span>
-        </h1>
-
-        {/* Tier 2 — positioning statement */}
-        <div
-          className={fadeIn(440)}
-          style={{ transitionDelay: "440ms" }}
-        >
-          <p className="font-sans font-normal text-slate-600 text-[1.45rem] sm:text-[1.9rem] lg:text-[2.3rem] leading-[1.3] tracking-[-0.02em]">
-            御社の事業構想を、
-            <br className="hidden sm:block" />
-            プロダクトとして実装する。
-          </p>
-        </div>
-
-        {/* Divider + Body + CTA */}
-        <div
-          className={`mt-14 pt-10 border-t border-slate-100 ${fadeIn(560)}`}
-          style={{ transitionDelay: "560ms" }}
-        >
-          <p className="text-slate-500 text-[0.9rem] sm:text-[1.05rem] leading-[2.3] font-light max-w-md mb-10">
-            業務・データ・顧客接点を、一つのログイン基盤へ統合。
-            <br />
-            AIネイティブ開発で、事業に最適化されたプロダクトを高速実装。
-          </p>
-
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-            <div className="flex flex-col gap-2.5">
-              <button
-                onClick={() => scrollTo("cta")}
-                className="hero-cta"
+              <span
+                className={`block font-sans font-light text-[1.75rem] sm:text-[2.25rem] lg:text-[2.85rem] leading-[1.4] tracking-[-0.01em] text-slate-400 mb-1 lg:mb-2 ${fadeIn(80)}`}
+                style={{ transitionDelay: "80ms" }}
               >
-                共同開発パートナーについて相談する
-                <svg
-                  className="hero-cta-arrow"
-                  width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5"
-                  aria-hidden="true"
+                その事業構想、
+              </span>
+
+              <span className="display-heading block">
+                <span
+                  className={`block text-[2.8rem] sm:text-[4rem] lg:text-[6.5rem] leading-[1.04] tracking-[-0.04em] text-slate-900 ${fadeIn(200)}`}
+                  style={{ transitionDelay: "200ms" }}
                 >
-                  <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <p className="text-[11px] text-slate-400 pl-1">
-                まずは30分の無料オンライン相談から。業種・規模は問いません。
+                  <span className="relative inline-block mr-[0.04em]">
+                    <span className="relative z-10 text-blue-600 text-[0.88em]">
+                      &ldquo;既製SaaS&rdquo;
+                    </span>
+                    <span
+                      className="absolute left-0 right-0 bg-blue-400"
+                      style={{ bottom: "0.05em", height: "3px" }}
+                      aria-hidden="true"
+                    />
+                  </span>
+                  で
+                </span>
+
+                <span
+                  className={`block text-[2.8rem] sm:text-[4rem] lg:text-[6.5rem] leading-[1.04] tracking-[-0.04em] text-slate-900 ${fadeIn(320)}`}
+                  style={{ transitionDelay: "320ms" }}
+                >
+                  妥協しない。
+                </span>
+              </span>
+            </h1>
+
+            {/* Tier 2 */}
+            <div
+              className={fadeIn(440)}
+              style={{ transitionDelay: "440ms" }}
+            >
+              <p className="font-sans font-normal text-slate-600 text-[1.45rem] sm:text-[1.9rem] lg:text-[2.3rem] leading-[1.3] tracking-[-0.02em]">
+                御社の事業構想を、
+                <br className="hidden sm:block" />
+                プロダクトとして実装する。
               </p>
             </div>
 
-            <button
-              onClick={() => scrollTo("concept")}
-              className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-700 transition-colors duration-200 sm:ml-2 w-fit group"
+            {/* Divider + CTA */}
+            <div
+              className={`mt-12 pt-9 border-t border-slate-100 ${fadeIn(560)}`}
+              style={{ transitionDelay: "560ms" }}
             >
-              詳しく読む
-              <svg
-                className="group-hover:translate-y-0.5 transition-transform duration-200"
-                width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
-                aria-hidden="true"
-              >
-                <path d="M6 2v8M3 6.5l3 3 3-3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+                <div className="flex flex-col gap-2.5">
+                  <button
+                    onClick={() => scrollTo("cta")}
+                    className="hero-cta"
+                  >
+                    共同開発パートナーについて相談する
+                    <svg
+                      className="hero-cta-arrow"
+                      width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5"
+                      aria-hidden="true"
+                    >
+                      <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  <p className="text-[11px] text-slate-400 pl-1">
+                    まずは30分の無料オンライン相談から。業種・規模は問いません。
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => scrollTo("concept")}
+                  className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-700 transition-colors duration-200 sm:ml-2 w-fit group"
+                >
+                  詳しく読む
+                  <svg
+                    className="group-hover:translate-y-0.5 transition-transform duration-200"
+                    width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 2v8M3 6.5l3 3 3-3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>{/* /LEFT */}
+
+          {/* ── RIGHT: Quiet supplementary copy ─────────────────────────── */}
+          <div
+            className={`hidden lg:flex flex-col self-start relative pl-8 pt-[12rem] ${fadeIn(640)}`}
+            style={{ transitionDelay: "640ms" }}
+          >
+            <p className="text-[1.15rem] text-slate-500 font-light leading-[2.2] tracking-[0.01em]">
+              業務・顧客・データを、
+              <br />
+              一つのログイン基盤へ。
+            </p>
+            <p className="text-[1.15rem] text-slate-500 font-light leading-[2.2] tracking-[0.01em] mt-7">
+              AIネイティブ開発で、
+              <br />
+              事業に最適化された構造を実装。
+            </p>
           </div>
-        </div>
+
+        </div>{/* /grid */}
 
         {/* Process Strip */}
         <div
-          className={`mt-24 pt-7 border-t border-slate-100 ${fadeIn(720)}`}
+          className={`mt-20 pt-7 border-t border-slate-100 ${fadeIn(720)}`}
           style={{ transitionDelay: "720ms" }}
         >
-          <div className="grid grid-cols-3 gap-2 sm:gap-0 sm:flex sm:items-center">
+          <div className="grid grid-cols-3 gap-2 sm:gap-0 sm:flex sm:items-center sm:justify-center">
             {[
               { step: "01", label: "事業課題の整理", sub: "現状分析・要件定義" },
               { step: "02", label: "統合基盤の設計", sub: "One Login, All Contents" },
               { step: "03", label: "高速実装・拡張", sub: "AIネイティブ開発体制" },
             ].map((item, i) => (
-              <div key={item.step} className="flex sm:flex-1 items-center">
+              <div key={item.step} className="flex items-center sm:w-[180px]">
                 <div className="flex-1 sm:flex-none">
                   <div className="flex items-baseline gap-1.5 mb-0.5">
                     <span className="font-mono text-[10px] text-blue-500 font-semibold">{item.step}</span>
