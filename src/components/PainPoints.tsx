@@ -31,64 +31,59 @@ export default function PainPoints() {
   return (
     <section id="pain" className="section-atm-slate py-24 lg:py-36 relative overflow-hidden">
 
-      {/* Section index label */}
-      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
-          Sect. 02<br />Pain Points
-        </p>
-      </div>
-
       <div
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
-        <div className={`mb-16 fade-up ${isVisible ? "is-visible" : ""}`}>
-          <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Pain Points</p>
-          <h2 className="display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[4rem] leading-tight">
+        <div className={`mb-12 fade-up ${isVisible ? "is-visible" : ""}`}>
+          <p className="section-label mb-5">Pain Points</p>
+          <h2 className="display-heading text-[#191919] text-[2rem] sm:text-[2.8rem] lg:text-[3.8rem] leading-tight">
             多くの企業が、
             <br />
             同じ壁にぶつかっている。
           </h2>
         </div>
 
-        {/* Pain cards — featured first + supporting three */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-300">
+        {/* Pain cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
 
           {/* Featured card — Pain 01 */}
           <div
-            className={`bg-slate-50 md:col-span-3 p-10 lg:p-14 card-grid-hover relative overflow-hidden fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            className={`card-notion md:col-span-3 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            style={{ boxShadow: "var(--shadow-card)" }}
           >
             <div className="grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20">
               <div>
                 <span className="font-mono text-[10px] tracking-[0.18em] text-blue-500 font-semibold block mb-6">
                   {pains[0].number}
                 </span>
-                <h3 className="display-heading text-slate-900 text-[1.5rem] sm:text-[1.9rem] lg:text-[2.3rem] leading-[1.2]">
+                <h3 className="display-heading text-[#191919] text-[1.4rem] sm:text-[1.75rem] lg:text-[2.1rem]">
                   {pains[0].title}
                 </h3>
               </div>
               <div className="flex flex-col justify-end">
-                <p className="text-slate-400 text-sm leading-[2.2] max-w-lg">
+                <p className="text-[#787674] text-sm leading-[2.2] max-w-lg">
                   {pains[0].body}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Supporting cards — Pains 02 / 03 / 04 */}
+          {/* Supporting cards */}
           {pains.slice(1).map((pain, i) => (
             <div
               key={pain.number}
-              className={`bg-slate-50 p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 2) * 100}`}
+              className={`card-notion p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 2) * 100}`}
+              style={{ boxShadow: "var(--shadow-card)" }}
             >
               <span className="font-mono text-[10px] tracking-[0.18em] text-blue-500 font-semibold block mb-5">
                 {pain.number}
               </span>
-              <h3 className="text-[0.85rem] font-semibold text-slate-900 mb-4 leading-snug">
+              <h3 className="text-[0.875rem] font-bold text-[#191919] mb-4 leading-snug">
                 {pain.title}
               </h3>
-              <p className="text-xs text-slate-400 leading-[1.9]">
+              <p className="text-xs text-[#787674] leading-[1.9]">
                 {pain.body}
               </p>
             </div>
@@ -96,10 +91,10 @@ export default function PainPoints() {
         </div>
 
         {/* Bridge */}
-        <div className={`mt-14 fade-up ${isVisible ? "is-visible" : ""} delay-500`}>
-          <p className="text-slate-400 text-sm">
+        <div className={`mt-12 fade-up ${isVisible ? "is-visible" : ""} delay-500`}>
+          <p className="text-[#A09D99] text-sm">
             これらはすべて、
-            <span className="text-slate-700 font-medium">
+            <span className="text-[#191919] font-semibold">
               「構造」を変えることで解決できる
             </span>
             課題です。

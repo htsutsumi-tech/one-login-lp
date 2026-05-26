@@ -62,107 +62,91 @@ export default function Security() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
   return (
-    <section id="security" className="section-atm-security py-32 lg:py-48 relative overflow-hidden">
-
-      {/* Section index label */}
-      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
-          Sect. 07<br />Security
-        </p>
-      </div>
+    <section id="security" className="section-atm-security py-28 lg:py-44 relative overflow-hidden">
 
       <div
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* ── Header — full-width, released from column constraint ── */}
-        <div className="mb-16 lg:mb-20">
+        {/* Header */}
+        <div className="mb-14 lg:mb-16">
           <p
             className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
           >
             Security
           </p>
           <h2
-            className={`display-heading text-slate-900 text-[2.5rem] sm:text-[3.5rem] lg:text-[4.2rem] leading-tight mb-6 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            className={`display-heading text-[#191919] text-[2.5rem] sm:text-[3.5rem] lg:text-[4.2rem] leading-tight mb-6 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
           >
             開発スピードと引き換えに、
             <br />
             セキュリティを犠牲にしない。
           </h2>
           <p
-            className={`text-slate-400 text-sm leading-relaxed max-w-md fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+            className={`text-[#787674] text-sm leading-relaxed max-w-md fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
             AIを開発へ組み込む以上、
             AIそのものも管理対象として設計する。
           </p>
         </div>
 
-        {/* ── インフラ・基盤セキュリティ ── */}
-        <div
-          className={`fade-up ${isVisible ? "is-visible" : ""} delay-200`}
-        >
+        {/* Infrastructure & Platform */}
+        <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-200`}>
           <p className="eyebrow mb-6">Infrastructure &amp; Platform</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {infraFeatures.map((feature, i) => (
             <div
               key={feature.title}
-              className={`bg-white p-7 lg:p-8 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`card-notion p-7 lg:p-8 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div className="flex items-start justify-between gap-4 mb-4">
-                <h3 className="text-sm font-medium text-slate-900 leading-snug">
+                <h3 className="text-sm font-bold text-[#191919] leading-snug">
                   {feature.title}
                 </h3>
-                <span className="flex-shrink-0 text-[10px] font-mono text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
+                <span className="flex-shrink-0 text-[10px] font-mono text-[#A09D99] border border-[#E8E5DF] px-1.5 py-0.5 rounded-md whitespace-nowrap">
                   {feature.tag}
                 </span>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-xs text-[#787674] leading-relaxed">
                 {feature.desc}
               </p>
             </div>
           ))}
         </div>
 
-        {/* ── AI開発ガバナンス ── */}
+        {/* AI Development Governance */}
         <div
-          className={`mt-16 pt-14 border-t border-slate-200 fade-up ${isVisible ? "is-visible" : ""} delay-400`}
+          className={`mt-16 pt-14 border-t border-[#E8E5DF] fade-up ${isVisible ? "is-visible" : ""} delay-400`}
         >
-          {/* サブセクションヘッダー */}
-          <div className="grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-20 items-end mb-10">
-            <div>
-              <p className="eyebrow mb-5">AI Development Governance</p>
-
-              <h3
-                className="
-                  font-sans font-normal leading-snug tracking-tight
-                  text-slate-900
-                  text-[1.4rem] sm:text-[1.75rem] lg:text-[2rem]
-                "
-              >
-                AIを活用することは、
-                <br />
-                AIを管理することでもある。
-              </h3>
-            </div>
+          <div className="mb-10">
+            <p className="eyebrow mb-5">AI Development Governance</p>
+            <h3
+              className="display-heading text-[#191919] text-[1.4rem] sm:text-[1.75rem] lg:text-[2rem] font-bold"
+            >
+              AIを活用することは、
+              <br />
+              AIを管理することでもある。
+            </h3>
           </div>
 
-          {/* AIガバナンス: 左ボーダー型リスト */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {aiGovernance.map((item, i) => (
               <div
                 key={item.title}
-                className={`bg-white p-7 lg:p-8 border-l-2 border-blue-400 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+                className={`card-notion p-7 lg:p-8 card-grid-hover border-l-4 border-blue-400 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+                style={{ boxShadow: "var(--shadow-card)" }}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
-                  <h4 className="text-sm font-medium text-slate-800 leading-snug">
+                  <h4 className="text-sm font-bold text-[#191919] leading-snug">
                     {item.title}
                   </h4>
-                  <span className="flex-shrink-0 text-[10px] font-mono text-slate-400 border border-slate-200 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
+                  <span className="flex-shrink-0 text-[10px] font-mono text-[#A09D99] border border-[#E8E5DF] px-1.5 py-0.5 rounded-md whitespace-nowrap">
                     {item.tag}
                   </span>
                 </div>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-[#787674] leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -170,11 +154,11 @@ export default function Security() {
           </div>
         </div>
 
-        {/* ── フッターノート ── */}
+        {/* Footer note */}
         <div
           className={`mt-10 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-xs text-slate-400 text-center">
+          <p className="text-xs text-[#A09D99] text-center">
             詳細なセキュリティ・ガバナンスポリシーについては、お問い合わせ後にご案内しています。
           </p>
         </div>

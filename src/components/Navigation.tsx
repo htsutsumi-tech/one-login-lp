@@ -20,20 +20,20 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-[0_1px_20px_0_rgba(37,99,235,0.09)]"
+          ? "bg-white/96 backdrop-blur-md border-b border-[#E8E5DF] shadow-[0_1px_16px_0_rgba(0,0,0,0.06)]"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-content mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo — philosophy tag */}
+        {/* Logo */}
         <button
           onClick={() => scrollTo("hero")}
           className="group"
           aria-label="トップへ戻る"
         >
-          <span className="font-mono text-[10px] tracking-[0.22em] text-slate-400 group-hover:text-slate-600 transition-colors duration-200 uppercase select-none">
+          <span className="font-mono text-[10px] tracking-[0.22em] text-[#A09D99] group-hover:text-[#191919] transition-colors duration-200 uppercase select-none">
             AI Native Partner
           </span>
         </button>
@@ -49,7 +49,7 @@ export default function Navigation() {
             <button
               key={id}
               onClick={() => scrollTo(id)}
-              className="text-sm text-slate-500 hover:text-slate-900 transition-colors duration-200 font-normal"
+              className="text-sm text-[#787674] hover:text-[#191919] transition-colors duration-200 font-normal"
             >
               {label}
             </button>
@@ -60,7 +60,7 @@ export default function Navigation() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => scrollTo("cta")}
-            className="hidden sm:flex items-center gap-1.5 bg-blue-600 text-white text-sm px-4 py-2 rounded-sm hover:bg-blue-700 active:scale-[0.98] transition-all duration-200 font-normal tracking-wide"
+            className="hidden sm:flex items-center gap-1.5 bg-[#191919] text-white text-sm px-4 py-2 rounded-lg hover:bg-black active:scale-[0.98] transition-all duration-200 font-normal tracking-wide"
           >
             <span>お問い合わせ</span>
             <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -69,21 +69,21 @@ export default function Navigation() {
           </button>
 
           <button
-            className="md:hidden p-1.5 text-slate-500"
+            className="md:hidden p-1.5 text-[#787674]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="メニュー"
           >
             <div className="w-5 flex flex-col gap-1.5">
-              <span className={`block h-px bg-slate-700 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block h-px bg-slate-700 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block h-px bg-slate-700 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              <span className={`block h-px bg-[#191919] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block h-px bg-[#191919] transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block h-px bg-[#191919] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </div>
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white border-b border-slate-200 transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
+      <div className={`md:hidden bg-white border-b border-[#E8E5DF] transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="px-6 py-4 flex flex-col gap-4">
           {[
             { label: "課題", id: "pain" },
@@ -92,11 +92,11 @@ export default function Navigation() {
             { label: "パートナー募集", id: "partnership" },
             { label: "セキュリティ", id: "security" },
           ].map(({ label, id }) => (
-            <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm text-slate-600 py-1">
+            <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm text-[#787674] py-1 hover:text-[#191919] transition-colors">
               {label}
             </button>
           ))}
-          <button onClick={() => scrollTo("cta")} className="mt-2 w-full bg-blue-600 text-white text-sm py-2.5 rounded-sm hover:bg-blue-700 transition-colors">
+          <button onClick={() => scrollTo("cta")} className="mt-2 w-full bg-[#191919] text-white text-sm py-2.5 rounded-lg hover:bg-black transition-colors">
             お問い合わせ
           </button>
         </div>

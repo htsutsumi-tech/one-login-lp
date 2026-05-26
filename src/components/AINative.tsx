@@ -30,28 +30,21 @@ export default function AINative() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="ai-native" className="section-atm-white py-16 lg:py-24 relative overflow-hidden">
-
-      {/* Section index label */}
-      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
-          Sect. 04<br />AI Native
-        </p>
-      </div>
+    <section id="ai-native" className="section-atm-slate py-20 lg:py-28 relative overflow-hidden">
 
       <div
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* Header — full-width, dominant */}
-        <div className="mb-10 lg:mb-12">
+        {/* Header */}
+        <div className="mb-12 lg:mb-14">
           <p
             className={`section-label mb-8 fade-up ${isVisible ? "is-visible" : ""}`}
           >
             AI Native Development
           </p>
           <h2
-            className={`display-heading text-slate-900 text-[2.5rem] sm:text-[4rem] lg:text-[4.5rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            className={`display-heading text-[#191919] text-[2.5rem] sm:text-[4rem] lg:text-[4.5rem] leading-tight fade-up ${isVisible ? "is-visible" : ""} delay-100`}
           >
             なぜ、いま
             <br />
@@ -60,54 +53,42 @@ export default function AINative() {
         </div>
 
         <p
-          className={`text-slate-400 text-sm leading-relaxed mb-16 max-w-xl fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+          className={`text-[#787674] text-sm leading-relaxed mb-14 max-w-xl fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
           AIは「便利なツール」ではなく、
           開発体制そのものに組み込む
-          <span className="text-slate-700 font-medium">「構造」</span>
+          <span className="text-[#191919] font-semibold">「構造」</span>
           として機能します。
         </p>
 
-        {/* Values */}
-        <div className="space-y-px">
+        {/* Values — cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {values.map((value, i) => (
             <div
               key={value.number}
-              className={`group relative border-t border-slate-200 py-10 lg:py-12 grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-16 hover:bg-slate-50 transition-colors duration-300 px-4 -mx-4 fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`card-notion p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              style={{ boxShadow: "var(--shadow-card)" }}
             >
-              {/* Decorative number */}
-              <span
-                className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-mono text-[6rem] lg:text-[8rem] leading-none text-blue-50 font-bold"
-                aria-hidden="true"
-              >
-                {value.number}
-              </span>
-
-              {/* Left */}
-              <div className="relative flex flex-col gap-2">
-                <span className="font-mono text-xs text-blue-400">
+              <div className="flex items-start justify-between gap-3 mb-6">
+                <span className="font-mono text-xs text-blue-500 font-semibold">
                   {value.number}
                 </span>
-                <h3 className="text-slate-900 font-medium text-base leading-snug">
-                  {value.title}
-                </h3>
-                <span className="inline-block mt-auto text-xs text-blue-600 bg-blue-50 border border-blue-200 rounded-sm px-2.5 py-1 w-fit">
+                <span className="text-xs text-blue-600 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1">
                   {value.highlight}
                 </span>
               </div>
 
-              {/* Right */}
-              <div className="relative">
-                <p className="text-slate-900 text-[0.92rem] font-semibold mb-3 leading-relaxed">
-                  {value.lead}
-                </p>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  {value.body}
-                </p>
-              </div>
+              <h3 className="text-[#191919] font-bold text-base leading-snug mb-3">
+                {value.title}
+              </h3>
+              <p className="text-[#191919] text-[0.85rem] font-semibold mb-3 leading-relaxed">
+                {value.lead}
+              </p>
+              <p className="text-[#787674] text-xs leading-relaxed">
+                {value.body}
+              </p>
             </div>
           ))}
-          <div className="border-t border-slate-200" />
         </div>
       </div>
     </section>

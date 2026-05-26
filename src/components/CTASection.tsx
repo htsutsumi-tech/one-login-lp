@@ -21,33 +21,11 @@ export default function CTASection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // フォームの送信処理はここに実装
     setSubmitted(true);
   };
 
   return (
-    <section id="cta" className="section-atm-cta py-32 lg:py-44 relative overflow-hidden">
-
-      {/* Section index label */}
-      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <p className="font-mono text-[9px] text-slate-400 tracking-[0.16em] text-right leading-[1.8] uppercase">
-          Sect. 08<br />Contact
-        </p>
-      </div>
-
-      {/* Corner markers */}
-      <div className="absolute top-8 left-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <div className="w-[18px] h-[18px] relative">
-          <div className="absolute top-0 left-0 w-full h-px bg-blue-200/60" />
-          <div className="absolute top-0 left-0 w-px h-full bg-blue-200/60" />
-        </div>
-      </div>
-      <div className="absolute top-8 right-[calc(2rem+80px)] pointer-events-none hidden lg:block" aria-hidden="true">
-        <div className="w-[18px] h-[18px] relative">
-          <div className="absolute top-0 right-0 w-full h-px bg-blue-200/60" />
-          <div className="absolute top-0 right-0 w-px h-full bg-blue-200/60" />
-        </div>
-      </div>
+    <section id="cta" className="section-atm-slate py-28 lg:py-40 relative overflow-hidden">
 
       <div
         ref={ref}
@@ -62,7 +40,7 @@ export default function CTASection() {
               Contact
             </p>
             <h2
-              className={`display-heading text-slate-900 text-[2.2rem] sm:text-[3rem] lg:text-[3.6rem] leading-[1.12] mb-8 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+              className={`display-heading text-[#191919] text-[2.2rem] sm:text-[3rem] lg:text-[3.6rem] leading-[1.12] mb-8 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             >
               &ldquo;構造から変える&rdquo;
               <br />
@@ -72,11 +50,11 @@ export default function CTASection() {
             <div
               className={`space-y-5 mb-10 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
             >
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-[#787674] text-sm leading-relaxed">
                 共同開発パートナーへのご興味・ご相談、
                 お気軽にお問い合わせください。
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-[#A09D99] text-sm leading-relaxed">
                 まずは30分のオンライン相談から。
                 事業の課題と現状をお聞きした上で、
                 どのような形でお役に立てるかをご提案します。
@@ -93,12 +71,12 @@ export default function CTASection() {
                 "共同開発パートナーシップのご提案",
               ].map((step, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <span className="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center flex-shrink-0 bg-white">
-                    <span className="font-mono text-[10px] text-slate-400">
+                  <span className="w-6 h-6 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="font-mono text-[10px] text-blue-500 font-semibold">
                       {i + 1}
                     </span>
                   </span>
-                  <span className="text-sm text-slate-500">{step}</span>
+                  <span className="text-sm text-[#787674]">{step}</span>
                 </div>
               ))}
             </div>
@@ -107,16 +85,16 @@ export default function CTASection() {
           {/* Right: Form */}
           <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-200`}>
             {submitted ? (
-              <div className="bg-white border border-slate-200 rounded-sm h-full flex flex-col items-center justify-center text-center py-16 px-8">
-                <div className="w-12 h-12 rounded-full border border-blue-200 bg-blue-50 flex items-center justify-center mb-6">
+              <div className="card-notion h-full flex flex-col items-center justify-center text-center py-16 px-8" style={{ boxShadow: "var(--shadow-card)" }}>
+                <div className="w-14 h-14 rounded-full border border-blue-100 bg-blue-50 flex items-center justify-center mb-6">
                   <svg
-                    width="20"
-                    height="20"
+                    width="22"
+                    height="22"
                     viewBox="0 0 20 20"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
-                    className="text-blue-600"
+                    className="text-blue-500"
                   >
                     <path
                       d="M3 10l5 5 9-9"
@@ -125,17 +103,17 @@ export default function CTASection() {
                     />
                   </svg>
                 </div>
-                <p className="text-slate-900 font-medium mb-2">
+                <p className="text-[#191919] font-bold mb-2">
                   お問い合わせを受け付けました
                 </p>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-[#787674] text-sm leading-relaxed">
                   内容を確認の上、担当者よりご連絡いたします。
                   <br />
                   通常1〜2営業日以内にご返信します。
                 </p>
               </div>
             ) : (
-              <div className="bg-white border border-slate-200 rounded-sm p-8 lg:p-10">
+              <div className="card-notion p-8 lg:p-10" style={{ boxShadow: "var(--shadow-card)" }}>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {[
                     {
@@ -161,7 +139,7 @@ export default function CTASection() {
                     },
                   ].map((field) => (
                     <div key={field.name}>
-                      <label className="block text-xs text-slate-500 mb-1.5">
+                      <label className="block text-xs font-medium text-[#787674] mb-1.5">
                         {field.label}
                         {field.required && (
                           <span className="text-blue-500 ml-1">*</span>
@@ -174,13 +152,13 @@ export default function CTASection() {
                         required={field.required}
                         value={formState[field.name as keyof typeof formState]}
                         onChange={handleChange}
-                        className="w-full bg-white border border-slate-200 text-slate-900 text-sm px-4 py-3 rounded-sm placeholder-slate-300 focus:outline-none focus:border-blue-400 transition-colors duration-200"
+                        className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-50 transition-all duration-200"
                       />
                     </div>
                   ))}
 
                   <div>
-                    <label className="block text-xs text-slate-500 mb-1.5">
+                    <label className="block text-xs font-medium text-[#787674] mb-1.5">
                       お問い合わせ内容
                     </label>
                     <textarea
@@ -189,13 +167,13 @@ export default function CTASection() {
                       rows={4}
                       value={formState.message}
                       onChange={handleChange}
-                      className="w-full bg-white border border-slate-200 text-slate-900 text-sm px-4 py-3 rounded-sm placeholder-slate-300 focus:outline-none focus:border-blue-400 transition-colors duration-200 resize-none"
+                      className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-50 transition-all duration-200 resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white text-sm font-medium py-3.5 rounded-sm hover:bg-blue-700 active:scale-[0.99] transition-all duration-200 mt-2 flex items-center justify-center gap-2"
+                    className="w-full bg-[#191919] text-white text-sm font-semibold py-3.5 rounded-xl hover:bg-black active:scale-[0.99] transition-all duration-200 mt-2 flex items-center justify-center gap-2 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
                   >
                     送信する
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -203,7 +181,7 @@ export default function CTASection() {
                     </svg>
                   </button>
 
-                  <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                  <p className="text-[11px] text-[#A09D99] text-center leading-relaxed">
                     送信いただいた情報は、お問い合わせへの対応のみに使用します。
                   </p>
                 </form>

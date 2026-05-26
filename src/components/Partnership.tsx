@@ -33,40 +33,25 @@ export default function Partnership() {
   const { ref, isVisible } = useScrollAnimation(0.06);
 
   return (
-    <section id="partnership" className="section-atm-slate py-32 lg:py-44 relative overflow-hidden">
-
-      {/* Section index label */}
-      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
-          Sect. 06<br />Partnership
-        </p>
-      </div>
-
-      {/* Corner markers */}
-      <div className="absolute top-8 left-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <div className="w-[18px] h-[18px] relative">
-          <div className="absolute top-0 left-0 w-full h-px bg-slate-300/70" />
-          <div className="absolute top-0 left-0 w-px h-full bg-slate-300/70" />
-        </div>
-      </div>
+    <section id="partnership" className="section-atm-slate py-28 lg:py-40 relative overflow-hidden">
 
       <div
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* Header — left-aligned, 2-col */}
-        <div className="grid lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-end mb-20">
+        {/* Header */}
+        <div className="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-20 items-end mb-16">
           <div className={`fade-up ${isVisible ? "is-visible" : ""}`}>
-            <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Partnership</p>
-            <h2 className="display-heading text-slate-900 text-[2.5rem] sm:text-[3.8rem] lg:text-[5.5rem] leading-[1.04] mb-6">
+            <p className="section-label mb-5">Partnership</p>
+            <h2 className="display-heading text-[#191919] text-[2.5rem] sm:text-[3.8rem] lg:text-[5.5rem] leading-[1.04] mb-6">
               &ldquo;本気で創る&rdquo;企業へ。
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed font-light">
+            <p className="text-[#787674] text-base leading-relaxed font-normal">
               共同開発パートナーを募集します。
             </p>
           </div>
           <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-100`}>
-            <p className="text-slate-400 text-sm leading-[2.1]">
+            <p className="text-[#A09D99] text-sm leading-[2.1]">
               私たちが求めるのは、単に開発を委託したい企業ではありません。
               本気の事業開発を目指す共創パートナーシップを通じて、
               自社プロダクトと共に歩む企業と、長期的に創り続けたいと考えています。
@@ -74,13 +59,14 @@ export default function Partnership() {
           </div>
         </div>
 
-        {/* Two column layout */}
-        <div className="grid lg:grid-cols-2 gap-px bg-slate-300">
+        {/* Two column layout — rounded cards */}
+        <div className="grid lg:grid-cols-2 gap-5">
           {/* Left: Target companies */}
           <div
-            className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            className={`card-notion p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+            style={{ boxShadow: "var(--shadow-card)" }}
           >
-            <h3 className="text-xs font-semibold text-slate-400 tracking-[0.14em] uppercase mb-8 pb-4 border-b border-slate-200">
+            <h3 className="text-xs font-bold text-[#A09D99] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
               共同パートナーとして想定する企業
             </h3>
             <ul className="space-y-5">
@@ -89,15 +75,15 @@ export default function Partnership() {
                   <span className="font-mono text-[10px] text-blue-400 mt-0.5 flex-shrink-0 select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-sm text-slate-700 leading-relaxed">
+                  <span className="text-sm text-[#191919] leading-relaxed">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 pt-6 border-t border-slate-200">
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="mt-10 pt-6 border-t border-[#E8E5DF]">
+              <p className="text-xs text-[#A09D99] leading-relaxed">
                 業種・規模は問いません。事業への本気度を最も重視しています。
               </p>
             </div>
@@ -105,18 +91,19 @@ export default function Partnership() {
 
           {/* Right: Our provision */}
           <div
-            className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+            className={`card-notion p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+            style={{ boxShadow: "var(--shadow-card)" }}
           >
-            <h3 className="text-xs font-semibold text-slate-400 tracking-[0.14em] uppercase mb-8 pb-4 border-b border-slate-200">
+            <h3 className="text-xs font-bold text-[#A09D99] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
               私たちが提供できること
             </h3>
-            <div className="space-y-7">
+            <div className="space-y-6">
               {ourProvision.map((item, i) => (
-                <div key={i} className="border-t border-slate-200 pt-5 first:border-t-0 first:pt-0">
-                  <p className="text-sm font-semibold text-slate-900 mb-1.5">
+                <div key={i} className="border-t border-[#E8E5DF] pt-5 first:border-t-0 first:pt-0">
+                  <p className="text-sm font-bold text-[#191919] mb-1.5">
                     {item.title}
                   </p>
-                  <p className="text-xs text-slate-400 leading-[1.9]">
+                  <p className="text-xs text-[#787674] leading-[1.9]">
                     {item.desc}
                   </p>
                 </div>
@@ -127,7 +114,7 @@ export default function Partnership() {
 
         {/* Quote */}
         <div className={`mt-16 fade-up ${isVisible ? "is-visible" : ""} delay-300`}>
-          <blockquote className="display-heading text-slate-400 text-lg sm:text-xl font-light">
+          <blockquote className="display-heading text-[#A09D99] text-lg sm:text-xl font-normal">
             戦術ではなく、構造を導入する。
             <br className="hidden sm:block" />
             その発想を、本気で事業を伸ばす企業と共に体現します。

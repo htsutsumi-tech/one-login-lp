@@ -21,22 +21,7 @@ export default function Concept() {
   const { ref, isVisible } = useScrollAnimation(0.08);
 
   return (
-    <section id="concept" className="section-atm-white py-40 lg:py-56 relative overflow-hidden">
-
-      {/* Section index label */}
-      <div className="absolute top-8 right-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <p className="font-mono text-[9px] text-slate-300 tracking-[0.16em] text-right leading-[1.8] uppercase">
-          Sect. 03<br />Concept
-        </p>
-      </div>
-
-      {/* Corner markers — blueprint accent */}
-      <div className="absolute top-8 left-8 pointer-events-none hidden lg:block" aria-hidden="true">
-        <div className="w-[18px] h-[18px] relative">
-          <div className="absolute top-0 left-0 w-full h-px bg-slate-300/70" />
-          <div className="absolute top-0 left-0 w-px h-full bg-slate-300/70" />
-        </div>
-      </div>
+    <section id="concept" className="section-atm-white py-36 lg:py-52 relative overflow-hidden">
 
       <div
         ref={ref}
@@ -47,37 +32,37 @@ export default function Concept() {
           Concept
         </p>
 
-        {/* Dominant H2 — full-width editorial statement */}
+        {/* Dominant H2 */}
         <h2
-          className={`display-heading text-slate-900 text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[0.92] tracking-[-0.03em] mb-12 lg:mb-20 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+          className={`display-heading text-[#191919] text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[0.95] tracking-[-0.04em] mb-12 lg:mb-20 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
         >
           One Login,
           <br />
           All Contents.
         </h2>
 
-        {/* Description row — under the dominant title */}
+        {/* Description row */}
         <div
           className={`grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-24 mb-24 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
           <div>
-            <p className="text-slate-600 text-[0.95rem] font-light leading-loose mb-4">
+            <p className="text-[#191919] text-[0.95rem] font-medium leading-loose mb-4">
               一つのIDで、事業に必要なすべてを。
             </p>
-            <p className="text-slate-400 text-sm leading-loose">
+            <p className="text-[#787674] text-sm leading-loose">
               業務管理、顧客管理、データ可視化、外部システム連携——
               <br />
               点在するツールを、一つのログイン基盤へ統合します。
             </p>
           </div>
-          <div className="space-y-3 text-sm text-slate-500 leading-loose">
+          <div className="space-y-3 text-sm text-[#787674] leading-loose">
             <p>
               汎用SaaSの限界は「全員向けに設計されている」点にあります。
               業務フローに合わせてツールを増やすほど、現場はその分断に翻弄されます。
             </p>
             <p>
               私たちが提唱するのは、逆の発想です。
-              <span className="text-slate-800 font-medium">
+              <span className="text-[#191919] font-semibold">
                 御社の業務に合わせて、機能を統合する。
               </span>
             </p>
@@ -89,12 +74,10 @@ export default function Concept() {
           </div>
         </div>
 
-        {/* Visual: Architecture diagram */}
-        <div
-          className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}
-        >
-          <div className="border border-slate-200 rounded-sm p-8 lg:p-12 bg-slate-50">
-            {/* Top layer: scattered tools */}
+        {/* Architecture diagram */}
+        <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}>
+          <div className="card-notion border border-[#E8E5DF] p-8 lg:p-12" style={{ boxShadow: "var(--shadow-card)" }}>
+            {/* Top: scattered tools */}
             <div className="mb-8">
               <p className="eyebrow mb-4 text-center">現在：ツールの断片化</p>
               <div className="flex flex-wrap justify-center gap-2">
@@ -110,13 +93,13 @@ export default function Concept() {
                 ].map((tool) => (
                   <span
                     key={tool}
-                    className="text-xs border border-slate-200 text-slate-400 px-3 py-1.5 rounded-sm bg-white"
+                    className="text-xs border border-[#E8E5DF] text-[#A09D99] px-3 py-1.5 rounded-lg bg-white"
                   >
                     {tool}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-center mt-4 gap-8 text-xs text-slate-300">
+              <div className="flex justify-center mt-4 gap-8 text-xs text-[#C8C5BF]">
                 <span>別ログイン</span>
                 <span>/</span>
                 <span>データ分断</span>
@@ -146,22 +129,25 @@ export default function Concept() {
               </div>
             </div>
 
-            {/* Bottom layer: integrated */}
-            <div className="border border-blue-200 rounded-sm p-6" style={{ background: "linear-gradient(135deg, #f0f7ff 0%, #ffffff 60%)" }}>
+            {/* Bottom: integrated */}
+            <div
+              className="rounded-xl p-6 border border-blue-100"
+              style={{ background: "linear-gradient(135deg, #EEF5FF 0%, #ffffff 60%)" }}
+            >
               <p className="eyebrow mb-6 text-center">
                 One Login, All Contents
               </p>
               <div className="grid grid-cols-3 gap-4">
                 {layers.map((layer) => (
                   <div key={layer.label} className="text-center">
-                    <p className="text-xs font-medium text-slate-700 mb-2">
+                    <p className="text-xs font-bold text-[#191919] mb-2">
                       {layer.label}
                     </p>
                     <div className="space-y-1">
                       {layer.items.map((item) => (
                         <div
                           key={item}
-                          className="text-xs text-slate-400 bg-slate-50 px-2 py-1 rounded-sm"
+                          className="text-xs text-[#787674] bg-white px-2 py-1 rounded-lg border border-[#E8E5DF]"
                         >
                           {item}
                         </div>
@@ -170,8 +156,8 @@ export default function Concept() {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-4 border-t border-slate-200 text-center">
-                <p className="text-xs text-slate-400">
+              <div className="mt-5 pt-4 border-t border-[#E8E5DF] text-center">
+                <p className="text-xs text-[#A09D99]">
                   単一ログイン基盤 ／ 統合データ ／ 拡張自在
                 </p>
               </div>
@@ -183,7 +169,7 @@ export default function Concept() {
         <div
           className={`mt-16 text-center fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="display-heading text-slate-700 text-xl sm:text-2xl font-light">
+          <p className="display-heading text-[#A09D99] text-xl sm:text-2xl font-normal">
             戦術ではなく、構造を導入する。
           </p>
         </div>
