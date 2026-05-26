@@ -115,7 +115,7 @@ export default function Concept() {
                 ].map((tool) => (
                   <span
                     key={tool}
-                    className="text-xs border border-slate-200 text-slate-400 px-3 py-1.5 rounded-full bg-white"
+                    className="text-xs border border-slate-200 text-slate-400 px-3 py-1.5 rounded-sm bg-white"
                   >
                     {tool}
                   </span>

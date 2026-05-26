@@ -103,17 +103,17 @@ export default function AINative() {
                 <h3 className="text-slate-900 font-medium text-base leading-snug">
                   {value.title}
                 </h3>
-                <span className="inline-block mt-auto text-xs text-blue-600 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1 w-fit">
+                <span className="inline-block mt-auto text-xs text-blue-600 bg-blue-50 border border-blue-100 rounded-sm px-2.5 py-1 w-fit">
                   {value.highlight}
                 </span>
               </div>
 
               {/* Right */}
               <div className="relative">
-                <p className="text-slate-800 text-sm font-medium mb-3 leading-relaxed">
+                <p className="text-slate-900 text-[0.92rem] font-semibold mb-3 leading-relaxed">
                   {value.lead}
                 </p>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-400 text-sm leading-relaxed">
                   {value.body}
                 </p>
               </div>

@@ -98,16 +98,16 @@ export default function BuildScope() {
               key={cat.label}
               className={`bg-white p-7 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
             >
-              <p className="text-xs font-medium text-slate-900 mb-4 pb-3 border-b border-slate-100">
+              <p className="text-[0.8rem] font-semibold text-slate-900 tracking-[0.03em] mb-4 pb-3 border-b border-slate-200">
                 {cat.label}
               </p>
               <ul className="space-y-2.5">
                 {cat.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
+                  <li key={item} className="flex items-baseline gap-2.5">
                     <span
-                      className="mt-1.5 w-1 h-1 rounded-full bg-blue-300 flex-shrink-0"
+                      className="text-slate-300 text-[10px] flex-shrink-0 select-none"
                       aria-hidden="true"
-                    />
+                    >—</span>
                     <span className="text-xs text-slate-500 leading-relaxed">
                       {item}
                     </span>

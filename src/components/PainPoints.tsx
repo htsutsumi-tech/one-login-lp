@@ -43,9 +43,7 @@ export default function PainPoints() {
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Header */}
-        <div
-          className={`mb-16 fade-up ${isVisible ? "is-visible" : ""}`}
-        >
+        <div className={`mb-16 fade-up ${isVisible ? "is-visible" : ""}`}>
           <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Pain Points</p>
           <h2 className="display-heading text-slate-900 text-[2rem] sm:text-[2.8rem] lg:text-[4rem] leading-tight">
             多くの企業が、
@@ -54,43 +52,52 @@ export default function PainPoints() {
           </h2>
         </div>
 
-        {/* Pain cards — with decorative background numbers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200">
-          {pains.map((pain, i) => (
-            <div
-              key={pain.number}
-              className={`bg-slate-50 p-8 lg:p-10 card-grid-hover relative fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
-            >
-              {/* Decorative large number — background */}
-              <span
-                className="absolute top-3 right-4 font-mono text-[5rem] leading-none text-blue-50 font-bold select-none pointer-events-none"
-                aria-hidden="true"
-              >
-                {pain.number}
-              </span>
+        {/* Pain cards — featured first + supporting three */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-200">
 
-              {/* Small step indicator */}
-              <span className="font-mono text-[10px] tracking-[0.18em] text-blue-500 font-semibold block mb-4">
-                {pain.number}
-              </span>
-
-              <div className="relative">
-                <h3 className="text-base font-medium text-slate-900 mb-3 leading-snug pr-12">
-                  {pain.title}
+          {/* Featured card — Pain 01 */}
+          <div
+            className={`bg-slate-50 md:col-span-3 p-10 lg:p-14 card-grid-hover relative overflow-hidden fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+          >
+            <div className="grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20">
+              <div>
+                <span className="font-mono text-[10px] tracking-[0.18em] text-blue-500 font-semibold block mb-6">
+                  {pains[0].number}
+                </span>
+                <h3 className="display-heading text-slate-900 text-[1.5rem] sm:text-[1.9rem] lg:text-[2.3rem] leading-[1.2]">
+                  {pains[0].title}
                 </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  {pain.body}
+              </div>
+              <div className="flex flex-col justify-end">
+                <p className="text-slate-400 text-sm leading-[2.2] max-w-lg">
+                  {pains[0].body}
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Supporting cards — Pains 02 / 03 / 04 */}
+          {pains.slice(1).map((pain, i) => (
+            <div
+              key={pain.number}
+              className={`bg-slate-50 p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 2) * 100}`}
+            >
+              <span className="font-mono text-[10px] tracking-[0.18em] text-blue-500 font-semibold block mb-5">
+                {pain.number}
+              </span>
+              <h3 className="text-[0.85rem] font-semibold text-slate-900 mb-4 leading-snug">
+                {pain.title}
+              </h3>
+              <p className="text-xs text-slate-400 leading-[1.9]">
+                {pain.body}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Bridge */}
-        <div
-          className={`mt-14 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
-        >
-          <p className="text-center text-slate-400 text-sm">
+        <div className={`mt-14 fade-up ${isVisible ? "is-visible" : ""} delay-500`}>
+          <p className="text-slate-400 text-sm">
             これらはすべて、
             <span className="text-slate-700 font-medium">
               「構造」を変えることで解決できる

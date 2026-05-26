@@ -54,22 +54,24 @@ export default function Partnership() {
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
-        {/* Header */}
-        <div
-          className={`text-center mb-20 fade-up ${isVisible ? "is-visible" : ""}`}
-        >
-          <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Partnership</p>
-          <h2 className="display-heading text-slate-900 text-[2.2rem] sm:text-[3.2rem] lg:text-[4.4rem] leading-tight mb-6">
-            &ldquo;本気で創る&rdquo;企業へ。
-          </h2>
-          <p className="text-slate-500 text-base max-w-xl mx-auto leading-relaxed font-light">
-            共同開発パートナーを募集します。
-          </p>
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed mt-3">
-            私たちが求めるのは、単に開発を委託したい企業ではありません。
-            本気の事業開発を目指す共創パートナーシップを通じて、
-            自社プロダクトと共に歩む企業と、長期的に創り続けたいと考えています。
-          </p>
+        {/* Header — left-aligned, 2-col */}
+        <div className="grid lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-end mb-20">
+          <div className={`fade-up ${isVisible ? "is-visible" : ""}`}>
+            <p className={`section-label mb-5 ${isVisible ? "is-visible" : ""}`}>Partnership</p>
+            <h2 className="display-heading text-slate-900 text-[2.2rem] sm:text-[3.2rem] lg:text-[4.4rem] leading-[1.08] mb-6">
+              &ldquo;本気で創る&rdquo;企業へ。
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed font-light">
+              共同開発パートナーを募集します。
+            </p>
+          </div>
+          <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-100`}>
+            <p className="text-slate-400 text-sm leading-[2.1]">
+              私たちが求めるのは、単に開発を委託したい企業ではありません。
+              本気の事業開発を目指す共創パートナーシップを通じて、
+              自社プロダクトと共に歩む企業と、長期的に創り続けたいと考えています。
+            </p>
+          </div>
         </div>
 
         {/* Two column layout */}
@@ -78,35 +80,23 @@ export default function Partnership() {
           <div
             className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
           >
-            <h3 className="text-sm font-medium text-slate-900 mb-7 pb-4 border-b border-slate-200">
+            <h3 className="text-xs font-semibold text-slate-400 tracking-[0.14em] uppercase mb-8 pb-4 border-b border-slate-200">
               共同パートナーとして想定する企業
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {targetCompanies.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <svg
-                    className="mt-0.5 flex-shrink-0 text-blue-500"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path
-                      d="M2 7l3.5 3.5L12 3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span className="text-sm text-slate-600 leading-relaxed">
+                <li key={i} className="flex items-start gap-4">
+                  <span className="font-mono text-[10px] text-blue-400 mt-0.5 flex-shrink-0 select-none">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm text-slate-700 leading-relaxed">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 pt-6 border-t border-slate-100">
+            <div className="mt-10 pt-6 border-t border-slate-100">
               <p className="text-xs text-slate-400 leading-relaxed">
                 業種・規模は問いません。事業への本気度を最も重視しています。
               </p>
@@ -117,16 +107,16 @@ export default function Partnership() {
           <div
             className={`bg-slate-50 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-200`}
           >
-            <h3 className="text-sm font-medium text-slate-900 mb-7 pb-4 border-b border-slate-200">
+            <h3 className="text-xs font-semibold text-slate-400 tracking-[0.14em] uppercase mb-8 pb-4 border-b border-slate-200">
               私たちが提供できること
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-7">
               {ourProvision.map((item, i) => (
-                <div key={i}>
-                  <p className="text-sm font-medium text-slate-800 mb-1">
+                <div key={i} className="border-t border-slate-100 pt-5 first:border-t-0 first:pt-0">
+                  <p className="text-sm font-semibold text-slate-900 mb-1.5">
                     {item.title}
                   </p>
-                  <p className="text-sm text-slate-500 leading-relaxed">
+                  <p className="text-xs text-slate-400 leading-[1.9]">
                     {item.desc}
                   </p>
                 </div>
@@ -136,10 +126,8 @@ export default function Partnership() {
         </div>
 
         {/* Quote */}
-        <div
-          className={`mt-16 text-center fade-up ${isVisible ? "is-visible" : ""} delay-300`}
-        >
-          <blockquote className="display-heading text-slate-400 text-lg sm:text-xl font-light italic">
+        <div className={`mt-16 fade-up ${isVisible ? "is-visible" : ""} delay-300`}>
+          <blockquote className="display-heading text-slate-400 text-lg sm:text-xl font-light">
             戦術ではなく、構造を導入する。
             <br className="hidden sm:block" />
             その発想を、本気で事業を伸ばす企業と共に体現します。
