@@ -74,75 +74,126 @@ export default function Concept() {
           </div>
         </div>
 
-        {/* Architecture — structural concept, no diagrams */}
+        {/* Architecture — UI mockup style, Notion-inspired */}
         <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}>
-          <div className="rounded-2xl bg-[#F7F5EF] px-10 lg:px-20 py-16 lg:py-20">
+          <div className="rounded-2xl bg-[#F7F5EF] px-8 lg:px-14 py-14 lg:py-16">
 
-            {/* Before — scattered, fading */}
-            <div className="text-center mb-14">
-              <p className="font-mono text-[10px] tracking-[0.2em] text-[#C8C5BF] uppercase mb-8">
-                現在 — 断片化した業務環境
+            {/* ── Before: scattered login screens ── */}
+            <div className="mb-12">
+              <p className="font-mono text-[10px] tracking-[0.2em] text-[#C8C5BF] uppercase mb-8 text-center">
+                現在 — ツールごとに別のログイン
               </p>
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 max-w-lg mx-auto">
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
                 {[
-                  { label: "CRM",          opacity: 0.45 },
-                  { label: "プロジェクト管理", opacity: 0.28 },
-                  { label: "会計SaaS",      opacity: 0.55 },
-                  { label: "分析ツール",    opacity: 0.35 },
-                  { label: "チャット",      opacity: 0.50 },
-                  { label: "契約管理",      opacity: 0.30 },
-                  { label: "勤怠管理",      opacity: 0.42 },
-                  { label: "顧客ポータル",  opacity: 0.22 },
-                ].map(({ label, opacity }) => (
-                  <span
-                    key={label}
-                    className="text-sm select-none"
-                    style={{ color: `rgba(120,118,116,${opacity})` }}
+                  { name: "CRM",           accent: "#F5C0B0", offset: false },
+                  { name: "プロジェクト管理", accent: "#B0C8F5", offset: true  },
+                  { name: "会計SaaS",       accent: "#B0E0C8", offset: false },
+                  { name: "勤怠管理",       accent: "#F5DCB0", offset: true  },
+                ].map(({ name, accent, offset }) => (
+                  <div
+                    key={name}
+                    className="bg-white rounded-xl border border-[#E8E5DF] overflow-hidden shadow-sm"
+                    style={{ transform: `translateY(${offset ? "10px" : "0px"})` }}
                   >
-                    {label}
-                  </span>
+                    {/* Window chrome */}
+                    <div className="flex items-center gap-1 px-3 py-2 bg-[#FAFAF8] border-b border-[#F0EDE7]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5C0B0]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5DCB0]" />
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }} />
+                    </div>
+                    {/* Login form mockup */}
+                    <div className="p-3">
+                      <p className="font-mono text-[7px] text-[#C8C5BF] tracking-widest mb-2.5 uppercase">Login</p>
+                      <div className="h-3 rounded-md border border-[#EDE9E3] bg-[#FAFAF8] mb-1.5" />
+                      <div className="h-3 rounded-md border border-[#EDE9E3] bg-[#FAFAF8] mb-2.5" />
+                      <div className="h-4 rounded-md bg-[#E8E5DF]" />
+                      <p className="text-[8px] font-semibold text-[#A09D99] mt-2.5 truncate">{name}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
-              <p className="text-xs text-[#D4D0C9] mt-6 tracking-wide leading-relaxed">
-                ログインが増えるたび、データは分断され、コストは積み上がる
+
+              <p className="text-xs text-[#C8C5BF] text-center mt-6">
+                4つのツール、4回のログイン。データはそれぞれの中に閉じている。
               </p>
             </div>
 
-            {/* Transition — thin line only */}
-            <div className="flex flex-col items-center gap-0 mb-14">
-              <div
-                className="w-px h-12"
-                style={{ background: "linear-gradient(to bottom, #D4D0C9, #7AAAC8)" }}
-              />
-              <span className="font-mono text-[10px] tracking-[0.24em] text-[#7AAAC8] uppercase py-2">
-                One Login
-              </span>
+            {/* ── Transition ── */}
+            <div className="flex flex-col items-center gap-0 mb-12">
+              <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, #D4D0C9, #7AAAC8)" }} />
+              <span className="font-mono text-[10px] tracking-[0.24em] text-[#4A7BA8] uppercase py-2">One Login</span>
               <svg width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
                 <path d="M1 1l3.5 4L8 1" stroke="#BDD3E7" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
-            {/* After — unified, clear typography only */}
-            <div className="text-center">
-              <p className="font-mono text-[10px] tracking-[0.2em] text-[#7AAAC8] uppercase mb-10">
+            {/* ── After: unified workspace ── */}
+            <div>
+              <p className="font-mono text-[10px] tracking-[0.2em] text-[#4A7BA8] uppercase mb-8 text-center">
                 One Login, All Contents
               </p>
-              <div className="grid grid-cols-3 gap-6 lg:gap-12 max-w-sm lg:max-w-md mx-auto">
-                {layers.map((layer) => (
-                  <div key={layer.label}>
-                    <p className="text-xs font-bold text-[#191919] mb-3">{layer.label}</p>
-                    <div className="space-y-2">
-                      {layer.items.map((item) => (
-                        <p key={item} className="text-xs text-[#A09D99] leading-relaxed">
-                          {item}
-                        </p>
+
+              {/* Unified app window */}
+              <div className="max-w-xl mx-auto bg-white rounded-2xl border border-[#E8E5DF] overflow-hidden shadow-md">
+                {/* Window chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#FAFAF8] border-b border-[#F0EDE7]">
+                  <span className="w-2 h-2 rounded-full bg-[#F5C0B0]" />
+                  <span className="w-2 h-2 rounded-full bg-[#F5DCB0]" />
+                  <span className="w-2 h-2 rounded-full bg-[#B0E0C0]" />
+                  <div className="flex-1 flex justify-center">
+                    <div className="flex items-center gap-1.5 bg-[#EEF4F9] px-3 py-1 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#7AAAC8]" />
+                      <span className="font-mono text-[9px] text-[#4A7BA8]">authenticated · One Login</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* App layout: sidebar + main */}
+                <div className="flex h-40">
+                  {/* Sidebar */}
+                  <div className="w-32 bg-[#FAFAF8] border-r border-[#F0EDE7] p-3 flex-shrink-0">
+                    <div className="flex items-center gap-1.5 mb-3 pb-2 border-b border-[#F0EDE7]">
+                      <div className="w-3.5 h-3.5 rounded-md bg-[#4A7BA8]/20" />
+                      <span className="text-[8px] font-medium text-[#787674]">ONE-EIGHTY</span>
+                    </div>
+                    {["業務管理", "顧客接点", "データ分析", "システム連携"].map((item, i) => (
+                      <div
+                        key={item}
+                        className={`text-[8px] px-2 py-1.5 rounded-lg mb-0.5 font-medium ${
+                          i === 0
+                            ? "bg-[#EEF4F9] text-[#4A7BA8]"
+                            : "text-[#C8C5BF]"
+                        }`}
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Main content area */}
+                  <div className="flex-1 p-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="h-2 w-20 rounded-full bg-[#F0EDE7]" />
+                      <div className="h-5 w-12 rounded-lg bg-[#EEF4F9] border border-[#BDD3E7]" />
+                    </div>
+                    <div className="space-y-2.5">
+                      {[1, 0.7, 0.85, 0.55].map((w, i) => (
+                        <div key={i} className="flex items-center gap-2.5">
+                          <div className="w-3 h-3 rounded-md bg-[#EEF4F9] border border-[#BDD3E7] flex-shrink-0" />
+                          <div
+                            className="h-2 rounded-full bg-[#F0EDE7]"
+                            style={{ width: `${w * 100}%` }}
+                          />
+                        </div>
                       ))}
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
-              <p className="text-[11px] text-[#C8C5BF] mt-10 tracking-wide">
-                単一ログイン基盤 · 統合データ · 拡張自在
+
+              <p className="text-[11px] text-[#C8C5BF] mt-6 text-center tracking-wide">
+                単一ログイン · 統合データ · 拡張自在
               </p>
             </div>
 
