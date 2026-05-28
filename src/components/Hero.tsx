@@ -133,18 +133,18 @@ export default function Hero() {
               { step: "02", label: "統合基盤の設計", sub: "One Login, All Contents" },
               { step: "03", label: "高速実装・拡張", sub: "AIネイティブ開発体制" },
             ].map((item, i) => (
-              <div key={item.step} className="flex items-center sm:w-[190px]">
+              <div key={item.step} className="flex items-center sm:w-[220px]">
                 <div className="flex-1 sm:flex-none text-center sm:text-left">
-                  <div className="flex items-baseline gap-1.5 mb-0.5 justify-center sm:justify-start">
-                    <span className="font-mono text-[10px] text-[#4A7BA8] font-semibold">{item.step}</span>
-                    <span className="text-xs font-medium text-[#191919]">{item.label}</span>
+                  <div className="flex items-baseline gap-2 mb-1 justify-center sm:justify-start">
+                    <span className="font-mono text-sm text-[#4A7BA8] font-semibold">{item.step}</span>
+                    <span className="text-base font-bold text-[#191919]">{item.label}</span>
                   </div>
-                  <p className="text-[11px] text-[#A09D99] hidden sm:block">{item.sub}</p>
+                  <p className="text-sm text-[#A09D99] hidden sm:block">{item.sub}</p>
                 </div>
                 {i < 2 && (
-                  <div className="hidden sm:flex items-center px-4 text-[#D4D0C9]" aria-hidden="true">
-                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-                      <path d="M1 5h12M10 1l4 4-4 4" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                  <div className="hidden sm:flex items-center px-4 text-[#C8C5BF]" aria-hidden="true">
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+                      <path d="M1 6h16M13 2l5 4-5 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                 )}
