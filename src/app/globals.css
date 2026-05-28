@@ -188,6 +188,19 @@ body {
   background: var(--color-bg-subtle);
 }
 
+/* ── Concept architecture diagram (PC-only) ──────────────────────────────── */
+@keyframes arch-bar-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arch-bar { animation: arch-bar-pulse 2.6s ease-in-out infinite; }
+  .arch-bar:nth-child(2) { animation-delay: 0.5s; }
+  .arch-bar:nth-child(3) { animation-delay: 1.0s; }
+  .arch-bar:nth-child(4) { animation-delay: 1.5s; }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }

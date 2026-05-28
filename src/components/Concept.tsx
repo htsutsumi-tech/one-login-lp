@@ -1,6 +1,7 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState, useEffect, useRef } from "react";
 
 const layers = [
   {
@@ -19,6 +20,21 @@ const layers = [
 
 export default function Concept() {
   const { ref, isVisible } = useScrollAnimation(0.08);
+  const [activeNav, setActiveNav] = useState(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // PC限定: サイドバーのアクティブ項目を自動循環
+  useEffect(() => {
+    if (!isVisible) return;
+    const isPC = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!isPC) return;
+    intervalRef.current = setInterval(() => {
+      setActiveNav((prev) => (prev + 1) % 4);
+    }, 1800);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isVisible]);
 
   return (
     <section id="concept" className="section-atm-white py-36 lg:py-52 relative overflow-hidden">
@@ -74,27 +90,40 @@ export default function Concept() {
           </div>
         </div>
 
-        {/* Architecture — UI mockup style, Notion-inspired */}
+        {/* Architecture — UI mockup with PC animations */}
         <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}>
           <div className="rounded-2xl bg-[#F7F5EF] px-8 lg:px-14 py-14 lg:py-16">
 
             {/* ── Before: scattered login screens ── */}
             <div className="mb-14">
-              <p className="text-sm font-medium tracking-[0.07em] text-[#787674] uppercase mb-8 text-center">
+              <p
+                className="text-sm font-medium tracking-[0.07em] text-[#787674] uppercase mb-8 text-center"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transition: "opacity 0.5s ease 0.1s",
+                }}
+              >
                 現在 — ツールごとに別のログイン
               </p>
 
+              {/* Cards: staggered entrance */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
                 {[
                   { name: "CRM",            dot: "#5ABF7A", offset: false },
                   { name: "プロジェクト管理", dot: "#7AAAC8", offset: true  },
                   { name: "会計SaaS",        dot: "#5ABF7A", offset: false },
                   { name: "勤怠管理",        dot: "#E0B43E", offset: true  },
-                ].map(({ name, dot, offset }) => (
+                ].map(({ name, dot, offset }, idx) => (
                   <div
                     key={name}
                     className="bg-white rounded-xl border border-[#D4D0C9] overflow-hidden shadow-sm"
-                    style={{ transform: `translateY(${offset ? "12px" : "0px"})` }}
+                    style={{
+                      transform: isVisible
+                        ? `translateY(${offset ? "12px" : "0px"})`
+                        : `translateY(${offset ? "28px" : "16px"})`,
+                      opacity: isVisible ? 1 : 0,
+                      transition: `opacity 0.55s ease ${idx * 110}ms, transform 0.55s cubic-bezier(0.16,1,0.3,1) ${idx * 110}ms`,
+                    }}
                   >
                     {/* Window chrome */}
                     <div className="flex items-center gap-1.5 px-3 py-2.5 bg-[#F0EDE7] border-b border-[#D4D0C9]">
@@ -114,22 +143,61 @@ export default function Concept() {
                 ))}
               </div>
 
-              <p className="text-sm text-[#A09D99] text-center mt-8">
+              <p
+                className="text-sm text-[#A09D99] text-center mt-8"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transition: "opacity 0.5s ease 0.55s",
+                }}
+              >
                 4つのツール、4回のログイン。データはそれぞれの中に閉じている。
               </p>
             </div>
 
-            {/* ── Transition ── */}
+            {/* ── Transition: line draws down ── */}
             <div className="flex flex-col items-center gap-0 mb-14">
-              <div className="w-px h-12" style={{ background: "linear-gradient(to bottom, #A09D99, #4A7BA8)" }} />
-              <span className="text-sm font-semibold tracking-[0.1em] text-[#4A7BA8] uppercase py-2.5">One Login</span>
-              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              {/* Line: scaleY 0→1 from top */}
+              <div
+                className="w-px h-12"
+                style={{
+                  background: "linear-gradient(to bottom, #A09D99, #4A7BA8)",
+                  transform: isVisible ? "scaleY(1)" : "scaleY(0)",
+                  transformOrigin: "top",
+                  transition: "transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.6s",
+                }}
+              />
+              {/* Label: fades in after line */}
+              <span
+                className="text-sm font-semibold tracking-[0.1em] text-[#4A7BA8] uppercase py-2.5"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transition: "opacity 0.4s ease 1.1s",
+                }}
+              >
+                One Login
+              </span>
+              {/* Chevron: drops in after label */}
+              <svg
+                width="12" height="8" viewBox="0 0 12 8" fill="none"
+                aria-hidden="true"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? "translateY(0)" : "translateY(-4px)",
+                  transition: "opacity 0.35s ease 1.4s, transform 0.35s ease 1.4s",
+                }}
+              >
                 <path d="M1 1l5 6 5-6" stroke="#7AAAC8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
             {/* ── After: unified workspace ── */}
-            <div>
+            <div
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.7s ease 1.5s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 1.5s",
+              }}
+            >
               <p className="text-sm font-semibold tracking-[0.07em] text-[#4A7BA8] uppercase mb-8 text-center">
                 One Login, All Contents
               </p>
@@ -151,7 +219,7 @@ export default function Concept() {
 
                 {/* App layout: sidebar + main */}
                 <div className="flex h-52">
-                  {/* Sidebar */}
+                  {/* Sidebar: active item cycles (PC) */}
                   <div className="w-40 bg-[#F7F5EF] border-r border-[#D4D0C9] p-4 flex-shrink-0">
                     <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#D4D0C9]">
                       <div className="w-5 h-5 rounded-lg bg-[#4A7BA8]/30" />
@@ -160,8 +228,8 @@ export default function Concept() {
                     {["業務管理", "顧客接点", "データ分析", "システム連携"].map((item, i) => (
                       <div
                         key={item}
-                        className={`text-xs px-2.5 py-2 rounded-lg mb-1 font-medium ${
-                          i === 0
+                        className={`text-xs px-2.5 py-2 rounded-lg mb-1 font-medium transition-all duration-500 ${
+                          i === activeNav
                             ? "bg-[#EEF4F9] text-[#4A7BA8]"
                             : "text-[#A09D99]"
                         }`}
@@ -171,7 +239,7 @@ export default function Concept() {
                     ))}
                   </div>
 
-                  {/* Main content area */}
+                  {/* Main content area: skeleton bars pulse */}
                   <div className="flex-1 p-5">
                     <div className="flex items-center justify-between mb-4">
                       <div className="h-3 w-28 rounded-full bg-[#E8E5DF]" />
@@ -179,7 +247,7 @@ export default function Concept() {
                     </div>
                     <div className="space-y-3">
                       {[1, 0.72, 0.88, 0.58].map((w, i) => (
-                        <div key={i} className="flex items-center gap-3">
+                        <div key={i} className="flex items-center gap-3 arch-bar">
                           <div className="w-4 h-4 rounded-md bg-[#EEF4F9] border border-[#7AAAC8] flex-shrink-0" />
                           <div
                             className="h-3 rounded-full bg-[#E8E5DF]"
