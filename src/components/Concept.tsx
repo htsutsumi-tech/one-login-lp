@@ -20,12 +20,14 @@ const layers = [
 
 export default function Concept() {
   const { ref, isVisible } = useScrollAnimation(0.08);
+  // アーキテクチャ図専用: 図自体が画面に入ったときにアニメーション開始
+  const { ref: archRef, isVisible: isArchVisible } = useScrollAnimation(0.15);
   const [activeNav, setActiveNav] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // PC限定: サイドバーのアクティブ項目を自動循環
+  // PC限定: サイドバーのアクティブ項目を自動循環 (図が見えてから開始)
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isArchVisible) return;
     const isPC = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     if (!isPC) return;
     intervalRef.current = setInterval(() => {
@@ -34,7 +36,7 @@ export default function Concept() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [isVisible]);
+  }, [isArchVisible]);
 
   return (
     <section id="concept" className="section-atm-white py-36 lg:py-52 relative overflow-hidden">
@@ -91,7 +93,10 @@ export default function Concept() {
         </div>
 
         {/* Architecture — UI mockup with PC animations */}
-        <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}>
+        <div
+          ref={archRef}
+          className={`fade-up ${isArchVisible ? "is-visible" : ""}`}
+        >
           <div className="rounded-2xl bg-[#F7F5EF] px-8 lg:px-14 py-14 lg:py-16">
 
             {/* ── Before: scattered login screens ── */}
@@ -99,7 +104,7 @@ export default function Concept() {
               <p
                 className="text-sm font-medium tracking-[0.07em] text-[#787674] uppercase mb-8 text-center"
                 style={{
-                  opacity: isVisible ? 1 : 0,
+                  opacity: isArchVisible ? 1 : 0,
                   transition: "opacity 0.5s ease 0.1s",
                 }}
               >
@@ -118,10 +123,10 @@ export default function Concept() {
                     key={name}
                     className="bg-white rounded-xl border border-[#D4D0C9] overflow-hidden shadow-sm"
                     style={{
-                      transform: isVisible
+                      transform: isArchVisible
                         ? `translateY(${offset ? "12px" : "0px"})`
                         : `translateY(${offset ? "28px" : "16px"})`,
-                      opacity: isVisible ? 1 : 0,
+                      opacity: isArchVisible ? 1 : 0,
                       transition: `opacity 0.55s ease ${idx * 110}ms, transform 0.55s cubic-bezier(0.16,1,0.3,1) ${idx * 110}ms`,
                     }}
                   >
@@ -146,7 +151,7 @@ export default function Concept() {
               <p
                 className="text-sm text-[#787674] text-center mt-8"
                 style={{
-                  opacity: isVisible ? 1 : 0,
+                  opacity: isArchVisible ? 1 : 0,
                   transition: "opacity 0.5s ease 0.55s",
                 }}
               >
@@ -161,7 +166,7 @@ export default function Concept() {
                 className="w-px h-12"
                 style={{
                   background: "linear-gradient(to bottom, #A09D99, #4A7BA8)",
-                  transform: isVisible ? "scaleY(1)" : "scaleY(0)",
+                  transform: isArchVisible ? "scaleY(1)" : "scaleY(0)",
                   transformOrigin: "top",
                   transition: "transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.6s",
                 }}
@@ -170,7 +175,7 @@ export default function Concept() {
               <span
                 className="text-sm font-semibold tracking-[0.1em] text-[#4A7BA8] uppercase py-2.5"
                 style={{
-                  opacity: isVisible ? 1 : 0,
+                  opacity: isArchVisible ? 1 : 0,
                   transition: "opacity 0.4s ease 1.1s",
                 }}
               >
@@ -181,8 +186,8 @@ export default function Concept() {
                 width="12" height="8" viewBox="0 0 12 8" fill="none"
                 aria-hidden="true"
                 style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? "translateY(0)" : "translateY(-4px)",
+                  opacity: isArchVisible ? 1 : 0,
+                  transform: isArchVisible ? "translateY(0)" : "translateY(-4px)",
                   transition: "opacity 0.35s ease 1.4s, transform 0.35s ease 1.4s",
                 }}
               >
@@ -193,8 +198,8 @@ export default function Concept() {
             {/* ── After: unified workspace ── */}
             <div
               style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(20px)",
+                opacity: isArchVisible ? 1 : 0,
+                transform: isArchVisible ? "translateY(0)" : "translateY(20px)",
                 transition: "opacity 0.7s ease 1.5s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 1.5s",
               }}
             >
