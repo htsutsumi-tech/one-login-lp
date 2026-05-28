@@ -51,7 +51,7 @@ export default function Partnership() {
             </p>
           </div>
           <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-100`}>
-            <p className="text-[#A09D99] text-sm leading-[2.1]">
+            <p className="text-[#787674] text-sm leading-[2.1]">
               私たちが求めるのは、単に開発を委託したい企業ではありません。
               本気の事業開発を目指す共創パートナーシップを通じて、
               自社プロダクトと共に歩む企業と、長期的に創り続けたいと考えています。
@@ -66,7 +66,7 @@ export default function Partnership() {
             className={`card-notion p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
             style={{ boxShadow: "var(--shadow-card)" }}
           >
-            <h3 className="text-xs font-bold text-[#A09D99] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
+            <h3 className="text-xs font-bold text-[#787674] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
               共同パートナーとして想定する企業
             </h3>
             <ul className="space-y-5">
@@ -83,7 +83,7 @@ export default function Partnership() {
             </ul>
 
             <div className="mt-10 pt-6 border-t border-[#E8E5DF]">
-              <p className="text-xs text-[#A09D99] leading-relaxed">
+              <p className="text-xs text-[#787674] leading-relaxed">
                 業種・規模は問いません。事業への本気度を最も重視しています。
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function Partnership() {
             className={`card-notion p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-200`}
             style={{ boxShadow: "var(--shadow-card)" }}
           >
-            <h3 className="text-xs font-bold text-[#A09D99] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
+            <h3 className="text-xs font-bold text-[#787674] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
               私たちが提供できること
             </h3>
             <div className="space-y-6">
@@ -114,7 +114,7 @@ export default function Partnership() {
 
         {/* Quote */}
         <div className={`mt-16 fade-up ${isVisible ? "is-visible" : ""} delay-300`}>
-          <blockquote className="display-heading text-[#A09D99] text-lg sm:text-xl font-normal">
+          <blockquote className="display-heading text-[#787674] text-lg sm:text-xl font-normal">
             戦術ではなく、構造を導入する。
             <br className="hidden sm:block" />
             その発想を、本気で事業を伸ばす企業と共に体現します。

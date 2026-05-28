@@ -54,7 +54,7 @@ export default function CTASection() {
                 共同開発パートナーへのご興味・ご相談、
                 お気軽にお問い合わせください。
               </p>
-              <p className="text-[#A09D99] text-sm leading-relaxed">
+              <p className="text-[#787674] text-sm leading-relaxed">
                 まずは30分のオンライン相談から。
                 事業の課題と現状をお聞きした上で、
                 どのような形でお役に立てるかをご提案します。
@@ -181,7 +181,7 @@ export default function CTASection() {
                     </svg>
                   </button>
 
-                  <p className="text-[11px] text-[#A09D99] text-center leading-relaxed">
+                  <p className="text-[11px] text-[#787674] text-center leading-relaxed">
                     送信いただいた情報は、お問い合わせへの対応のみに使用します。
                   </p>
                 </form>

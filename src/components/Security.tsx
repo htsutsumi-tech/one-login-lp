@@ -105,7 +105,7 @@ export default function Security() {
                 <h3 className="text-sm font-bold text-[#191919] leading-snug">
                   {feature.title}
                 </h3>
-                <span className="flex-shrink-0 text-[10px] font-medium text-[#A09D99] border border-[#E8E5DF] px-1.5 py-0.5 rounded-md whitespace-nowrap">
+                <span className="flex-shrink-0 text-[10px] font-medium text-[#787674] border border-[#E8E5DF] px-1.5 py-0.5 rounded-md whitespace-nowrap">
                   {feature.tag}
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function Security() {
                   <h4 className="text-sm font-bold text-[#191919] leading-snug">
                     {item.title}
                   </h4>
-                  <span className="flex-shrink-0 text-[10px] font-medium text-[#A09D99] border border-[#E8E5DF] px-1.5 py-0.5 rounded-md whitespace-nowrap">
+                  <span className="flex-shrink-0 text-[10px] font-medium text-[#787674] border border-[#E8E5DF] px-1.5 py-0.5 rounded-md whitespace-nowrap">
                     {item.tag}
                   </span>
                 </div>
@@ -158,7 +158,7 @@ export default function Security() {
         <div
           className={`mt-10 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-xs text-[#A09D99] text-center">
+          <p className="text-xs text-[#787674] text-center">
             詳細なセキュリティ・ガバナンスポリシーについては、お問い合わせ後にご案内しています。
           </p>
         </div>

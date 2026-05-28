@@ -123,7 +123,7 @@ export default function BuildScope() {
         <div
           className={`mt-10 fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="text-xs text-[#A09D99] text-center">
+          <p className="text-xs text-[#787674] text-center">
             上記はすべて単一ログイン基盤上に統合可能です。
             御社の要件に合わせた組み合わせをご提案します。
           </p>

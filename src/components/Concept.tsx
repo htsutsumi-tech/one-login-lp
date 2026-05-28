@@ -133,7 +133,7 @@ export default function Concept() {
                     </div>
                     {/* Login form mockup */}
                     <div className="p-4">
-                      <p className="text-xs font-medium text-[#A09D99] tracking-[0.08em] mb-3 uppercase">Login</p>
+                      <p className="text-xs font-medium text-[#787674] tracking-[0.08em] mb-3 uppercase">Login</p>
                       <div className="h-6 rounded-lg border border-[#C8C5BF] bg-[#FAFAF8] mb-2" />
                       <div className="h-6 rounded-lg border border-[#C8C5BF] bg-[#FAFAF8] mb-3" />
                       <div className="h-7 rounded-lg bg-[#C8C5BF]" />
@@ -144,7 +144,7 @@ export default function Concept() {
               </div>
 
               <p
-                className="text-sm text-[#A09D99] text-center mt-8"
+                className="text-sm text-[#787674] text-center mt-8"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transition: "opacity 0.5s ease 0.55s",
@@ -231,7 +231,7 @@ export default function Concept() {
                         className={`text-xs px-2.5 py-2 rounded-lg mb-1 font-medium transition-all duration-500 ${
                           i === activeNav
                             ? "bg-[#EEF4F9] text-[#4A7BA8]"
-                            : "text-[#A09D99]"
+                            : "text-[#787674]"
                         }`}
                       >
                         {item}
@@ -260,7 +260,7 @@ export default function Concept() {
                 </div>
               </div>
 
-              <p className="text-sm text-[#A09D99] mt-6 text-center tracking-wide">
+              <p className="text-sm text-[#787674] mt-6 text-center tracking-wide">
                 単一ログイン · 統合データ · 拡張自在
               </p>
             </div>
@@ -272,7 +272,7 @@ export default function Concept() {
         <div
           className={`mt-16 text-center fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
-          <p className="display-heading text-[#A09D99] text-xl sm:text-2xl font-normal">
+          <p className="display-heading text-[#787674] text-xl sm:text-2xl font-normal">
             戦術ではなく、構造を導入する。
           </p>
         </div>

@@ -55,7 +55,7 @@ export default function Hero() {
           aria-label="その事業構想、「既製SaaS」で妥協しない。"
         >
           <span
-            className={`block font-sans font-normal text-[1.4rem] sm:text-[1.75rem] lg:text-[2.1rem] leading-[1.6] tracking-[-0.01em] text-[#A09D99] mb-3 ${fadeIn(80)}`}
+            className={`block font-sans font-normal text-[1.4rem] sm:text-[1.75rem] lg:text-[2.1rem] leading-[1.6] tracking-[-0.01em] text-[#787674] mb-3 ${fadeIn(80)}`}
             style={{ transitionDelay: "80ms" }}
           >
             その事業構想、
@@ -100,7 +100,7 @@ export default function Hero() {
 
           <button
             onClick={() => scrollTo("concept")}
-            className="inline-flex items-center gap-1.5 text-sm text-[#A09D99] hover:text-[#191919] transition-colors duration-200 px-4 py-3 group"
+            className="inline-flex items-center gap-1.5 text-sm text-[#787674] hover:text-[#191919] transition-colors duration-200 px-4 py-3 group"
           >
             詳しく読む
             <svg
@@ -117,7 +117,7 @@ export default function Hero() {
           className={`${fadeIn(540)}`}
           style={{ transitionDelay: "540ms" }}
         >
-          <p className="text-[11px] text-[#A09D99]">
+          <p className="text-[11px] text-[#787674]">
             まずは30分の無料オンライン相談から。業種・規模は問いません。
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function Hero() {
                     <span className="text-sm text-[#4A7BA8] font-bold tabular-nums">{item.step}</span>
                     <span className="text-base font-bold text-[#191919]">{item.label}</span>
                   </div>
-                  <p className="text-sm text-[#A09D99] hidden sm:block">{item.sub}</p>
+                  <p className="text-sm text-[#787674] hidden sm:block">{item.sub}</p>
                 </div>
                 {i < 2 && (
                   <div className="hidden sm:flex items-center px-4 text-[#C8C5BF]" aria-hidden="true">

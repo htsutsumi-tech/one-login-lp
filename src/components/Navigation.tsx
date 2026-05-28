@@ -33,7 +33,7 @@ export default function Navigation() {
           className="group"
           aria-label="トップへ戻る"
         >
-          <span className="text-[10px] font-semibold tracking-[0.14em] text-[#A09D99] group-hover:text-[#191919] transition-colors duration-200 uppercase select-none">
+          <span className="text-[10px] font-semibold tracking-[0.14em] text-[#787674] group-hover:text-[#191919] transition-colors duration-200 uppercase select-none">
             AI Native Partner
           </span>
         </button>

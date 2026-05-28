@@ -92,7 +92,7 @@ export default function PainPoints() {
 
         {/* Bridge */}
         <div className={`mt-12 fade-up ${isVisible ? "is-visible" : ""} delay-500`}>
-          <p className="text-[#A09D99] text-sm">
+          <p className="text-[#787674] text-sm">
             これらはすべて、
             <span className="text-[#191919] font-semibold">
               「構造」を変えることで解決できる
