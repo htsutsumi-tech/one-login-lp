@@ -74,94 +74,78 @@ export default function Concept() {
           </div>
         </div>
 
-        {/* Architecture diagram */}
+        {/* Architecture — structural concept, no diagrams */}
         <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-400`}>
-          <div className="card-notion border border-[#E8E5DF] p-8 lg:p-12" style={{ boxShadow: "var(--shadow-card)" }}>
-            {/* Top: scattered tools */}
-            <div className="mb-8">
-              <p className="eyebrow mb-4 text-center">現在：ツールの断片化</p>
-              <div className="flex flex-wrap justify-center gap-2">
+          <div className="rounded-2xl bg-[#F7F5EF] px-10 lg:px-20 py-16 lg:py-20">
+
+            {/* Before — scattered, fading */}
+            <div className="text-center mb-14">
+              <p className="font-mono text-[10px] tracking-[0.2em] text-[#C8C5BF] uppercase mb-8">
+                現在 — 断片化した業務環境
+              </p>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 max-w-lg mx-auto">
                 {[
-                  "CRM",
-                  "プロジェクト管理",
-                  "会計SaaS",
-                  "分析ツール",
-                  "チャット",
-                  "契約管理",
-                  "勤怠管理",
-                  "顧客ポータル",
-                ].map((tool) => (
+                  { label: "CRM",          opacity: 0.45 },
+                  { label: "プロジェクト管理", opacity: 0.28 },
+                  { label: "会計SaaS",      opacity: 0.55 },
+                  { label: "分析ツール",    opacity: 0.35 },
+                  { label: "チャット",      opacity: 0.50 },
+                  { label: "契約管理",      opacity: 0.30 },
+                  { label: "勤怠管理",      opacity: 0.42 },
+                  { label: "顧客ポータル",  opacity: 0.22 },
+                ].map(({ label, opacity }) => (
                   <span
-                    key={tool}
-                    className="text-xs border border-[#E8E5DF] text-[#A09D99] px-3 py-1.5 rounded-lg bg-white"
+                    key={label}
+                    className="text-sm select-none"
+                    style={{ color: `rgba(120,118,116,${opacity})` }}
                   >
-                    {tool}
+                    {label}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-center mt-4 gap-8 text-xs text-[#C8C5BF]">
-                <span>別ログイン</span>
-                <span>/</span>
-                <span>データ分断</span>
-                <span>/</span>
-                <span>コスト積み上がり</span>
-              </div>
+              <p className="text-xs text-[#D4D0C9] mt-6 tracking-wide leading-relaxed">
+                ログインが増えるたび、データは分断され、コストは積み上がる
+              </p>
             </div>
 
-            {/* Arrow */}
-            <div className="flex justify-center mb-8">
-              <div className="flex flex-col items-center gap-1 text-[#9BBDD4]">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path
-                    d="M10 3v14M5 13l5 5 5-5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span className="eyebrow text-[#7AAAC8]">one login</span>
-              </div>
+            {/* Transition — thin line only */}
+            <div className="flex flex-col items-center gap-0 mb-14">
+              <div
+                className="w-px h-12"
+                style={{ background: "linear-gradient(to bottom, #D4D0C9, #7AAAC8)" }}
+              />
+              <span className="font-mono text-[10px] tracking-[0.24em] text-[#7AAAC8] uppercase py-2">
+                One Login
+              </span>
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
+                <path d="M1 1l3.5 4L8 1" stroke="#BDD3E7" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
 
-            {/* Bottom: integrated */}
-            <div
-              className="rounded-xl p-6 border border-[#BDD3E7]"
-              style={{ background: "linear-gradient(135deg, #EEF4F9 0%, #ffffff 60%)" }}
-            >
-              <p className="eyebrow mb-6 text-center">
+            {/* After — unified, clear typography only */}
+            <div className="text-center">
+              <p className="font-mono text-[10px] tracking-[0.2em] text-[#7AAAC8] uppercase mb-10">
                 One Login, All Contents
               </p>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-6 lg:gap-12 max-w-sm lg:max-w-md mx-auto">
                 {layers.map((layer) => (
-                  <div key={layer.label} className="text-center">
-                    <p className="text-xs font-bold text-[#191919] mb-2">
-                      {layer.label}
-                    </p>
-                    <div className="space-y-1">
+                  <div key={layer.label}>
+                    <p className="text-xs font-bold text-[#191919] mb-3">{layer.label}</p>
+                    <div className="space-y-2">
                       {layer.items.map((item) => (
-                        <div
-                          key={item}
-                          className="text-xs text-[#787674] bg-white px-2 py-1 rounded-lg border border-[#E8E5DF]"
-                        >
+                        <p key={item} className="text-xs text-[#A09D99] leading-relaxed">
                           {item}
-                        </div>
+                        </p>
                       ))}
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-4 border-t border-[#E8E5DF] text-center">
-                <p className="text-xs text-[#A09D99]">
-                  単一ログイン基盤 ／ 統合データ ／ 拡張自在
-                </p>
-              </div>
+              <p className="text-[11px] text-[#C8C5BF] mt-10 tracking-wide">
+                単一ログイン基盤 · 統合データ · 拡張自在
+              </p>
             </div>
+
           </div>
         </div>
 
