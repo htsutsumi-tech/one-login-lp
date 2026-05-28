@@ -79,91 +79,91 @@ export default function Concept() {
           <div className="rounded-2xl bg-[#F7F5EF] px-8 lg:px-14 py-14 lg:py-16">
 
             {/* ── Before: scattered login screens ── */}
-            <div className="mb-12">
-              <p className="font-mono text-[10px] tracking-[0.2em] text-[#C8C5BF] uppercase mb-8 text-center">
+            <div className="mb-14">
+              <p className="font-mono text-sm tracking-[0.14em] text-[#787674] uppercase mb-8 text-center">
                 現在 — ツールごとに別のログイン
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
                 {[
-                  { name: "CRM",           accent: "#F5C0B0", offset: false },
-                  { name: "プロジェクト管理", accent: "#B0C8F5", offset: true  },
-                  { name: "会計SaaS",       accent: "#B0E0C8", offset: false },
-                  { name: "勤怠管理",       accent: "#F5DCB0", offset: true  },
-                ].map(({ name, accent, offset }) => (
+                  { name: "CRM",            dot: "#5ABF7A", offset: false },
+                  { name: "プロジェクト管理", dot: "#7AAAC8", offset: true  },
+                  { name: "会計SaaS",        dot: "#5ABF7A", offset: false },
+                  { name: "勤怠管理",        dot: "#E0B43E", offset: true  },
+                ].map(({ name, dot, offset }) => (
                   <div
                     key={name}
-                    className="bg-white rounded-xl border border-[#E8E5DF] overflow-hidden shadow-sm"
-                    style={{ transform: `translateY(${offset ? "10px" : "0px"})` }}
+                    className="bg-white rounded-xl border border-[#D4D0C9] overflow-hidden shadow-sm"
+                    style={{ transform: `translateY(${offset ? "12px" : "0px"})` }}
                   >
                     {/* Window chrome */}
-                    <div className="flex items-center gap-1 px-3 py-2 bg-[#FAFAF8] border-b border-[#F0EDE7]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5C0B0]" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5DCB0]" />
-                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }} />
+                    <div className="flex items-center gap-1.5 px-3 py-2.5 bg-[#F0EDE7] border-b border-[#D4D0C9]">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#E06B6B]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#E0B43E]" />
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: dot }} />
                     </div>
                     {/* Login form mockup */}
-                    <div className="p-3">
-                      <p className="font-mono text-[7px] text-[#C8C5BF] tracking-widest mb-2.5 uppercase">Login</p>
-                      <div className="h-3 rounded-md border border-[#EDE9E3] bg-[#FAFAF8] mb-1.5" />
-                      <div className="h-3 rounded-md border border-[#EDE9E3] bg-[#FAFAF8] mb-2.5" />
-                      <div className="h-4 rounded-md bg-[#E8E5DF]" />
-                      <p className="text-[8px] font-semibold text-[#A09D99] mt-2.5 truncate">{name}</p>
+                    <div className="p-4">
+                      <p className="font-mono text-xs text-[#A09D99] tracking-widest mb-3 uppercase">Login</p>
+                      <div className="h-6 rounded-lg border border-[#C8C5BF] bg-[#FAFAF8] mb-2" />
+                      <div className="h-6 rounded-lg border border-[#C8C5BF] bg-[#FAFAF8] mb-3" />
+                      <div className="h-7 rounded-lg bg-[#C8C5BF]" />
+                      <p className="text-sm font-semibold text-[#5C5A57] mt-3 truncate">{name}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <p className="text-xs text-[#C8C5BF] text-center mt-6">
+              <p className="text-sm text-[#A09D99] text-center mt-8">
                 4つのツール、4回のログイン。データはそれぞれの中に閉じている。
               </p>
             </div>
 
             {/* ── Transition ── */}
-            <div className="flex flex-col items-center gap-0 mb-12">
-              <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, #D4D0C9, #7AAAC8)" }} />
-              <span className="font-mono text-[10px] tracking-[0.24em] text-[#4A7BA8] uppercase py-2">One Login</span>
-              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
-                <path d="M1 1l3.5 4L8 1" stroke="#BDD3E7" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            <div className="flex flex-col items-center gap-0 mb-14">
+              <div className="w-px h-12" style={{ background: "linear-gradient(to bottom, #A09D99, #4A7BA8)" }} />
+              <span className="font-mono text-sm tracking-[0.2em] text-[#4A7BA8] uppercase py-2.5">One Login</span>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1l5 6 5-6" stroke="#7AAAC8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
             {/* ── After: unified workspace ── */}
             <div>
-              <p className="font-mono text-[10px] tracking-[0.2em] text-[#4A7BA8] uppercase mb-8 text-center">
+              <p className="font-mono text-sm tracking-[0.14em] text-[#4A7BA8] uppercase mb-8 text-center">
                 One Login, All Contents
               </p>
 
               {/* Unified app window */}
-              <div className="max-w-xl mx-auto bg-white rounded-2xl border border-[#E8E5DF] overflow-hidden shadow-md">
+              <div className="max-w-xl mx-auto bg-white rounded-2xl border border-[#D4D0C9] overflow-hidden shadow-md">
                 {/* Window chrome */}
-                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#FAFAF8] border-b border-[#F0EDE7]">
-                  <span className="w-2 h-2 rounded-full bg-[#F5C0B0]" />
-                  <span className="w-2 h-2 rounded-full bg-[#F5DCB0]" />
-                  <span className="w-2 h-2 rounded-full bg-[#B0E0C0]" />
+                <div className="flex items-center gap-2 px-4 py-3 bg-[#F0EDE7] border-b border-[#D4D0C9]">
+                  <span className="w-3 h-3 rounded-full bg-[#E06B6B]" />
+                  <span className="w-3 h-3 rounded-full bg-[#E0B43E]" />
+                  <span className="w-3 h-3 rounded-full bg-[#5ABF7A]" />
                   <div className="flex-1 flex justify-center">
-                    <div className="flex items-center gap-1.5 bg-[#EEF4F9] px-3 py-1 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#7AAAC8]" />
-                      <span className="font-mono text-[9px] text-[#4A7BA8]">authenticated · One Login</span>
+                    <div className="flex items-center gap-2 bg-[#EEF4F9] px-4 py-1.5 rounded-full border border-[#BDD3E7]">
+                      <span className="w-2 h-2 rounded-full bg-[#5ABF7A]" />
+                      <span className="font-mono text-xs text-[#4A7BA8]">authenticated · One Login</span>
                     </div>
                   </div>
                 </div>
 
                 {/* App layout: sidebar + main */}
-                <div className="flex h-40">
+                <div className="flex h-52">
                   {/* Sidebar */}
-                  <div className="w-32 bg-[#FAFAF8] border-r border-[#F0EDE7] p-3 flex-shrink-0">
-                    <div className="flex items-center gap-1.5 mb-3 pb-2 border-b border-[#F0EDE7]">
-                      <div className="w-3.5 h-3.5 rounded-md bg-[#4A7BA8]/20" />
-                      <span className="text-[8px] font-medium text-[#787674]">ONE-EIGHTY</span>
+                  <div className="w-40 bg-[#F7F5EF] border-r border-[#D4D0C9] p-4 flex-shrink-0">
+                    <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#D4D0C9]">
+                      <div className="w-5 h-5 rounded-lg bg-[#4A7BA8]/30" />
+                      <span className="text-xs font-semibold text-[#5C5A57]">ONE-EIGHTY</span>
                     </div>
                     {["業務管理", "顧客接点", "データ分析", "システム連携"].map((item, i) => (
                       <div
                         key={item}
-                        className={`text-[8px] px-2 py-1.5 rounded-lg mb-0.5 font-medium ${
+                        className={`text-xs px-2.5 py-2 rounded-lg mb-1 font-medium ${
                           i === 0
                             ? "bg-[#EEF4F9] text-[#4A7BA8]"
-                            : "text-[#C8C5BF]"
+                            : "text-[#A09D99]"
                         }`}
                       >
                         {item}
@@ -172,17 +172,17 @@ export default function Concept() {
                   </div>
 
                   {/* Main content area */}
-                  <div className="flex-1 p-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="h-2 w-20 rounded-full bg-[#F0EDE7]" />
-                      <div className="h-5 w-12 rounded-lg bg-[#EEF4F9] border border-[#BDD3E7]" />
+                  <div className="flex-1 p-5">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="h-3 w-28 rounded-full bg-[#E8E5DF]" />
+                      <div className="h-7 w-16 rounded-lg bg-[#EEF4F9] border border-[#BDD3E7]" />
                     </div>
-                    <div className="space-y-2.5">
-                      {[1, 0.7, 0.85, 0.55].map((w, i) => (
-                        <div key={i} className="flex items-center gap-2.5">
-                          <div className="w-3 h-3 rounded-md bg-[#EEF4F9] border border-[#BDD3E7] flex-shrink-0" />
+                    <div className="space-y-3">
+                      {[1, 0.72, 0.88, 0.58].map((w, i) => (
+                        <div key={i} className="flex items-center gap-3">
+                          <div className="w-4 h-4 rounded-md bg-[#EEF4F9] border border-[#7AAAC8] flex-shrink-0" />
                           <div
-                            className="h-2 rounded-full bg-[#F0EDE7]"
+                            className="h-3 rounded-full bg-[#E8E5DF]"
                             style={{ width: `${w * 100}%` }}
                           />
                         </div>
@@ -192,7 +192,7 @@ export default function Concept() {
                 </div>
               </div>
 
-              <p className="text-[11px] text-[#C8C5BF] mt-6 text-center tracking-wide">
+              <p className="text-sm text-[#A09D99] mt-6 text-center tracking-wide">
                 単一ログイン · 統合データ · 拡張自在
               </p>
             </div>
