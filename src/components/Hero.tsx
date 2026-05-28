@@ -136,7 +136,7 @@ export default function Hero() {
               <div key={item.step} className="flex items-center sm:w-[220px]">
                 <div className="flex-1 sm:flex-none text-center sm:text-left">
                   <div className="flex items-baseline gap-2 mb-1 justify-center sm:justify-start">
-                    <span className="font-mono text-sm text-[#4A7BA8] font-semibold">{item.step}</span>
+                    <span className="text-sm text-[#4A7BA8] font-bold tabular-nums">{item.step}</span>
                     <span className="text-base font-bold text-[#191919]">{item.label}</span>
                   </div>
                   <p className="text-sm text-[#A09D99] hidden sm:block">{item.sub}</p>
@@ -160,7 +160,7 @@ export default function Hero() {
         style={{ transitionDelay: "1400ms" }}
         aria-hidden="true"
       >
-        <span className="font-mono text-[9px] tracking-[0.24em] uppercase text-[#C8C5BF] select-none leading-none">
+        <span className="text-[9px] font-medium tracking-[0.16em] uppercase text-[#C8C5BF] select-none leading-none">
           Scroll
         </span>
         <div className="animate-scroll-down flex flex-col items-center gap-px">

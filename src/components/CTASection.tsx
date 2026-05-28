@@ -72,7 +72,7 @@ export default function CTASection() {
               ].map((step, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <span className="w-6 h-6 rounded-full bg-[#EEF4F9] border border-[#BDD3E7] flex items-center justify-center flex-shrink-0">
-                    <span className="font-mono text-[10px] text-[#4A7BA8] font-semibold">
+                    <span className="text-[10px] text-[#4A7BA8] font-bold tabular-nums">
                       {i + 1}
                     </span>
                   </span>

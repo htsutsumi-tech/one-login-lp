@@ -70,7 +70,7 @@ export default function AINative() {
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div className="flex items-start justify-between gap-3 mb-6">
-                <span className="font-mono text-xs text-[#4A7BA8] font-semibold">
+                <span className="text-xs text-[#4A7BA8] font-bold tabular-nums">
                   {value.number}
                 </span>
                 <span className="text-xs text-[#4A7BA8] bg-[#EEF4F9] border border-[#BDD3E7] rounded-full px-2.5 py-1">

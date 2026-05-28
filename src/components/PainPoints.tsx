@@ -55,7 +55,7 @@ export default function PainPoints() {
           >
             <div className="grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20">
               <div>
-                <span className="font-mono text-[10px] tracking-[0.18em] text-[#4A7BA8] font-semibold block mb-6">
+                <span className="text-[10px] tracking-[0.08em] text-[#4A7BA8] font-bold tabular-nums block mb-6">
                   {pains[0].number}
                 </span>
                 <h3 className="display-heading text-[#191919] text-[1.4rem] sm:text-[1.75rem] lg:text-[2.1rem]">
@@ -77,7 +77,7 @@ export default function PainPoints() {
               className={`card-notion p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 2) * 100}`}
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <span className="font-mono text-[10px] tracking-[0.18em] text-[#4A7BA8] font-semibold block mb-5">
+              <span className="text-[10px] tracking-[0.08em] text-[#4A7BA8] font-bold tabular-nums block mb-5">
                 {pain.number}
               </span>
               <h3 className="text-[0.875rem] font-bold text-[#191919] mb-4 leading-snug">

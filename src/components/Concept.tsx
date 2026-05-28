@@ -80,7 +80,7 @@ export default function Concept() {
 
             {/* ── Before: scattered login screens ── */}
             <div className="mb-14">
-              <p className="font-mono text-sm tracking-[0.14em] text-[#787674] uppercase mb-8 text-center">
+              <p className="text-sm font-medium tracking-[0.07em] text-[#787674] uppercase mb-8 text-center">
                 現在 — ツールごとに別のログイン
               </p>
 
@@ -104,7 +104,7 @@ export default function Concept() {
                     </div>
                     {/* Login form mockup */}
                     <div className="p-4">
-                      <p className="font-mono text-xs text-[#A09D99] tracking-widest mb-3 uppercase">Login</p>
+                      <p className="text-xs font-medium text-[#A09D99] tracking-[0.08em] mb-3 uppercase">Login</p>
                       <div className="h-6 rounded-lg border border-[#C8C5BF] bg-[#FAFAF8] mb-2" />
                       <div className="h-6 rounded-lg border border-[#C8C5BF] bg-[#FAFAF8] mb-3" />
                       <div className="h-7 rounded-lg bg-[#C8C5BF]" />
@@ -122,7 +122,7 @@ export default function Concept() {
             {/* ── Transition ── */}
             <div className="flex flex-col items-center gap-0 mb-14">
               <div className="w-px h-12" style={{ background: "linear-gradient(to bottom, #A09D99, #4A7BA8)" }} />
-              <span className="font-mono text-sm tracking-[0.2em] text-[#4A7BA8] uppercase py-2.5">One Login</span>
+              <span className="text-sm font-semibold tracking-[0.1em] text-[#4A7BA8] uppercase py-2.5">One Login</span>
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
                 <path d="M1 1l5 6 5-6" stroke="#7AAAC8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -130,7 +130,7 @@ export default function Concept() {
 
             {/* ── After: unified workspace ── */}
             <div>
-              <p className="font-mono text-sm tracking-[0.14em] text-[#4A7BA8] uppercase mb-8 text-center">
+              <p className="text-sm font-semibold tracking-[0.07em] text-[#4A7BA8] uppercase mb-8 text-center">
                 One Login, All Contents
               </p>
 
@@ -144,7 +144,7 @@ export default function Concept() {
                   <div className="flex-1 flex justify-center">
                     <div className="flex items-center gap-2 bg-[#EEF4F9] px-4 py-1.5 rounded-full border border-[#BDD3E7]">
                       <span className="w-2 h-2 rounded-full bg-[#5ABF7A]" />
-                      <span className="font-mono text-xs text-[#4A7BA8]">authenticated · One Login</span>
+                      <span className="text-xs font-medium text-[#4A7BA8]">authenticated · One Login</span>
                     </div>
                   </div>
                 </div>
