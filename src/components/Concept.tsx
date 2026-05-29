@@ -39,20 +39,20 @@ export default function Concept() {
   }, [isArchVisible]);
 
   return (
-    <section id="concept" className="section-atm-white py-36 lg:py-52 relative overflow-hidden">
+    <section id="concept" className="section-atm-white py-24 lg:py-36 relative overflow-hidden">
 
       <div
         ref={ref}
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         {/* Section label */}
-        <p className={`section-label mb-10 fade-up ${isVisible ? "is-visible" : ""}`}>
+        <p className={`section-label mb-6 fade-up ${isVisible ? "is-visible" : ""}`}>
           Concept
         </p>
 
         {/* Dominant H2 */}
         <h2
-          className={`display-heading text-[#191919] text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[0.95] tracking-[-0.04em] mb-12 lg:mb-20 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
+          className={`display-heading text-[#191919] text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-[0.95] tracking-[-0.04em] mb-8 lg:mb-14 fade-up ${isVisible ? "is-visible" : ""} delay-100`}
         >
           One Login,
           <br />
@@ -61,7 +61,7 @@ export default function Concept() {
 
         {/* Description row */}
         <div
-          className={`grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-24 mb-24 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
+          className={`grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-24 mb-14 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
           <div>
             <p className="text-[#191919] text-[0.95rem] font-medium leading-loose mb-4">
@@ -97,12 +97,12 @@ export default function Concept() {
           ref={archRef}
           className={`fade-up ${isArchVisible ? "is-visible" : ""}`}
         >
-          <div className="rounded-2xl bg-[#F7F5EF] px-8 lg:px-14 py-14 lg:py-16">
+          <div className="rounded-2xl bg-[#F7F5EF] px-8 lg:px-14 py-10 lg:py-12">
 
             {/* ── Before: scattered login screens ── */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p
-                className="text-sm font-medium tracking-[0.07em] text-[#787674] uppercase mb-8 text-center"
+                className="text-sm font-medium tracking-[0.07em] text-[#787674] uppercase mb-5 text-center"
                 style={{
                   opacity: isArchVisible ? 1 : 0,
                   transition: "opacity 0.5s ease 0.1s",
@@ -149,7 +149,7 @@ export default function Concept() {
               </div>
 
               <p
-                className="text-sm text-[#787674] text-center mt-8"
+                className="text-sm text-[#787674] text-center mt-4"
                 style={{
                   opacity: isArchVisible ? 1 : 0,
                   transition: "opacity 0.5s ease 0.55s",
@@ -160,7 +160,7 @@ export default function Concept() {
             </div>
 
             {/* ── Transition: line draws down ── */}
-            <div className="flex flex-col items-center gap-0 mb-14">
+            <div className="flex flex-col items-center gap-0 mb-8">
               {/* Line: scaleY 0→1 from top */}
               <div
                 className="w-px h-12"
@@ -203,7 +203,7 @@ export default function Concept() {
                 transition: "opacity 0.7s ease 1.5s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 1.5s",
               }}
             >
-              <p className="text-sm font-semibold tracking-[0.07em] text-[#4A7BA8] uppercase mb-8 text-center">
+              <p className="text-sm font-semibold tracking-[0.07em] text-[#4A7BA8] uppercase mb-5 text-center">
                 One Login, All Contents
               </p>
 
@@ -265,7 +265,7 @@ export default function Concept() {
                 </div>
               </div>
 
-              <p className="text-sm text-[#787674] mt-6 text-center tracking-wide">
+              <p className="text-sm text-[#787674] mt-3 text-center tracking-wide">
                 単一ログイン · 統合データ · 拡張自在
               </p>
             </div>
@@ -275,7 +275,7 @@ export default function Concept() {
 
         {/* Tagline */}
         <div
-          className={`mt-16 text-center fade-up ${isVisible ? "is-visible" : ""} delay-500`}
+          className={`mt-8 text-center fade-up ${isVisible ? "is-visible" : ""} delay-500`}
         >
           <p className="display-heading text-[#787674] text-xl sm:text-2xl font-normal">
             戦術ではなく、構造を導入する。
