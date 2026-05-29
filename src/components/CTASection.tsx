@@ -11,6 +11,7 @@ export default function CTASection() {
     email: "",
     message: "",
   });
+  const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
@@ -171,9 +172,49 @@ export default function CTASection() {
                     />
                   </div>
 
+                  {/* Privacy policy consent */}
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div className="relative flex-shrink-0 mt-0.5">
+                      <input
+                        type="checkbox"
+                        checked={agreed}
+                        onChange={(e) => setAgreed(e.target.checked)}
+                        className="sr-only"
+                        required
+                      />
+                      <div
+                        className={`w-4 h-4 rounded border transition-all duration-150 flex items-center justify-center ${
+                          agreed
+                            ? "bg-[#4A7BA8] border-[#4A7BA8]"
+                            : "bg-white border-[#C8C5BF] group-hover:border-[#4A7BA8]"
+                        }`}
+                      >
+                        {agreed && (
+                          <svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true">
+                            <path d="M1 3.5l2.5 2.5L8 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                    <span className="text-xs text-[#787674] leading-relaxed">
+                      <a
+                        href="https://o-eighty.jp/handling-personal-data/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#4A7BA8] underline underline-offset-2 hover:text-[#3A6A96] transition-colors duration-150"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        個人情報の取り扱い
+                      </a>
+                      について同意します
+                      <span className="text-[#4A7BA8] ml-1">*</span>
+                    </span>
+                  </label>
+
                   <button
                     type="submit"
-                    className="w-full bg-[#191919] text-white text-sm font-semibold py-3.5 rounded-xl hover:bg-black active:scale-[0.99] transition-all duration-200 mt-2 flex items-center justify-center gap-2 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
+                    disabled={!agreed}
+                    className="w-full bg-[#191919] text-white text-sm font-semibold py-3.5 rounded-xl hover:bg-black active:scale-[0.99] transition-all duration-200 mt-2 flex items-center justify-center gap-2 shadow-[0_2px_12px_rgba(0,0,0,0.15)] disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:bg-[#191919] disabled:active:scale-100"
                   >
                     送信する
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
