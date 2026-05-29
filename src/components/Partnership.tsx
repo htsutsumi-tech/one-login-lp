@@ -69,12 +69,15 @@ export default function Partnership() {
             <h3 className="text-xs font-bold text-[#787674] tracking-[0.14em] uppercase mb-8 pb-4 border-b border-[#E8E5DF]">
               共同パートナーとして想定する企業
             </h3>
-            <ul className="space-y-5">
+            <ul className="space-y-4">
               {targetCompanies.map((item, i) => (
-                <li key={i} className="flex items-start gap-4">
-                  <span className="text-[10px] font-bold text-[#7AAAC8] mt-0.5 flex-shrink-0 select-none tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <li key={i} className="flex items-start gap-3">
+                  {/* Notion-style checked checkbox */}
+                  <div className="w-4 h-4 rounded border border-[#BDD3E7] bg-[#EEF4F9] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true">
+                      <path d="M1 3.5l2.5 2.5L8 1" stroke="#4A7BA8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                   <span className="text-sm text-[#191919] leading-relaxed">
                     {item}
                   </span>
