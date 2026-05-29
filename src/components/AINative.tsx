@@ -83,12 +83,10 @@ export default function AINative() {
                 {value.number}
               </span>
 
-              {/* Highlight badge */}
-              <div className="mb-6 relative">
-                <span className="text-xs text-[#4A7BA8] bg-[#EEF4F9] border border-[#BDD3E7] rounded-full px-2.5 py-1">
-                  {value.highlight}
-                </span>
-              </div>
+              {/* Highlight label */}
+              <p className="text-[10px] font-medium text-[#787674] tracking-[0.1em] uppercase mb-5 relative">
+                {value.highlight}
+              </p>
 
               <h3 className="text-[#191919] font-bold text-base leading-snug mb-3 relative">
                 {value.title}
