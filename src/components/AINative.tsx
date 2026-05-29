@@ -66,25 +66,37 @@ export default function AINative() {
           {values.map((value, i) => (
             <div
               key={value.number}
-              className={`card-notion p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
+              className={`card-notion relative overflow-hidden p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <div className="flex items-start justify-between gap-3 mb-6">
-                <span className="text-xs text-[#4A7BA8] font-bold tabular-nums">
-                  {value.number}
-                </span>
+              {/* Ghost number — atmospheric backdrop */}
+              <span
+                className="absolute -top-3 right-5 font-sans font-black leading-none select-none pointer-events-none tabular-nums"
+                style={{
+                  fontSize: "7rem",
+                  color: "#191919",
+                  opacity: 0.055,
+                  letterSpacing: "-0.04em",
+                }}
+                aria-hidden="true"
+              >
+                {value.number}
+              </span>
+
+              {/* Highlight badge */}
+              <div className="mb-6 relative">
                 <span className="text-xs text-[#4A7BA8] bg-[#EEF4F9] border border-[#BDD3E7] rounded-full px-2.5 py-1">
                   {value.highlight}
                 </span>
               </div>
 
-              <h3 className="text-[#191919] font-bold text-base leading-snug mb-3">
+              <h3 className="text-[#191919] font-bold text-base leading-snug mb-3 relative">
                 {value.title}
               </h3>
-              <p className="text-[#191919] text-[0.85rem] font-semibold mb-3 leading-relaxed">
+              <p className="text-[#191919] text-[0.85rem] font-semibold mb-3 leading-relaxed relative">
                 {value.lead}
               </p>
-              <p className="text-[#787674] text-xs leading-relaxed">
+              <p className="text-[#787674] text-xs leading-relaxed relative">
                 {value.body}
               </p>
             </div>
