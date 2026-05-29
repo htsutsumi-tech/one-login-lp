@@ -108,7 +108,7 @@ export default function Concept() {
                   transition: "opacity 0.5s ease 0.1s",
                 }}
               >
-                現在 — ツールごとに別のログイン
+                現在 — 業務ごとにツールが分断されている
               </p>
 
               {/* Cards: staggered entrance */}
@@ -155,7 +155,7 @@ export default function Concept() {
                   transition: "opacity 0.5s ease 0.55s",
                 }}
               >
-                4つのツール、4回のログイン。データはそれぞれの中に閉じている。
+                便利なツールが増えるほど、業務が分断されていく。
               </p>
             </div>
 
@@ -266,7 +266,7 @@ export default function Concept() {
               </div>
 
               <p className="text-sm text-[#787674] mt-3 text-center tracking-wide">
-                単一ログイン · 統合データ · 拡張自在
+                使うツールを増やすのではなく、構造そのものを変える。
               </p>
             </div>
 
