@@ -45,45 +45,33 @@ export default function PainPoints() {
           </h2>
         </div>
 
-        {/* Pain cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
-
-          {/* Featured card — Pain 01 */}
-          <div
-            className={`card-notion md:col-span-3 p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-100`}
-            style={{ boxShadow: "var(--shadow-card)" }}
-          >
-            <div className="grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20">
-              <div>
-                <span className="text-[10px] tracking-[0.08em] text-[#4A7BA8] font-bold tabular-nums block mb-6">
-                  {pains[0].number}
-                </span>
-                <h3 className="display-heading text-[#191919] text-[1.4rem] sm:text-[1.75rem] lg:text-[2.1rem]">
-                  {pains[0].title}
-                </h3>
-              </div>
-              <div className="flex flex-col justify-end">
-                <p className="text-[#787674] text-sm leading-[2.2] max-w-lg">
-                  {pains[0].body}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Supporting cards */}
-          {pains.slice(1).map((pain, i) => (
+        {/* Pain cards — 2×2 equal grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {pains.map((pain, i) => (
             <div
               key={pain.number}
-              className={`card-notion p-8 lg:p-9 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 2) * 100}`}
+              className={`card-notion relative overflow-hidden p-10 lg:p-12 card-grid-hover fade-up ${isVisible ? "is-visible" : ""} delay-${(i + 1) * 100}`}
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <span className="text-[10px] tracking-[0.08em] text-[#4A7BA8] font-bold tabular-nums block mb-5">
+              {/* Ghost number — atmospheric backdrop */}
+              <span
+                className="absolute -top-3 right-5 font-sans font-black leading-none select-none pointer-events-none tabular-nums"
+                style={{
+                  fontSize: "7rem",
+                  color: "#191919",
+                  opacity: 0.055,
+                  letterSpacing: "-0.04em",
+                }}
+                aria-hidden="true"
+              >
                 {pain.number}
               </span>
-              <h3 className="text-[0.875rem] font-bold text-[#191919] mb-4 leading-snug">
+
+              {/* Content */}
+              <h3 className="display-heading text-[#191919] text-[1.15rem] sm:text-[1.25rem] lg:text-[1.4rem] leading-snug mb-5 relative">
                 {pain.title}
               </h3>
-              <p className="text-xs text-[#787674] leading-[1.9]">
+              <p className="text-sm text-[#787674] leading-[1.9] relative">
                 {pain.body}
               </p>
             </div>
