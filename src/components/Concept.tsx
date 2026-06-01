@@ -64,7 +64,7 @@ export default function Concept() {
           className={`grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-24 mb-14 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
         >
           <div>
-            <p className="text-[#191919] text-[0.95rem] font-medium leading-loose mb-4">
+            <p className="text-[#191919] text-[1.4rem] font-medium leading-loose mb-4">
               一つのIDで、事業に必要なすべてを。
             </p>
             <p className="text-[#787674] text-sm leading-loose">
