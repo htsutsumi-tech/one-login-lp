@@ -1,29 +1,12 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useState } from "react";
+
+const CONTACT_URL =
+  "https://digital-eyes.jp/form/one-eighty/contact1?title=%E5%85%B1%E5%90%8C%E9%96%8B%E7%99%BA%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6";
 
 export default function CTASection() {
   const { ref, isVisible } = useScrollAnimation(0.1);
-  const [formState, setFormState] = useState({
-    company: "",
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [agreed, setAgreed] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <section id="cta" className="section-atm-slate py-28 lg:py-40 relative overflow-hidden">
@@ -33,11 +16,10 @@ export default function CTASection() {
         className="relative max-w-content mx-auto px-6 lg:px-8"
       >
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+
           {/* Left: Copy */}
           <div>
-            <p
-              className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}
-            >
+            <p className={`section-label mb-5 fade-up ${isVisible ? "is-visible" : ""}`}>
               Contact
             </p>
             <h2
@@ -48,9 +30,7 @@ export default function CTASection() {
               開発を、共に。
             </h2>
 
-            <div
-              className={`space-y-5 mb-10 fade-up ${isVisible ? "is-visible" : ""} delay-200`}
-            >
+            <div className={`space-y-5 mb-10 fade-up ${isVisible ? "is-visible" : ""} delay-200`}>
               <p className="text-[#787674] text-sm leading-relaxed">
                 共同開発パートナーへのご興味・ご相談、
                 お気軽にお問い合わせください。
@@ -62,9 +42,7 @@ export default function CTASection() {
               </p>
             </div>
 
-            <div
-              className={`space-y-3 fade-up ${isVisible ? "is-visible" : ""} delay-300`}
-            >
+            <div className={`space-y-3 fade-up ${isVisible ? "is-visible" : ""} delay-300`}>
               {[
                 "現在のプロダクト課題のヒアリング",
                 "One Login, All Contentsの要件整理",
@@ -83,152 +61,53 @@ export default function CTASection() {
             </div>
           </div>
 
-          {/* Right: Form */}
+          {/* Right: CTA */}
           <div className={`fade-up ${isVisible ? "is-visible" : ""} delay-200`}>
-            {submitted ? (
-              <div className="card-notion h-full flex flex-col items-center justify-center text-center py-16 px-8" style={{ boxShadow: "var(--shadow-card)" }}>
-                <div className="w-14 h-14 rounded-full border border-[#BDD3E7] bg-[#EEF4F9] flex items-center justify-center mb-6">
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-[#4A7BA8]"
-                  >
-                    <path
-                      d="M3 10l5 5 9-9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <p className="text-[#191919] font-bold mb-2">
-                  お問い合わせを受け付けました
+            <div
+              className="card-notion p-8 lg:p-10 flex flex-col gap-8"
+              style={{ boxShadow: "var(--shadow-card)" }}
+            >
+              {/* Guide text */}
+              <div className="space-y-3">
+                <p className="text-[#191919] text-sm font-semibold leading-relaxed">
+                  お問い合わせフォームへ
                 </p>
                 <p className="text-[#787674] text-sm leading-relaxed">
-                  内容を確認の上、担当者よりご連絡いたします。
+                  下記ボタンよりお問い合わせフォームへお進みください。
+                  業種・規模は問いません。
+                  まずはお気軽にご連絡ください。
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-[#E8E5DF]" />
+
+              {/* CTA button */}
+              <div className="space-y-4">
+                <a
+                  href={CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#191919] text-white text-sm font-semibold py-3.5 rounded-xl hover:bg-black active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
+                >
+                  お問い合わせする
+                  <svg
+                    width="12" height="12" viewBox="0 0 12 12" fill="none"
+                    stroke="currentColor" strokeWidth="1.5" aria-hidden="true"
+                  >
+                    <path d="M2 6h8M7 3l3 3-3 3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+
+                <p className="text-[11px] text-[#787674] text-center leading-relaxed">
+                  クリックすると外部フォームへ遷移します。
                   <br />
                   通常1〜2営業日以内にご返信します。
                 </p>
               </div>
-            ) : (
-              <div className="card-notion p-8 lg:p-10" style={{ boxShadow: "var(--shadow-card)" }}>
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {[
-                    {
-                      label: "会社名",
-                      name: "company",
-                      type: "text",
-                      placeholder: "株式会社〇〇",
-                      required: true,
-                    },
-                    {
-                      label: "お名前",
-                      name: "name",
-                      type: "text",
-                      placeholder: "山田 太郎",
-                      required: true,
-                    },
-                    {
-                      label: "メールアドレス",
-                      name: "email",
-                      type: "email",
-                      placeholder: "hello@example.com",
-                      required: true,
-                    },
-                  ].map((field) => (
-                    <div key={field.name}>
-                      <label className="block text-xs font-medium text-[#787674] mb-1.5">
-                        {field.label}
-                        {field.required && (
-                          <span className="text-[#4A7BA8] ml-1">*</span>
-                        )}
-                      </label>
-                      <input
-                        type={field.type}
-                        name={field.name}
-                        placeholder={field.placeholder}
-                        required={field.required}
-                        value={formState[field.name as keyof typeof formState]}
-                        onChange={handleChange}
-                        className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-[#4A7BA8] focus:ring-2 focus:ring-[#EEF4F9] transition-all duration-200"
-                      />
-                    </div>
-                  ))}
-
-                  <div>
-                    <label className="block text-xs font-medium text-[#787674] mb-1.5">
-                      お問い合わせ内容
-                    </label>
-                    <textarea
-                      name="message"
-                      placeholder="現在の課題や、共同開発パートナーについてのご質問などをお聞かせください。"
-                      rows={4}
-                      value={formState.message}
-                      onChange={handleChange}
-                      className="w-full bg-white border border-[#E8E5DF] text-[#191919] text-sm px-4 py-3 rounded-xl placeholder-[#C8C5BF] focus:outline-none focus:border-[#4A7BA8] focus:ring-2 focus:ring-[#EEF4F9] transition-all duration-200 resize-none"
-                    />
-                  </div>
-
-                  {/* Privacy policy consent */}
-                  <label className="flex items-start gap-3 cursor-pointer group">
-                    <div className="relative flex-shrink-0 mt-0.5">
-                      <input
-                        type="checkbox"
-                        checked={agreed}
-                        onChange={(e) => setAgreed(e.target.checked)}
-                        className="sr-only"
-                        required
-                      />
-                      <div
-                        className={`w-4 h-4 rounded border transition-all duration-150 flex items-center justify-center ${
-                          agreed
-                            ? "bg-[#4A7BA8] border-[#4A7BA8]"
-                            : "bg-white border-[#C8C5BF] group-hover:border-[#4A7BA8]"
-                        }`}
-                      >
-                        {agreed && (
-                          <svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true">
-                            <path d="M1 3.5l2.5 2.5L8 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        )}
-                      </div>
-                    </div>
-                    <span className="text-xs text-[#787674] leading-relaxed">
-                      <a
-                        href="https://o-eighty.jp/handling-personal-data/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#4A7BA8] underline underline-offset-2 hover:text-[#3A6A96] transition-colors duration-150"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        個人情報の取り扱い
-                      </a>
-                      について同意します
-                      <span className="text-[#4A7BA8] ml-1">*</span>
-                    </span>
-                  </label>
-
-                  <button
-                    type="submit"
-                    disabled={!agreed}
-                    className="w-full bg-[#191919] text-white text-sm font-semibold py-3.5 rounded-xl hover:bg-black active:scale-[0.99] transition-all duration-200 mt-2 flex items-center justify-center gap-2 shadow-[0_2px_12px_rgba(0,0,0,0.15)] disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:bg-[#191919] disabled:active:scale-100"
-                  >
-                    送信する
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                      <path d="M2 6h8M7 3l3 3-3 3" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-
-                  <p className="text-[11px] text-[#787674] text-center leading-relaxed">
-                    送信いただいた情報は、お問い合わせへの対応のみに使用します。
-                  </p>
-                </form>
-              </div>
-            )}
+            </div>
           </div>
+
         </div>
       </div>
     </section>
