@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+const CONTACT_URL =
+  "https://digital-eyes.jp/form/one-eighty/contact1?title=%E5%85%B1%E5%90%8C%E9%96%8B%E7%99%BA%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6";
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,8 +46,8 @@ export default function Navigation() {
           {[
             { label: "課題", id: "pain" },
             { label: "コンセプト", id: "concept" },
-            { label: "強み", id: "ai-native" },
-            { label: "パートナー募集", id: "partnership" },
+            { label: "開発体制", id: "ai-native" },
+            { label: "パートナー", id: "partnership" },
           ].map(({ label, id }) => (
             <button
               key={id}
@@ -58,15 +61,17 @@ export default function Navigation() {
 
         {/* CTA */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => scrollTo("cta")}
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-1.5 bg-[#191919] text-white text-sm px-4 py-2 rounded-lg hover:bg-black active:scale-[0.98] transition-all duration-200 font-normal tracking-wide"
           >
             <span>お問い合わせ</span>
             <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M2 6h8M7 3l3 3-3 3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </button>
+          </a>
 
           <button
             className="md:hidden p-1.5 text-[#787674]"
@@ -83,22 +88,26 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white border-b border-[#E8E5DF] transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
+      <div className={`md:hidden bg-white border-b border-[#E8E5DF] transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="px-6 py-4 flex flex-col gap-4">
           {[
             { label: "課題", id: "pain" },
             { label: "コンセプト", id: "concept" },
-            { label: "AIネイティブ開発", id: "ai-native" },
-            { label: "パートナー募集", id: "partnership" },
-            { label: "セキュリティ", id: "security" },
+            { label: "開発体制", id: "ai-native" },
+            { label: "パートナー", id: "partnership" },
           ].map(({ label, id }) => (
             <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm text-[#787674] py-1 hover:text-[#191919] transition-colors">
               {label}
             </button>
           ))}
-          <button onClick={() => scrollTo("cta")} className="mt-2 w-full bg-[#191919] text-white text-sm py-2.5 rounded-lg hover:bg-black transition-colors">
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 w-full bg-[#191919] text-white text-sm py-2.5 rounded-lg hover:bg-black transition-colors flex items-center justify-center gap-1.5"
+          >
             お問い合わせ
-          </button>
+          </a>
         </div>
       </div>
     </header>
