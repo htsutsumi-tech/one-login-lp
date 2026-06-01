@@ -73,7 +73,7 @@ export default function CTASection() {
                   まずはご相談ください
                 </p>
                 <p className="text-[#787674] text-sm leading-relaxed">
-                  下記ボタンよりまずはご相談くださいお進みください。
+                  下記ボタンよりお問い合わせフォームへお進みください。
                   業種・規模は問いません。
                   まずはお気軽にご連絡ください。
                 </p>
