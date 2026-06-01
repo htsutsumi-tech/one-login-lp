@@ -93,10 +93,7 @@ export default function BuildScope() {
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               {/* Category header */}
-              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-[#E8E5DF]">
-                <span className="text-[11px] text-[#4A7BA8] font-bold tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <div className="mb-6 pb-5 border-b border-[#E8E5DF]">
                 <h3 className="text-[#191919] font-bold text-lg leading-tight">
                   {cat.label}
                 </h3>
