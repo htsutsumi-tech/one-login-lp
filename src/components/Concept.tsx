@@ -81,11 +81,11 @@ export default function Concept() {
             <p>
               私たちが提唱するのは、逆の発想です。
               <span className="text-[#191919] font-semibold">
-                御社の業務に合わせて、機能を統合する。
+                貴社の業務に合わせて、機能を統合する。
               </span>
             </p>
             <p>
-              &ldquo;全部入りSaaS&rdquo;ではなく、御社の事業に最適化された
+              &ldquo;全部入りSaaS&rdquo;ではなく、貴社の事業に最適化された
               統合プロダクトを、AIネイティブ開発によって高速実装する。
               使うほどに業務がシンプルになる体験を設計します。
             </p>

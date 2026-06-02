@@ -76,7 +76,7 @@ export default function BuildScope() {
           >
             <p className="text-[#787674] text-sm leading-relaxed">
               独立したSaaSを並べるのではなく、
-              御社の業務に合わせた統合プロダクトとして設計します。
+              貴社の業務に合わせた統合プロダクトとして設計します。
               ここに挙げた機能領域を組み合わせ、
               <span className="text-[#191919] font-semibold">必要な形に最適化</span>
               して実装します。
@@ -122,7 +122,7 @@ export default function BuildScope() {
         >
           <p className="text-xs text-[#787674] text-center">
             上記はすべて単一ログイン基盤上に統合可能です。
-            御社の要件に合わせた組み合わせをご提案します。
+            貴社の要件に合わせた組み合わせをご提案します。
           </p>
         </div>
       </div>

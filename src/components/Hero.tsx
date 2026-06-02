@@ -77,7 +77,7 @@ export default function Hero() {
           style={{ transitionDelay: "360ms" }}
         >
           <p className="font-sans font-normal text-[#787674] text-[1.1rem] sm:text-[1.35rem] lg:text-[1.5rem] leading-[1.6] tracking-[-0.01em]">
-            御社の事業構想を、
+            貴社の事業構想を、
             プロダクトとして実装する。
           </p>
         </div>
